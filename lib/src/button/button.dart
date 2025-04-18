@@ -14,7 +14,7 @@ class Button extends StatelessWidget {
   const Button({
     super.key,
     this.label,
-    this.onTap,
+    this.onPressed,
     this.height,
     this.width,
     this.color,
@@ -47,7 +47,7 @@ class Button extends StatelessWidget {
   final Color? labelColor;
 
   /// Callback function when the button is tapped. If null, button appears disabled.
-  final VoidCallback? onTap;
+  final VoidCallback? onPressed;
 
   /// When true, displays a loading indicator instead of the button content.
   final bool isLoading;
@@ -90,7 +90,7 @@ class Button extends StatelessWidget {
     double? width,
     Color? color,
     Color? labelColor,
-    VoidCallback? onTap,
+    VoidCallback? onPressed,
     bool isLoading = false,
     TextStyle? labelStyle,
     BorderSide? border,
@@ -108,7 +108,7 @@ class Button extends StatelessWidget {
       width: width,
       color: color,
       labelColor: labelColor,
-      onTap: onTap,
+      onPressed: onPressed,
       isLoading: isLoading,
       labelStyle: labelStyle,
       border: border,
@@ -132,7 +132,7 @@ class Button extends StatelessWidget {
     double? width,
     Color? color,
     Color? labelColor,
-    VoidCallback? onTap,
+    VoidCallback? onPressed,
     bool isLoading = false,
     TextStyle? labelStyle,
     BorderSide? border,
@@ -150,7 +150,7 @@ class Button extends StatelessWidget {
       width: width,
       color: color,
       labelColor: labelColor,
-      onTap: onTap,
+      onPressed: onPressed,
       isLoading: isLoading,
       labelStyle: labelStyle,
       border: border,
@@ -175,7 +175,7 @@ class Button extends StatelessWidget {
     double? width,
     Color? color,
     Color? labelColor,
-    VoidCallback? onTap,
+    VoidCallback? onPressed,
     bool isLoading = false,
     TextStyle? labelStyle,
     BorderSide? border,
@@ -193,7 +193,7 @@ class Button extends StatelessWidget {
       width: width,
       color: color,
       labelColor: labelColor,
-      onTap: onTap,
+      onPressed: onPressed,
       isLoading: isLoading,
       labelStyle: labelStyle,
       border: border,
@@ -218,7 +218,7 @@ class Button extends StatelessWidget {
     double? width,
     Color? color,
     Color? labelColor,
-    VoidCallback? onTap,
+    VoidCallback? onPressed,
     bool isLoading = false,
     TextStyle? labelStyle,
     BorderSide? border,
@@ -236,7 +236,7 @@ class Button extends StatelessWidget {
       width: width,
       color: color,
       labelColor: labelColor,
-      onTap: onTap,
+      onPressed: onPressed,
       isLoading: isLoading,
       labelStyle: labelStyle,
       border: border,
@@ -261,7 +261,7 @@ class Button extends StatelessWidget {
     double? width,
     Color? color,
     Color? labelColor,
-    VoidCallback? onTap,
+    VoidCallback? onPressed,
     bool isLoading = false,
     TextStyle? labelStyle,
     BorderSide? border,
@@ -279,7 +279,7 @@ class Button extends StatelessWidget {
       width: width,
       color: color,
       labelColor: labelColor,
-      onTap: onTap,
+      onPressed: onPressed,
       isLoading: isLoading,
       labelStyle: labelStyle,
       border: border,
@@ -306,7 +306,7 @@ class Button extends StatelessWidget {
     double? width,
     Color? color,
     Color? labelColor,
-    VoidCallback? onTap,
+    VoidCallback? onPressed,
     bool isLoading = false,
     TextStyle? labelStyle,
     BorderSide? border,
@@ -324,7 +324,7 @@ class Button extends StatelessWidget {
       width: width,
       color: color,
       labelColor: labelColor,
-      onTap: onTap,
+      onPressed: onPressed,
       isLoading: isLoading,
       labelStyle: labelStyle,
       border: border,
@@ -340,7 +340,7 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final disabled = onTap == null;
+    final disabled = onPressed == null;
     final btnHeight = height ?? buttonSize.height;
     final btnWidth = width ?? buttonSize.width;
     final textColor = isLoading
@@ -360,7 +360,7 @@ class Button extends StatelessWidget {
           ? btnHeight
           : (icon == null ? btnWidth : btnHeight),
       child: ElevatedButton(
-        onPressed: isLoading ? () {} : onTap,
+        onPressed: isLoading ? () {} : onPressed,
         style: ElevatedButton.styleFrom(
           elevation: 0,
           overlayColor: padding == EdgeInsets.zero ? Colors.transparent : null,
