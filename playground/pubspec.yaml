@@ -1,0 +1,27 @@
+name: playground
+description: "The components playground rendered in the Docs site."
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.1.0
+  flutter_web_plugins:
+    sdk: flutter
+  go_router: ^15.0.0
+  nucleus_ui:
+    path: ..
+  web: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^7.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
