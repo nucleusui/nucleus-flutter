@@ -9,3 +9,4 @@ linter:
     avoid_positional_boolean_parameters: false
     document_ignores: false
     lines_longer_than_80_chars: false
+    require_trailing_commas: false
