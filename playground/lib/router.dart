@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:playground/pages/button.dart';
-import 'package:playground/pages/textfield.dart';
+import 'package:playground/pages/input_field.dart';
 
 final router = GoRouter(
   debugLogDiagnostics: true,
@@ -15,11 +15,11 @@ final router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/textfield',
+      path: '/input-field',
       builder: (context, state) {
         final style = state.uri.queryParameters['style'] ?? 'primary';
         return TextFieldPage(
-          style: PlagroundTextFieldStyle.values.byName(style),
+          style: PlagroundInputFieldStyle.values.byName(style),
         );
       },
     ),

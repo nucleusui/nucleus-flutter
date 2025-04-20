@@ -6,12 +6,12 @@ import 'package:nucleus_ui/extension/context.dart';
 
 /// A customizable text field component that supports various styles, states, and input types.
 ///
-/// The TextFields widget provides consistent styling and behavior options for
+/// The InputField widget provides consistent styling and behavior options for
 /// text input across the application. It handles different states including focus,
 /// error, and disabled states, alongside support for password visibility toggling,
 /// prefix/suffix icons, and input validation.
-class TextFields extends StatefulWidget {
-  const TextFields({
+class InputField extends StatefulWidget {
+  const InputField({
     super.key,
     this.controller,
     this.isPassword = false,
@@ -120,10 +120,10 @@ class TextFields extends StatefulWidget {
   final FocusNode? focusNode;
 
   @override
-  State<TextFields> createState() => _TextFieldStates();
+  State<InputField> createState() => _InputFieldStates();
 }
 
-class _TextFieldStates extends State<TextFields> {
+class _InputFieldStates extends State<InputField> {
   String errorText = '';
   bool isFocus = false;
   bool isError = false;
