@@ -1,0 +1,12 @@
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.docs-table th:nth-child(1) {
+  min-width: 165px;
+}
+
+.docs-table th:nth-child(2) {
+  min-width: 195px;
+}

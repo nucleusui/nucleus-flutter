@@ -1,0 +1,247 @@
+---
+title: Button
+sidebar:
+  order: 4
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable button component that supports various styles, sizes, and states.
+
+The `Button` widget provides consistent styling and behavior options for different button types. It handles loading states, disabled states, and various customization options.
+
+- **Button Types**: Primary, Secondary, Outline, Ghost, Destructive, Social.
+- **States**: Loading, Disabled.
+- **Customizable**: Supports icons, colors, sizes, borders, and more.
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property       | Type                  | Description                                                                                     |
+|----------------|-----------------------|-------------------------------------------------------------------------------------------------|
+| `label`        | `String?`             | The text to be displayed on the button.                                                         |
+| `height`       | `double?`             | Custom height for the button. If not provided, uses the height defined by `buttonSize`.         |
+| `width`        | `double?`             | Custom width for the button. If not provided, uses the width defined by `buttonSize`.           |
+| `color`        | `Color?`              | Background color of the button. Overrides the default color for the `buttonType`.               |
+| `labelColor`   | `Color?`              | Text color of the button. Overrides the default color for the `buttonType`.                     |
+| `onPressed`    | `VoidCallback?`       | Callback function when the button is tapped. If null, the button appears disabled.              |
+| `isLoading`    | `bool`                | When true, displays a loading indicator instead of the button content.                          |
+| `labelStyle`   | `TextStyle?`          | Custom text style for the button label.                                                         |
+| `border`       | `BorderSide?`         | Custom border for the button. Overrides the default border for the `buttonType`.                |
+| `prefixIcon`   | `Widget?`             | Widget to display before the button label.                                                      |
+| `suffixIcon`   | `Widget?`             | Widget to display after the button label.                                                       |
+| `buttonType`   | `ButtonType`          | Defines the type of button (e.g., primary, secondary, outline, etc.).                           |
+| `buttonSize`   | `ButtonSize`          | Defines the size of the button (e.g., small, medium, large, full).                              |
+| `borderRadius` | `BorderRadius?`       | Custom border radius for the button.                                                            |
+| `icon`         | `Widget?`             | Icon to display in the button. Overrides the label and prefix/suffix icons.                     |
+| `padding`      | `EdgeInsetsGeometry?` | Custom padding for the button content.                                                          |
+
+</div>
+
+---
+
+## Variants
+
+#### Primary
+A button for primary actions.
+
+<Preview src="button?style=primary">
+
+```dart
+Button.primary(
+  child: 'Primary',
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### Secondary
+A button for secondary actions.
+
+<Preview src="button?style=secondary">
+
+```dart
+Button.secondary(
+  child: 'Secondary',
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### Destructive
+A button for destructive actions (e.g., delete).
+
+<Preview src="button?style=destructive">
+
+```dart
+Button.destructive(
+  child: 'Destructive',
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### Outline
+A button with a border and no background.
+
+<Preview src="button?style=outline">
+
+```dart
+Button.outline(
+  child: 'Outline',
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### Ghost
+A button with no border or background.
+
+<Preview src="button?style=ghost">
+
+```dart
+Button.ghost(
+  child: 'Ghost',
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### Social
+A button for social logins or actions.
+
+<Preview src="button?style=social">
+
+```dart
+Container(
+  constraints: const BoxConstraints(
+    maxWidth: 300,
+  ),
+  margin: const EdgeInsets.all(16),
+  child: Button.social(
+    label: 'Continue with Apple',
+    color: Colors.black,
+    prefixIcon: const Icon(Icons.apple, size: 26),
+    onPressed: () {},
+  ),
+),
+```
+
+</Preview>
+
+---
+
+## Additional Features
+
+#### Icon Button
+A button with an icon only.
+
+<Preview src="button?style=icon">
+
+```dart
+Button(
+  icon: const Icon(Icons.apple),
+  onPressed: () {},
+),
+```
+
+</Preview>
+
+---
+
+#### Loading State
+A button that shows a loading indicator.
+
+<Preview src="button?style=loading">
+
+```dart
+Button.ghost(
+  label: 'Primary',
+  isLoading: true,
+  onPressed: () {},
+),
+```
+
+</Preview>
+
+---
+
+#### Prefix Icon
+A button with an icon before the label.
+
+<Preview src="button?style=prefixIcon">
+
+```dart
+Button(
+  label: 'Prefix Icon',
+  prefixIcon: const Padding(
+    padding: EdgeInsets.only(right: 5),
+    child: Icon(Icons.circle),
+  ),
+  onPressed: () {},
+),
+```
+
+</Preview>
+
+---
+
+#### Suffix Icon
+A button with an icon after the label.
+
+<Preview src="button?style=suffixIcon">
+
+```dart
+Button(
+  label: 'Suffix Icon',
+  suffixIcon: const Padding(
+    padding: EdgeInsets.only(left: 16),
+    child: Icon(Icons.circle_outlined),
+  ),
+  onPressed: () {},
+),
+```
+
+</Preview>
+
+---
+
+#### Both Icons
+A button with both prefix and suffix icons.
+
+<Preview src="button?style=bothIcon">
+
+```dart
+Button(
+  label: 'Both Icon',
+  prefixIcon: const Padding(
+    padding: EdgeInsets.only(right: 16),
+    child: Icon(Icons.circle),
+  ),
+  suffixIcon: const Padding(
+    padding: EdgeInsets.only(left: 16),
+    child: Icon(Icons.circle_outlined),
+  ),
+  onPressed: () {},
+),
+```
+
+</Preview>
