@@ -182,5 +182,7 @@ extension AppColors on ColorScheme {
   Color get fgOnContrast => _themeColor(grey100, grey10);
   Color get fgDisabled => _themeColor(grey60, grey50);
   Color get bgDisabled => const Color(0xFFDADDDE);
-  Color get bgColor => _themeColor(bgContrast, bgCanvas);
+  Color get fgBaseReverse => _themeColor(grey100, grey10);
+  Color get bgColor => _themeColor(bgContrast, bgMuted);
+  Color get bgColorReverse => _themeColor(bgMuted, bgContrast);
 }
