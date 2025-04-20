@@ -4,7 +4,7 @@ import 'package:nucleus_ui/constant/typography.dart';
 import 'package:nucleus_ui/extension/context.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
-enum HoverTipStyle {
+enum QuickTipStyle {
   up,
   down,
   left,
@@ -13,10 +13,10 @@ enum HoverTipStyle {
   customContent,
 }
 
-class HoverTipPage extends StatelessWidget {
-  const HoverTipPage({super.key, required this.style});
+class QuickTipPage extends StatelessWidget {
+  const QuickTipPage({super.key, required this.style});
 
-  final HoverTipStyle style;
+  final QuickTipStyle style;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,10 @@ class HoverTipPage extends StatelessWidget {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 300),
           child: switch (style) {
-            HoverTipStyle.up => const Row(
+            QuickTipStyle.up => const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HoverTip(
+                  QuickTip(
                     message: 'Hello world!',
                     child: Icon(Icons.info_outline),
                   ),
@@ -36,10 +36,10 @@ class HoverTipPage extends StatelessWidget {
                   Text('Hover or focus icon to see the tooltip'),
                 ],
               ),
-            HoverTipStyle.down => const Row(
+            QuickTipStyle.down => const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HoverTip(
+                  QuickTip(
                     message: 'Hello world!',
                     direction: AxisDirection.down,
                     child: Icon(Icons.info_outline),
@@ -48,10 +48,10 @@ class HoverTipPage extends StatelessWidget {
                   Text('Hover or focus icon to see the tooltip'),
                 ],
               ),
-            HoverTipStyle.left => const Row(
+            QuickTipStyle.left => const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HoverTip(
+                  QuickTip(
                     message: 'Hello world!',
                     direction: AxisDirection.left,
                     child: Icon(Icons.info_outline),
@@ -60,10 +60,10 @@ class HoverTipPage extends StatelessWidget {
                   Text('Hover or focus icon to see the tooltip'),
                 ],
               ),
-            HoverTipStyle.right => const Row(
+            QuickTipStyle.right => const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HoverTip(
+                  QuickTip(
                     message: 'Hello world!',
                     direction: AxisDirection.right,
                     child: Icon(Icons.info_outline),
@@ -72,10 +72,10 @@ class HoverTipPage extends StatelessWidget {
                   Text('Hover or focus icon to see the tooltip'),
                 ],
               ),
-            HoverTipStyle.noTail => const Row(
+            QuickTipStyle.noTail => const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HoverTip(
+                  QuickTip(
                     message: 'Hello world!',
                     tailLength: 0,
                     child: Icon(Icons.info_outline),
@@ -84,10 +84,10 @@ class HoverTipPage extends StatelessWidget {
                   Text('Hover or focus icon to see the tooltip'),
                 ],
               ),
-            HoverTipStyle.customContent => Row(
+            QuickTipStyle.customContent => Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  HoverTip(
+                  QuickTip(
                     content: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Column(

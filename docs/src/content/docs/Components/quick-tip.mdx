@@ -1,5 +1,5 @@
 ---
-title: Hover Tip
+title: Quick Tip
 sidebar:
   order: 5
 ---
@@ -9,7 +9,7 @@ import "../../../styles/docs.css";
 
 A tooltip component that displays information when users hover over or focus on an element.
 
-The `HoverTip` widget provides a flexible way to show additional information or custom content in a tooltip-style popup. It supports different directions, customizable appearance, and various trigger modes.
+The `QuickTip` widget provides a flexible way to show additional information or custom content in a tooltip-style popup. It supports different directions, customizable appearance, and various trigger modes.
 
 - **Directions**: Up, Down, Left, Right
 - **Content Types**: Text message or custom widget content
@@ -22,10 +22,10 @@ The `HoverTip` widget provides a flexible way to show additional information or 
 #### Default (Up)
 Basic tooltip that appears above the trigger widget.
 
-<Preview src="hover-tip?style=up">
+<Preview src="quick-tip?style=up">
 
 ```dart
-HoverTip(
+QuickTip(
   message: 'Hello world!',
   child: Icon(Icons.info_outline),
 )
@@ -38,10 +38,10 @@ HoverTip(
 #### Down Direction
 Tooltip that appears below the trigger widget.
 
-<Preview src="hover-tip?style=down">
+<Preview src="quick-tip?style=down">
 
 ```dart
-HoverTip(
+QuickTip(
   message: 'Hello world!',
   direction: AxisDirection.down,
   child: Icon(Icons.info_outline),
@@ -55,10 +55,10 @@ HoverTip(
 #### Left Direction
 Tooltip that appears to the left of the trigger widget.
 
-<Preview src="hover-tip?style=left">
+<Preview src="quick-tip?style=left">
 
 ```dart
-HoverTip(
+QuickTip(
   message: 'Hello world!',
   direction: AxisDirection.left,
   child: Icon(Icons.info_outline),
@@ -72,10 +72,10 @@ HoverTip(
 #### Right Direction
 Tooltip that appears to the right of the trigger widget.
 
-<Preview src="hover-tip?style=right">
+<Preview src="quick-tip?style=right">
 
 ```dart
-HoverTip(
+QuickTip(
   message: 'Hello world!',
   direction: AxisDirection.right,
   child: Icon(Icons.info_outline),
@@ -89,10 +89,10 @@ HoverTip(
 #### No Tail
 Tooltip without the pointing tail.
 
-<Preview src="hover-tip?style=noTail">
+<Preview src="quick-tip?style=noTail">
 
 ```dart
-HoverTip(
+QuickTip(
   message: 'Hello world!',
   tailLength: 0,
   child: Icon(Icons.info_outline),
@@ -106,10 +106,10 @@ HoverTip(
 #### Custom Content
 Tooltip with custom widget content instead of text.
 
-<Preview src="hover-tip?style=customContent">
+<Preview src="quick-tip?style=customContent">
 
 ```dart
-HoverTip(
+QuickTip(
   content: Padding(
     padding: EdgeInsets.all(8),
     child: Column(

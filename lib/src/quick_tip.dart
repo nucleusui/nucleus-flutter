@@ -4,8 +4,8 @@ import 'package:nucleus_ui/constant/typography.dart';
 import 'package:nucleus_ui/extension/context.dart';
 import 'package:nucleus_ui/package/tooltip/tooltip.dart';
 
-class HoverTip extends StatelessWidget {
-  const HoverTip({
+class QuickTip extends StatelessWidget {
+  const QuickTip({
     super.key,
     required this.child,
     this.message,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:playground/pages/button.dart';
-import 'package:playground/pages/hover_tip.dart';
 import 'package:playground/pages/input_field.dart';
+import 'package:playground/pages/quick_tip.dart';
 
 final router = GoRouter(
   debugLogDiagnostics: true,
@@ -34,11 +34,11 @@ final router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/hover-tip',
+      path: '/quick-tip',
       builder: (context, state) {
         final style = state.uri.queryParameters['style'] ?? 'up';
-        return HoverTipPage(
-          style: HoverTipStyle.values.byName(style),
+        return QuickTipPage(
+          style: QuickTipStyle.values.byName(style),
         );
       },
     ),
