@@ -10,3 +10,4 @@ linter:
     document_ignores: false
     lines_longer_than_80_chars: false
     require_trailing_commas: false
+    comment_references: false
