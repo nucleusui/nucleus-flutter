@@ -57,13 +57,13 @@ class ButtonPage extends StatelessWidget {
                 onPressed: () {},
               ),
             ),
-          PlagroundButtonStyle.loading => Button.primary(
+          PlagroundButtonStyle.loading => Button.outline(
               label: 'Primary',
               isLoading: true,
               onPressed: () {},
             ),
           PlagroundButtonStyle.icon => Button(
-              icon: const Icon(Icons.apple),
+              icon: const Icon(Icons.circle),
               onPressed: () {},
             ),
           PlagroundButtonStyle.prefixIcon => Button(
@@ -78,7 +78,7 @@ class ButtonPage extends StatelessWidget {
               label: 'Suffix Icon',
               suffixIcon: const Padding(
                 padding: EdgeInsets.only(left: 16),
-                child: Icon(Icons.circle_outlined),
+                child: Icon(Icons.circle),
               ),
               onPressed: () {},
             ),
@@ -90,7 +90,7 @@ class ButtonPage extends StatelessWidget {
               ),
               suffixIcon: const Padding(
                 padding: EdgeInsets.only(left: 16),
-                child: Icon(Icons.circle_outlined),
+                child: Icon(Icons.circle),
               ),
               onPressed: () {},
             ),
