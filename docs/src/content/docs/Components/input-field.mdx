@@ -13,43 +13,6 @@ The `InputField` component offers various styling options and input behaviors, s
 
 ---
 
-## Properties
-
-<div class="docs-table">
-
-| Property             | Type                                   | Description                                                                                     |
-|----------------------|----------------------------------------|-------------------------------------------------------------------------------------------------|
-| `controller`         | `TextEditingController?`               | Controller for the text field input.                                                            |
-| `isPassword`         | `bool`                                 | When true, obscures the text being edited (for password fields).                                |
-| `autofocus`          | `bool`                                 | When true, the text field will be focused when the widget is first created.                     |
-| `labelText`          | `String?`                              | Text displayed as a floating label above the text field when focused or filled.                 |
-| `hintText`           | `String?`                              | Placeholder text displayed when the text field is empty.                                        |
-| `textInputType`      | `TextInputType?`                       | The type of keyboard to use for editing the text (e.g., email, number, phone).                  |
-| `onSubmitied`        | `ValueChanged<String>?`                | Callback function when the user submits the text field (e.g., presses done/next).               |
-| `validator`          | `String? Function(String?)?`           | Function that validates the text and returns an error message string if invalid.                |
-| `textInputAction`    | `TextInputAction?`                     | Determines the action button on the keyboard (e.g., next, done, search).                        |
-| `suffixIcon`         | `Widget?`                              | Widget displayed at the end of the text field, typically for action buttons.                    |
-| `enabled`            | `bool?`                                | Controls whether the text field is interactive or grayed out.                                   |
-| `maxLength`          | `int?`                                 | Maximum number of characters allowed in the text field.                                         |
-| `autovalidateMode`   | `AutovalidateMode?`                    | Determines when validation should be performed (e.g., on user interaction, always).             |
-| `prefixIcon`         | `Widget?`                              | Widget displayed at the start of the text field, typically for icons.                           |
-| `contentPadding`     | `EdgeInsetsGeometry?`                  | Custom padding for the content inside the text field.                                           |
-| `fillColor`          | `Color?`                               | Background color of the text field.                                                             |
-| `border`             | `BoxBorder?`                           | Custom border for the text field. Overrides the default border.                                 |
-| `borderRadius`       | `BorderRadiusGeometry`                 | Corner radius for the text field borders.                                                       |
-| `height`             | `double?`                              | Height of the text field container.                                                             |
-| `minLines`           | `int?`                                 | Minimum number of lines to show (for multiline text fields).                                    |
-| `maxLines`           | `int?`                                 | Maximum number of lines to show (for multiline text fields).                                    |
-| `initialValue`       | `String?`                              | Default text to display when the text field is first created.                                   |
-| `onChanged`          | `void Function(String)?`               | Callback function when the text value changes.                                                  |
-| `suffixPadding`      | `EdgeInsetsGeometry?`                  | Custom padding for the suffix icon.                                                             |
-| `prefixPadding`      | `EdgeInsetsGeometry?`                  | Custom padding for the prefix icon.                                                             |
-| `focusNode`          | `FocusNode?`                           | Focus node that controls the focus state of this text field.                                    |
-
-</div>
-
----
-
 ## Variants
 
 #### Standard
@@ -159,3 +122,40 @@ const InputField(
 ```
 
 </Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+
+| Property             | Type                                   | Description                                                                                     |
+|----------------------|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| `controller`         | `TextEditingController?`               | Controller for the text field input.                                                            |
+| `isPassword`         | `bool`                                 | When true, obscures the text being edited (for password fields).                                |
+| `autofocus`          | `bool`                                 | When true, the text field will be focused when the widget is first created.                     |
+| `labelText`          | `String?`                              | Text displayed as a floating label above the text field when focused or filled.                 |
+| `hintText`           | `String?`                              | Placeholder text displayed when the text field is empty.                                        |
+| `textInputType`      | `TextInputType?`                       | The type of keyboard to use for editing the text (e.g., email, number, phone).                  |
+| `onSubmitied`        | `ValueChanged<String>?`                | Callback function when the user submits the text field (e.g., presses done/next).               |
+| `validator`          | `String? Function(String?)?`           | Function that validates the text and returns an error message string if invalid.                |
+| `textInputAction`    | `TextInputAction?`                     | Determines the action button on the keyboard (e.g., next, done, search).                        |
+| `suffixIcon`         | `Widget?`                              | Widget displayed at the end of the text field, typically for action buttons.                    |
+| `enabled`            | `bool?`                                | Controls whether the text field is interactive or grayed out.                                   |
+| `maxLength`          | `int?`                                 | Maximum number of characters allowed in the text field.                                         |
+| `autovalidateMode`   | `AutovalidateMode?`                    | Determines when validation should be performed (e.g., on user interaction, always).             |
+| `prefixIcon`         | `Widget?`                              | Widget displayed at the start of the text field, typically for icons.                           |
+| `contentPadding`     | `EdgeInsetsGeometry?`                  | Custom padding for the content inside the text field.                                           |
+| `fillColor`          | `Color?`                               | Background color of the text field.                                                             |
+| `border`             | `BoxBorder?`                           | Custom border for the text field. Overrides the default border.                                 |
+| `borderRadius`       | `BorderRadiusGeometry`                 | Corner radius for the text field borders.                                                       |
+| `height`             | `double?`                              | Height of the text field container.                                                             |
+| `minLines`           | `int?`                                 | Minimum number of lines to show (for multiline text fields).                                    |
+| `maxLines`           | `int?`                                 | Maximum number of lines to show (for multiline text fields).                                    |
+| `initialValue`       | `String?`                              | Default text to display when the text field is first created.                                   |
+| `onChanged`          | `void Function(String)?`               | Callback function when the text value changes.                                                  |
+| `suffixPadding`      | `EdgeInsetsGeometry?`                  | Custom padding for the suffix icon.                                                             |
+| `prefixPadding`      | `EdgeInsetsGeometry?`                  | Custom padding for the prefix icon.                                                             |
+| `focusNode`          | `FocusNode?`                           | Focus node that controls the focus state of this text field.                                    |
+
+</div>

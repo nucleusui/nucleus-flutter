@@ -17,32 +17,6 @@ The `Button` widget provides consistent styling and behavior options for differe
 
 ---
 
-## Properties
-
-<div class="docs-table">
-| Property       | Type                  | Description                                                                                     |
-|----------------|-----------------------|-------------------------------------------------------------------------------------------------|
-| `label`        | `String?`             | The text to be displayed on the button.                                                         |
-| `height`       | `double?`             | Custom height for the button. If not provided, uses the height defined by `buttonSize`.         |
-| `width`        | `double?`             | Custom width for the button. If not provided, uses the width defined by `buttonSize`.           |
-| `color`        | `Color?`              | Background color of the button. Overrides the default color for the `buttonType`.               |
-| `labelColor`   | `Color?`              | Text color of the button. Overrides the default color for the `buttonType`.                     |
-| `onPressed`    | `VoidCallback?`       | Callback function when the button is tapped. If null, the button appears disabled.              |
-| `isLoading`    | `bool`                | When true, displays a loading indicator instead of the button content.                          |
-| `labelStyle`   | `TextStyle?`          | Custom text style for the button label.                                                         |
-| `border`       | `BorderSide?`         | Custom border for the button. Overrides the default border for the `buttonType`.                |
-| `prefixIcon`   | `Widget?`             | Widget to display before the button label.                                                      |
-| `suffixIcon`   | `Widget?`             | Widget to display after the button label.                                                       |
-| `buttonType`   | `ButtonType`          | Defines the type of button (e.g., primary, secondary, outline, etc.).                           |
-| `buttonSize`   | `ButtonSize`          | Defines the size of the button (e.g., small, medium, large, full).                              |
-| `borderRadius` | `BorderRadius?`       | Custom border radius for the button.                                                            |
-| `icon`         | `Widget?`             | Icon to display in the button. Overrides the label and prefix/suffix icons.                     |
-| `padding`      | `EdgeInsetsGeometry?` | Custom padding for the button content.                                                          |
-
-</div>
-
----
-
 ## Variants
 
 #### Primary
@@ -245,3 +219,29 @@ Button(
 ```
 
 </Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property       | Type                  | Description                                                                                     |
+|----------------|-----------------------|-------------------------------------------------------------------------------------------------|
+| `label`        | `String?`             | The text to be displayed on the button.                                                         |
+| `height`       | `double?`             | Custom height for the button. If not provided, uses the height defined by `buttonSize`.         |
+| `width`        | `double?`             | Custom width for the button. If not provided, uses the width defined by `buttonSize`.           |
+| `color`        | `Color?`              | Background color of the button. Overrides the default color for the `buttonType`.               |
+| `labelColor`   | `Color?`              | Text color of the button. Overrides the default color for the `buttonType`.                     |
+| `onPressed`    | `VoidCallback?`       | Callback function when the button is tapped. If null, the button appears disabled.              |
+| `isLoading`    | `bool`                | When true, displays a loading indicator instead of the button content.                          |
+| `labelStyle`   | `TextStyle?`          | Custom text style for the button label.                                                         |
+| `border`       | `BorderSide?`         | Custom border for the button. Overrides the default border for the `buttonType`.                |
+| `prefixIcon`   | `Widget?`             | Widget to display before the button label.                                                      |
+| `suffixIcon`   | `Widget?`             | Widget to display after the button label.                                                       |
+| `buttonType`   | `ButtonType`          | Defines the type of button (e.g., primary, secondary, outline, etc.).                           |
+| `buttonSize`   | `ButtonSize`          | Defines the size of the button (e.g., small, medium, large, full).                              |
+| `borderRadius` | `BorderRadius?`       | Custom border radius for the button.                                                            |
+| `icon`         | `Widget?`             | Icon to display in the button. Overrides the label and prefix/suffix icons.                     |
+| `padding`      | `EdgeInsetsGeometry?` | Custom padding for the button content.                                                          |
+
+</div>

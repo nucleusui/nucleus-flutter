@@ -17,6 +17,118 @@ The `HoverTip` widget provides a flexible way to show additional information or 
 
 ---
 
+## Variants
+
+#### Default (Up)
+Basic tooltip that appears above the trigger widget.
+
+<Preview src="hover-tip?style=up">
+
+```dart
+HoverTip(
+  message: 'Hello world!',
+  child: Icon(Icons.info_outline),
+)
+```
+
+</Preview>
+
+---
+
+#### Down Direction
+Tooltip that appears below the trigger widget.
+
+<Preview src="hover-tip?style=down">
+
+```dart
+HoverTip(
+  message: 'Hello world!',
+  direction: AxisDirection.down,
+  child: Icon(Icons.info_outline),
+)
+```
+
+</Preview>
+
+---
+
+#### Left Direction
+Tooltip that appears to the left of the trigger widget.
+
+<Preview src="hover-tip?style=left">
+
+```dart
+HoverTip(
+  message: 'Hello world!',
+  direction: AxisDirection.left,
+  child: Icon(Icons.info_outline),
+)
+```
+
+</Preview>
+
+---
+
+#### Right Direction
+Tooltip that appears to the right of the trigger widget.
+
+<Preview src="hover-tip?style=right">
+
+```dart
+HoverTip(
+  message: 'Hello world!',
+  direction: AxisDirection.right,
+  child: Icon(Icons.info_outline),
+)
+```
+
+</Preview>
+
+---
+
+#### No Tail
+Tooltip without the pointing tail.
+
+<Preview src="hover-tip?style=noTail">
+
+```dart
+HoverTip(
+  message: 'Hello world!',
+  tailLength: 0,
+  child: Icon(Icons.info_outline),
+)
+```
+
+</Preview>
+
+---
+
+#### Custom Content
+Tooltip with custom widget content instead of text.
+
+<Preview src="hover-tip?style=customContent">
+
+```dart
+HoverTip(
+  content: Padding(
+    padding: EdgeInsets.all(8),
+    child: Column(
+      spacing: 5,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        FlutterLogo(),
+        Text('Custom Content'),
+      ],
+    ),
+  ),
+  child: Icon(Icons.info_outline),
+)
+```
+
+</Preview>
+
+---
+
 ## Properties
 
 <div class="docs-table">
@@ -58,157 +170,3 @@ The `HoverTip` widget provides a flexible way to show additional information or 
 | `textStyle`                 | `TextStyle?`           | Custom text style for the message.                                                         |
 
 </div>
-
----
-
-## Variants
-
-#### Default (Up)
-Basic tooltip that appears above the trigger widget.
-
-<Preview src="hover-tip?style=up">
-
-```dart
-Row(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    HoverTip(
-      message: 'Hello world!',
-      child: Icon(Icons.info_outline),
-    ),
-    SizedBox(width: 8),
-    Text('Hover or focus icon to see the tooltip'),
-  ],
-)
-```
-
-</Preview>
-
----
-
-#### Down Direction
-Tooltip that appears below the trigger widget.
-
-<Preview src="hover-tip?style=down">
-
-```dart
-Row(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    HoverTip(
-      message: 'Hello world!',
-      direction: AxisDirection.down,
-      child: Icon(Icons.info_outline),
-    ),
-    SizedBox(width: 8),
-    Text('Hover or focus icon to see the tooltip'),
-  ],
-)
-```
-
-</Preview>
-
----
-
-#### Left Direction
-Tooltip that appears to the left of the trigger widget.
-
-<Preview src="hover-tip?style=left">
-
-```dart
-Row(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    HoverTip(
-      message: 'Hello world!',
-      direction: AxisDirection.left,
-      child: Icon(Icons.info_outline),
-    ),
-    SizedBox(width: 8),
-    Text('Hover or focus icon to see the tooltip'),
-  ],
-)
-```
-
-</Preview>
-
----
-
-#### Right Direction
-Tooltip that appears to the right of the trigger widget.
-
-<Preview src="hover-tip?style=right">
-
-```dart
-Row(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    HoverTip(
-      message: 'Hello world!',
-      direction: AxisDirection.right,
-      child: Icon(Icons.info_outline),
-    ),
-    SizedBox(width: 8),
-    Text('Hover or focus icon to see the tooltip'),
-  ],
-)
-```
-
-</Preview>
-
----
-
-#### No Tail
-Tooltip without the pointing tail.
-
-<Preview src="hover-tip?style=noTail">
-
-```dart
-Row(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    HoverTip(
-      message: 'Hello world!',
-      tailLength: 0,
-      child: Icon(Icons.info_outline),
-    ),
-    SizedBox(width: 8),
-    Text('Hover or focus icon to see the tooltip'),
-  ],
-)
-```
-
-</Preview>
-
----
-
-#### Custom Content
-Tooltip with custom widget content instead of text.
-
-<Preview src="hover-tip?style=customContent">
-
-```dart
-Row(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    HoverTip(
-      content: Padding(
-        padding: EdgeInsets.all(8),
-        child: Column(
-          spacing: 5,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FlutterLogo(),
-            Text('Custom Content'),
-          ],
-        ),
-      ),
-      child: Icon(Icons.info_outline),
-    ),
-    SizedBox(width: 8),
-    Text('Hover or focus icon to see the tooltip'),
-  ],
-)
-```
-
-</Preview>
