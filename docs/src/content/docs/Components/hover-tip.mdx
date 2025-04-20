@@ -1,0 +1,214 @@
+---
+title: Hover Tip
+sidebar:
+  order: 5
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A tooltip component that displays information when users hover over or focus on an element.
+
+The `HoverTip` widget provides a flexible way to show additional information or custom content in a tooltip-style popup. It supports different directions, customizable appearance, and various trigger modes.
+
+- **Directions**: Up, Down, Left, Right
+- **Content Types**: Text message or custom widget content
+- **Customizable**: Supports custom styling, animations, and positioning
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property                    | Type                   | Description                                                                                     |
+|-----------------------------|------------------------|-------------------------------------------------------------------------------------------------|
+| `child`                     | `Widget`               | **Required.** The widget that triggers the tooltip.                                              |
+| `message`                   | `String?`              | Text message to display in the tooltip.                                                          |
+| `content`                   | `Widget?`              | Custom widget to display instead of text message.                                                |
+| `direction`                 | `AxisDirection`        | Direction where tooltip appears (up, down, left, right). Default: up.                            |
+| `triggerMode`               | `TooltipTriggerMode?`  | How tooltip is triggered (tap, longPress, hover). Default: tap.                                  |
+| `backgroundColor`           | `Color?`               | Background color of the tooltip.                                                                 |
+| `elevation`                 | `double`               | Shadow elevation of the tooltip. Default: 4.                                                     |
+| `borderRadius`              | `BorderRadiusGeometry` | Border radius of the tooltip. Default: 4px.                                                      |
+| `tailLength`                | `double`               | Length of the tooltip's tail. Set to 0 to hide. Default: 8.                                      |
+| `tailBaseWidth`             | `double`               | Width of the tail's base. Default: 12.                                                           |
+| `offset`                    | `double`               | Distance between tooltip and trigger widget. Default: 4.                                         |
+| `margin`                    | `EdgeInsetsGeometry`   | Margin around the tooltip. Default: 8px all sides.                                               |
+| `onShow`                    | `VoidCallback?`        | Callback when tooltip is shown.                                                                  |
+| `onDismiss`                 | `VoidCallback?`        | Callback when tooltip is dismissed.                                                              |
+| `controller`                | `TooltipController?`   | Controller for programmatically showing/hiding tooltip.                                          |
+| `isModal`                   | `bool`                 | If true, blocks interaction with widgets behind. Default: false.                                 |
+| `waitDuration`              | `Duration?`            | Delay before showing tooltip on hover.                                                           |
+| `showDuration`              | `Duration?`            | How long tooltip remains visible.                                                                |
+| `hoverShowDuration`         | `Duration?`            | Custom show duration for hover trigger.                                                          |
+| `fadeInDuration`            | `Duration`             | Animation duration when showing. Default: 150ms.                                                 |
+| `fadeOutDuration`           | `Duration`             | Animation duration when hiding. Default: 75ms.                                                   |
+| `curve`                     | `Curve`                | Animation curve when showing. Default: easeInOut.                                                |
+| `reverseCurve`              | `Curve`                | Animation curve when hiding. Default: easeInOut.                                                 |
+| `barrierDismissible`        | `bool`                 | If modal, can click outside to dismiss. Default: true .                                          |
+| `barrierColor`              | `Color`                | Color of modal barrier. Default: transparent.                                                    |
+| `barrierBuilder`            | `Widget Function(BuildContext, Animation<double>, VoidCallback)?` | Custom barrier widget builder.                        |
+| `enableFeedback`            | `bool?`                | Enable haptic/sound feedback on interaction.                                                     |
+| `tailBuilder`               | `Path Function(Offset, Offset, Offset)` | Custom tail shape builder.                                                      |
+| `animatedTransitionBuilder` | `Widget Function(BuildContext, Animation<double>, Widget?)` | Custom animation builder.                                   |
+| `textDirection`             | `TextDirection`        | Text direction. Default: TextDirection.ltr.                                                      |
+| `shadow`                    | `Shadow?`              | Custom shadow instead of elevation.                                                              |
+| `showWhenUnlinked`          | `bool`                 | Show when trigger is removed. Default: false.                                                    |
+| `scrollController`          | `ScrollController?`    | Controller for scrollable ancestor.                                                              |
+| `textStyle`                 | `TextStyle?`           | Custom text style for the message.                                                         |
+
+</div>
+
+---
+
+## Variants
+
+#### Default (Up)
+Basic tooltip that appears above the trigger widget.
+
+<Preview src="hover-tip?style=up">
+
+```dart
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    HoverTip(
+      message: 'Hello world!',
+      child: Icon(Icons.info_outline),
+    ),
+    SizedBox(width: 8),
+    Text('Hover or focus icon to see the tooltip'),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Down Direction
+Tooltip that appears below the trigger widget.
+
+<Preview src="hover-tip?style=down">
+
+```dart
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    HoverTip(
+      message: 'Hello world!',
+      direction: AxisDirection.down,
+      child: Icon(Icons.info_outline),
+    ),
+    SizedBox(width: 8),
+    Text('Hover or focus icon to see the tooltip'),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Left Direction
+Tooltip that appears to the left of the trigger widget.
+
+<Preview src="hover-tip?style=left">
+
+```dart
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    HoverTip(
+      message: 'Hello world!',
+      direction: AxisDirection.left,
+      child: Icon(Icons.info_outline),
+    ),
+    SizedBox(width: 8),
+    Text('Hover or focus icon to see the tooltip'),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Right Direction
+Tooltip that appears to the right of the trigger widget.
+
+<Preview src="hover-tip?style=right">
+
+```dart
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    HoverTip(
+      message: 'Hello world!',
+      direction: AxisDirection.right,
+      child: Icon(Icons.info_outline),
+    ),
+    SizedBox(width: 8),
+    Text('Hover or focus icon to see the tooltip'),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### No Tail
+Tooltip without the pointing tail.
+
+<Preview src="hover-tip?style=noTail">
+
+```dart
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    HoverTip(
+      message: 'Hello world!',
+      tailLength: 0,
+      child: Icon(Icons.info_outline),
+    ),
+    SizedBox(width: 8),
+    Text('Hover or focus icon to see the tooltip'),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Custom Content
+Tooltip with custom widget content instead of text.
+
+<Preview src="hover-tip?style=customContent">
+
+```dart
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    HoverTip(
+      content: Padding(
+        padding: EdgeInsets.all(8),
+        child: Column(
+          spacing: 5,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FlutterLogo(),
+            Text('Custom Content'),
+          ],
+        ),
+      ),
+      child: Icon(Icons.info_outline),
+    ),
+    SizedBox(width: 8),
+    Text('Hover or focus icon to see the tooltip'),
+  ],
+)
+```
+
+</Preview>

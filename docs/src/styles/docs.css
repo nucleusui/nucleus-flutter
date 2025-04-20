@@ -4,9 +4,9 @@
 }
 
 .docs-table th:nth-child(1) {
-  min-width: 165px;
+  min-width: 155px;
 }
 
 .docs-table th:nth-child(2) {
-  min-width: 195px;
+  min-width: 155px;
 }
