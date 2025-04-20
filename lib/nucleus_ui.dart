@@ -1,3 +1,3 @@
 // Components
-export 'src/button/button.dart';
-export 'src/input/input_field.dart';
+export 'src/button.dart';
+export 'src/input_field.dart';
