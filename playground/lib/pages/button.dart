@@ -9,6 +9,10 @@ enum PlagroundButtonStyle {
   ghost,
   social,
   icon,
+  prefixIcon,
+  suffixIcon,
+  bothIcon,
+  loading,
 }
 
 class ButtonPage extends StatelessWidget {
@@ -21,7 +25,7 @@ class ButtonPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: switch (style) {
-          PlagroundButtonStyle.primary => Button(
+          PlagroundButtonStyle.primary => Button.primary(
               label: 'Primary',
               onPressed: () {},
             ),
@@ -53,16 +57,42 @@ class ButtonPage extends StatelessWidget {
                 onPressed: () {},
               ),
             ),
-          PlagroundButtonStyle.icon => Container(
-              constraints: const BoxConstraints(
-                maxWidth: 300,
+          PlagroundButtonStyle.loading => Button.primary(
+              label: 'Primary',
+              isLoading: true,
+              onPressed: () {},
+            ),
+          PlagroundButtonStyle.icon => Button(
+              icon: const Icon(Icons.apple),
+              onPressed: () {},
+            ),
+          PlagroundButtonStyle.prefixIcon => Button(
+              label: 'Prefix Icon',
+              prefixIcon: const Padding(
+                padding: EdgeInsets.only(right: 5),
+                child: Icon(Icons.circle),
               ),
-              margin: const EdgeInsets.all(16),
-              child: Button.social(
-                color: Colors.black,
-                icon: const Icon(Icons.apple, size: 26),
-                onPressed: () {},
+              onPressed: () {},
+            ),
+          PlagroundButtonStyle.suffixIcon => Button(
+              label: 'Suffix Icon',
+              suffixIcon: const Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: Icon(Icons.circle_outlined),
               ),
+              onPressed: () {},
+            ),
+          PlagroundButtonStyle.bothIcon => Button(
+              label: 'Both Icon',
+              prefixIcon: const Padding(
+                padding: EdgeInsets.only(right: 16),
+                child: Icon(Icons.circle),
+              ),
+              suffixIcon: const Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: Icon(Icons.circle_outlined),
+              ),
+              onPressed: () {},
             ),
         },
       ),
