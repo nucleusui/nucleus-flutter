@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ButtonStyle;
 import 'package:go_router/go_router.dart';
 import 'package:playground/pages/button.dart';
 import 'package:playground/pages/input_field.dart';
@@ -20,7 +20,7 @@ final router = GoRouter(
       builder: (context, state) {
         final style = state.uri.queryParameters['style'] ?? 'primary';
         return ButtonPage(
-          style: PlagroundButtonStyle.values.byName(style),
+          style: ButtonStyle.values.byName(style),
         );
       },
     ),
@@ -28,8 +28,8 @@ final router = GoRouter(
       path: '/input-field',
       builder: (context, state) {
         final style = state.uri.queryParameters['style'] ?? 'standard';
-        return TextFieldPage(
-          style: PlagroundInputFieldStyle.values.byName(style),
+        return InputFieldPage(
+          style: InputFieldStyle.values.byName(style),
         );
       },
     ),

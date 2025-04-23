@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
-enum PlagroundInputFieldStyle {
+enum InputFieldStyle {
   standard,
   floatingLabel,
   prefixIcon,
@@ -11,10 +11,10 @@ enum PlagroundInputFieldStyle {
   disabled,
 }
 
-class TextFieldPage extends StatelessWidget {
-  const TextFieldPage({super.key, required this.style});
+class InputFieldPage extends StatelessWidget {
+  const InputFieldPage({super.key, required this.style});
 
-  final PlagroundInputFieldStyle style;
+  final InputFieldStyle style;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TextFieldPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               switch (style) {
-                PlagroundInputFieldStyle.standard => InputField(
+                InputFieldStyle.standard => InputField(
                     hintText: 'Placeholder text',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -35,15 +35,15 @@ class TextFieldPage extends StatelessWidget {
                       return null;
                     },
                   ),
-                PlagroundInputFieldStyle.floatingLabel => const InputField(
+                InputFieldStyle.floatingLabel => const InputField(
                     labelText: 'Text Label',
                     hintText: 'Text you just entered',
                   ),
-                PlagroundInputFieldStyle.prefixIcon => InputField(
+                InputFieldStyle.prefixIcon => InputField(
                     hintText: 'Search location',
                     prefixIcon: SvgPicture.asset('assets/location.svg'),
                   ),
-                PlagroundInputFieldStyle.suffixIcon => InputField(
+                InputFieldStyle.suffixIcon => InputField(
                     labelText: 'Text Label',
                     hintText: 'Text you just entered',
                     suffixIcon: SvgPicture.asset(
@@ -51,7 +51,7 @@ class TextFieldPage extends StatelessWidget {
                       width: 20,
                     ),
                   ),
-                PlagroundInputFieldStyle.bothIcon => InputField(
+                InputFieldStyle.bothIcon => InputField(
                     labelText: 'Location',
                     hintText: 'Location of your choose',
                     prefixIcon: SvgPicture.asset('assets/location.svg'),
@@ -60,7 +60,7 @@ class TextFieldPage extends StatelessWidget {
                       width: 20,
                     ),
                   ),
-                PlagroundInputFieldStyle.disabled => const InputField(
+                InputFieldStyle.disabled => const InputField(
                     enabled: false,
                     hintText: 'Placeholder text',
                   ),

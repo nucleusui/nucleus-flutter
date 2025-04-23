@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
-enum PlagroundButtonStyle {
+enum ButtonStyle {
   primary,
   secondary,
   destructive,
@@ -18,34 +18,34 @@ enum PlagroundButtonStyle {
 class ButtonPage extends StatelessWidget {
   const ButtonPage({super.key, required this.style});
 
-  final PlagroundButtonStyle style;
+  final ButtonStyle style;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: switch (style) {
-          PlagroundButtonStyle.primary => Button.primary(
+          ButtonStyle.primary => Button.primary(
               label: 'Primary',
               onPressed: () {},
             ),
-          PlagroundButtonStyle.secondary => Button.secondary(
+          ButtonStyle.secondary => Button.secondary(
               label: 'Secondary',
               onPressed: () {},
             ),
-          PlagroundButtonStyle.destructive => Button.destructive(
+          ButtonStyle.destructive => Button.destructive(
               label: 'Destructive',
               onPressed: () {},
             ),
-          PlagroundButtonStyle.outline => Button.outline(
+          ButtonStyle.outline => Button.outline(
               label: 'Outline',
               onPressed: () {},
             ),
-          PlagroundButtonStyle.ghost => Button.ghost(
+          ButtonStyle.ghost => Button.ghost(
               label: 'Ghost',
               onPressed: () {},
             ),
-          PlagroundButtonStyle.social => Container(
+          ButtonStyle.social => Container(
               constraints: const BoxConstraints(
                 maxWidth: 300,
               ),
@@ -57,16 +57,16 @@ class ButtonPage extends StatelessWidget {
                 onPressed: () {},
               ),
             ),
-          PlagroundButtonStyle.loading => Button.outline(
+          ButtonStyle.loading => Button.outline(
               label: 'Primary',
               isLoading: true,
               onPressed: () {},
             ),
-          PlagroundButtonStyle.icon => Button(
+          ButtonStyle.icon => Button(
               icon: const Icon(Icons.circle),
               onPressed: () {},
             ),
-          PlagroundButtonStyle.prefixIcon => Button(
+          ButtonStyle.prefixIcon => Button(
               label: 'Prefix Icon',
               prefixIcon: const Padding(
                 padding: EdgeInsets.only(right: 5),
@@ -74,7 +74,7 @@ class ButtonPage extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-          PlagroundButtonStyle.suffixIcon => Button(
+          ButtonStyle.suffixIcon => Button(
               label: 'Suffix Icon',
               suffixIcon: const Padding(
                 padding: EdgeInsets.only(left: 16),
@@ -82,7 +82,7 @@ class ButtonPage extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-          PlagroundButtonStyle.bothIcon => Button(
+          ButtonStyle.bothIcon => Button(
               label: 'Both Icon',
               prefixIcon: const Padding(
                 padding: EdgeInsets.only(right: 16),
