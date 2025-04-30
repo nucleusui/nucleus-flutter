@@ -3,7 +3,23 @@ import 'package:nucleus_ui/constant/colors.dart';
 import 'package:nucleus_ui/constant/typography.dart';
 import 'package:nucleus_ui/extension/context.dart';
 
+/// A customizable badge widget that can display labels, icons, or notifications.
+///
+/// The `Badges` widget supports different types of badges such as basic, success,
+/// warning, error, info, and notification badges. It allows customization of
+/// padding, alignment, colors, text styles, and more.
+///
+/// Example usage:
+/// ```dart
+/// Badges(
+///   label: 'Basic',
+///   type: BadgeType.basic,
+/// )
+/// ```
 class Badges extends StatelessWidget {
+  /// Creates a `Badges` widget.
+  ///
+  /// The [label] parameter is required and specifies the text to display inside the badge.
   const Badges({
     super.key,
     required this.label,
@@ -19,16 +35,37 @@ class Badges extends StatelessWidget {
     this.notificationBadgeSize = NotificationBadgeSize.medium,
   });
 
+  /// The text to display inside the badge.
   final String label;
+
+  /// The padding around the badge content.
   final EdgeInsetsGeometry? padding;
+
+  /// The offset to position the badge relative to its parent.
   final Offset? offset;
+
+  /// The background color of the badge.
   final Color? backgroundColor;
+
+  /// The text color of the badge.
   final Color? textColor;
+
+  /// The text style for the badge label.
   final TextStyle? textStyle;
+
+  /// The alignment of the badge within its parent.
   final AlignmentGeometry? alignment;
+
+  /// The child widget to which the badge is attached.
   final Widget? child;
+
+  /// An optional icon to display inside the badge.
   final Widget? icon;
+
+  /// The type of badge, which determines its appearance.
   final BadgeType type;
+
+  /// The size of the notification badge, applicable when [type] is `BadgeType.notification`.
   final NotificationBadgeSize notificationBadgeSize;
 
   @override
@@ -85,11 +122,15 @@ class Badges extends StatelessWidget {
   }
 }
 
+/// Enum representing the different types of badges.
 enum BadgeType { success, warning, error, info, basic, notification }
 
+/// Enum representing the sizes of notification badges.
 enum NotificationBadgeSize { small, medium, large }
 
+/// Extension to provide size-related properties for `NotificationBadgeSize`.
 extension NotifSizeExtension on NotificationBadgeSize {
+  /// The font size for the notification badge label.
   double get fontSize {
     switch (this) {
       case NotificationBadgeSize.small:
@@ -101,6 +142,7 @@ extension NotifSizeExtension on NotificationBadgeSize {
     }
   }
 
+  /// The size of the notification badge.
   double get size {
     switch (this) {
       case NotificationBadgeSize.small:
@@ -112,6 +154,7 @@ extension NotifSizeExtension on NotificationBadgeSize {
     }
   }
 
+  /// The padding inside the notification badge.
   double get padding {
     switch (this) {
       case NotificationBadgeSize.small:
@@ -124,7 +167,9 @@ extension NotifSizeExtension on NotificationBadgeSize {
   }
 }
 
+/// Extension to provide color-related properties for `BadgeType`.
 extension BadgeTypeExtension on BadgeType {
+  /// Returns the background color for the badge type.
   Color bgColor(BuildContext context) {
     switch (this) {
       case BadgeType.success:
@@ -142,6 +187,7 @@ extension BadgeTypeExtension on BadgeType {
     }
   }
 
+  /// Returns the foreground color for the badge type.
   Color fgColor(BuildContext context) {
     switch (this) {
       case BadgeType.success:
