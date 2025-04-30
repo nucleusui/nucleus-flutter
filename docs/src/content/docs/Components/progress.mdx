@@ -1,0 +1,245 @@
+---
+title: Progress
+sidebar:
+  order: 5
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable progress bar component that visually represents progress with optional labels and alignment.
+
+The `Progress` widget provides consistent styling and behavior options for progress bars. It supports primary and secondary labels, alignment, and various customization options.
+
+- **Customizable**: Supports colors, sizes, labels, alignment, and more.
+- **Labels**: Primary and secondary labels for additional context.
+- **Alignment**: Flexible alignment options for labels and progress bars.
+
+---
+
+## Variants
+
+#### Basic Progress Bar
+A simple progress bar without labels.
+
+<Preview src="progress?style=basic">
+
+```dart
+Progress(
+  value: 15,
+)
+```
+
+</Preview>
+
+---
+
+#### Bottom-Left Label
+A progress bar with the label aligned to the bottom-left.
+
+<Preview src="progress?style=labelBottomLeft">
+
+```dart
+Progress(
+  value: 15,
+  label: '15% to goal',
+)
+```
+
+</Preview>
+
+---
+
+#### Bottom-Right Label
+A progress bar with the label aligned to the bottom-right.
+
+<Preview src="progress?style=labelBottomRight">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.bottomRight,
+  label: '15% to goal',
+)
+```
+
+</Preview>
+
+---
+
+#### Bottom-Center Label
+A progress bar with the label aligned to the bottom-center.
+
+<Preview src="progress?style=labelBottomCenter">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.bottomCenter,
+  label: 'Quota used: 15%',
+)
+```
+
+</Preview>
+
+---
+
+#### Bottom-Center with Both Labels
+A progress bar with both primary and secondary labels aligned to the bottom-center.
+
+<Preview src="progress?style=labelBottomBoth">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.bottomCenter,
+  label: '15% to goal',
+  secondaryLabel: '7 days left',
+)
+```
+
+</Preview>
+
+---
+
+#### Top-Left Label
+A progress bar with the label aligned to the top-left.
+
+<Preview src="progress?style=labelTopLeft">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.topLeft,
+  label: '15% to goal',
+)
+```
+
+</Preview>
+
+---
+
+#### Top-Right Label
+A progress bar with the label aligned to the top-right.
+
+<Preview src="progress?style=labelTopRight">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.topRight,
+  label: '15% to goal',
+)
+```
+
+</Preview>
+
+---
+
+#### Top-Center Label
+A progress bar with the label aligned to the top-center.
+
+<Preview src="progress?style=labelTopCenter">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.topCenter,
+  label: 'Quota used: 15%',
+)
+```
+
+</Preview>
+
+---
+
+#### Top-Center with Both Labels
+A progress bar with both primary and secondary labels aligned to the top-center.
+
+<Preview src="progress?style=labelTopBoth">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.topCenter,
+  label: '15% to goal',
+  secondaryLabel: '7 days left',
+)
+```
+
+</Preview>
+
+---
+
+#### Center-Left Label
+A progress bar with the label aligned to the center-left.
+
+<Preview src="progress?style=labelCenterLeft">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.centerLeft,
+  label: '15% to goal',
+)
+```
+
+</Preview>
+
+---
+
+#### Center-Right Label
+A progress bar with the label aligned to the center-right.
+
+<Preview src="progress?style=labelCenterRight">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.centerRight,
+  label: '15% to goal',
+)
+```
+
+</Preview>
+
+---
+
+#### Center with Both Labels
+A progress bar with both primary and secondary labels aligned to the center.
+
+<Preview src="progress?style=labelCenterBoth">
+
+```dart
+Progress(
+  value: 15,
+  alignment: Alignment.center,
+  label: '15% to goal',
+  secondaryLabel: '7 days left',
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                     | Default                          | Description                                                                 |
+|-----------------------|--------------------------|----------------------------------|-----------------------------------------------------------------------------|
+| `value`               | `double`                 | **Required**                     | The progress value as a percentage (0-100).                                 |
+| `label`               | `String?`                | `undefined`                      | The primary label displayed alongside the progress bar.                     |
+| `secondaryLabel`      | `String?`                | `undefined`                      | The secondary label displayed alongside the progress bar.                   |
+| `backgroundColor`     | `Color?`                 | `context.color.bgMuted`          | The background color of the progress bar.                                   |
+| `color`               | `Color?`                 | `context.color.accentModerate`   | The color of the progress indicator.                                        |
+| `valueColor`          | `Animation<Color?>?`     | `undefined`                      | The animation for the progress indicator color.                             |
+| `minHeight`           | `double`                 | `8`                              | The minimum height of the progress bar.                                     |
+| `borderRadius`        | `BorderRadiusGeometry?`  | `BorderRadius.circular(999)`     | The border radius of the progress bar.                                      |
+| `stopIndicatorColor`  | `Color?`                 | `undefined`                      | The color of the stop indicator.                                            |
+| `stopIndicatorRadius` | `double?`                | `undefined`                      | The radius of the stop indicator.                                           |
+| `trackGap`            | `double?`                | `undefined`                      | The gap between the progress track and the stop indicator.                  |
+| `verticalPadding`     | `double`                 | `24`                             | The vertical padding around the progress bar.                               |
+| `alignment`           | `AlignmentGeometry`      | `Alignment.bottomLeft`           | The alignment of the progress bar and labels.                               |
+
+</div>

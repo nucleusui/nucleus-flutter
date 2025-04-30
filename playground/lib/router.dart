@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:playground/pages/badge.dart';
 import 'package:playground/pages/button.dart';
 import 'package:playground/pages/input_field.dart';
+import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/quick_tip.dart';
 
 final router = GoRouter(
@@ -49,6 +50,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'basic';
         return BadgePage(
           style: BadgeStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/progress',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'basic';
+        return ProgressPage(
+          style: ProgressStyle.values.byName(style),
         );
       },
     ),
