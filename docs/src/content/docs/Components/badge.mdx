@@ -1,0 +1,197 @@
+---
+title: Badge
+sidebar:
+  order: 4
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A badge component that displays a label with optional styling variants, icons, and customizable appearance.
+
+The `Badges` widget provides a flexible way to show labels with different styles and types. It supports various background colors, text styles, and can include icons.
+
+- **Types**: Success, Warning, Error, Info, Basic
+- **Content Types**: Text label with optional icon
+- **Customizable**: Supports custom styling, padding, and positioning
+
+---
+
+## Variants
+
+#### Basic Badge
+Default badge style.
+
+<Preview src="badge?style=basic">
+
+```dart
+Badges(
+  label: 'Basic',
+  type: BadgeType.basic,
+)
+```
+
+</Preview>
+
+---
+
+#### Success Badge
+Badge with success styling.
+
+<Preview src="badge?style=success">
+
+```dart
+Badges(
+  label: 'Success',
+  type: BadgeType.success,
+)
+```
+
+</Preview>
+
+---
+
+#### Warning Badge
+Badge with warning styling.
+
+<Preview src="badge?style=warning">
+
+```dart
+Badges(
+  label: 'Warning',
+  type: BadgeType.warning,
+)
+```
+
+</Preview>
+
+---
+
+#### Error Badge
+Badge with error styling.
+
+<Preview src="badge?style=error">
+
+```dart
+Badges(
+  label: 'Error',
+  type: BadgeType.error,
+)
+```
+
+</Preview>
+
+---
+
+#### Info Badge
+Badge with info styling.
+
+<Preview src="badge?style=info">
+
+```dart
+Badges(
+  label: 'Info',
+  type: BadgeType.info,
+)
+```
+
+</Preview>
+
+---
+
+#### Badge with Icon
+Badge including an icon alongside the label.
+
+<Preview src="badge?style=withIcon">
+
+```dart
+Badges(
+  label: 'With Icon',
+  icon: Icon(Icons.star, size: 16),
+  type: BadgeType.basic,
+)
+```
+
+</Preview>
+
+---
+
+#### Large Notification Badge
+Badge with a large notification size.
+
+<Preview src="badge?style=notificationLarge">
+
+```dart
+const Badges(
+  label: '3',
+  type: BadgeType.notification,
+  notificationBadgeSize: NotificationBadgeSize.large,
+  child: CircleAvatar(
+    radius: 32,
+    child: Icon(Icons.person, size: 36),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Medium Notification Badge
+Badge with a medium notification size.
+
+<Preview src="badge?style=notificationMedium">
+
+```dart
+const Badges(
+  label: '3',
+  type: BadgeType.notification,
+  child: CircleAvatar(
+    radius: 20,
+    child: Icon(Icons.person, size: 24),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Small Notification badge
+Badge with a small notification size.
+
+<Preview src="badge?style=notificationSmall">
+
+```dart
+const Badges(
+  label: '3',
+  type: BadgeType.notification,
+  notificationBadgeSize: NotificationBadgeSize.small,
+  child: CircleAvatar(
+    radius: 16,
+    child: Icon(Icons.person, size: 20),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property           | Type                  | Description                                                                 |
+|--------------------|-----------------------|-----------------------------------------------------------------------------|
+| `label`            | `String`              | **Required.** The text to display in the badge.                             |
+| `padding`          | `EdgeInsetsGeometry?` | Custom padding for the badge content. Default: horizontal: 8, vertical: 5   |
+| `offset`           | `Offset?`             | Position offset for the badge when used with a child widget.                |
+| `backgroundColor`  | `Color?`              | Custom background color. If not provided, uses the type's default color.    |
+| `textColor`        | `Color?`              | Custom text color. If not provided, uses the type's default color.          |
+| `textStyle`        | `TextStyle?`          | Custom text style.                                                          |
+| `alignment`        | `AlignmentGeometry?`  | Alignment of the badge when used with a child widget.                       |
+| `child`            | `Widget?`             | Optional child widget that the badge will be attached to.                   |
+| `icon`             | `Widget?`             | Optional icon to display before the label text.                             |
+| `type`             | `BadgeType`           | Type of badge (basic, success, warning, error, info). Default: basic        |
+
+</div>

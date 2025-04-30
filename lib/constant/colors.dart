@@ -103,14 +103,11 @@ extension AppColors on ColorScheme {
   Color get bgInteractiveTertiary => const Color(0xFFC1C4C6);
 
   // Status backgrounds
-  Color get bgSuccess => const Color(0xFFE8FAF0);
-  Color get bgSuccessContrast => const Color(0xFF008557);
-  Color get bgError => const Color(0xFFFFF3F0);
-  Color get bgErrorContrast => const Color(0xFFDB340B);
-  Color get bgWarning => const Color(0xFFFFFEF4);
-  Color get bgWarningContrast => const Color(0xFFFFD84D);
-  Color get bgInfo => const Color(0xFFF2F7FF);
-  Color get bgInfoContrast => const Color(0xFF0A69FA);
+  Color get bgSuccess => _themeColor(green10, fgSuccess);
+  Color get bgError => _themeColor(green10, fgError);
+  Color get bgWarning => _themeColor(const Color(0xFFFFF9E6), yellow30);
+  Color get bgInfo => _themeColor(blue10, fgInfo);
+  Color get bgDefault => _themeColor(bgSubtle, bgContrast);
   Color get bgNotification => const Color(0xFFDB340B);
 
   // Special backgrounds
@@ -183,6 +180,7 @@ extension AppColors on ColorScheme {
   Color get fgDisabled => _themeColor(grey60, grey50);
   Color get bgDisabled => const Color(0xFFDADDDE);
   Color get fgBaseReverse => _themeColor(grey100, grey10);
+  Color get fgColor => _themeColor(bgContrast, bgCanvas);
   Color get bgColor => _themeColor(bgContrast, bgMuted);
   Color get bgColorReverse => _themeColor(bgMuted, bgContrast);
 }
