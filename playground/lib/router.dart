@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide ButtonStyle;
 import 'package:go_router/go_router.dart';
+import 'package:playground/pages/avatar.dart';
 import 'package:playground/pages/badge.dart';
 import 'package:playground/pages/button.dart';
 import 'package:playground/pages/input_field.dart';
@@ -59,6 +60,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'basic';
         return ProgressPage(
           style: ProgressStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/avatar',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'basic';
+        return AvatarPage(
+          style: AvatarStyle.values.byName(style),
         );
       },
     ),

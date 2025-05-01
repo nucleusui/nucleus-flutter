@@ -1,0 +1,223 @@
+---
+title: Avatar
+sidebar:
+  order: 6
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A circular avatar component that displays user images with various configurations and layouts.
+
+The `Avatar` widget provides consistent styling and behavior options for different avatar layouts. It handles loading errors, sizing options, and various customization features.
+
+- **Avatar Types**: Basic, Meta, Content, Stacked
+- **States**: Error handling with fallback
+- **Customizable**: Supports custom sizes, colors, error states, and layouts
+
+---
+
+## Variants
+
+#### Basic Avatar
+A simple circular avatar.
+
+<Preview src="avatar?style=basic">
+
+```dart
+Avatar(
+    size: AvatarSize.lg,
+    image: 'https://picsum.photos/200',
+)
+```
+
+</Preview>
+
+---
+
+## Sizes
+
+<Preview src="avatar?style=sizes">
+
+```dart
+Row(
+  spacing: 8,
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Avatar(
+      image: 'https://picsum.photos/200',
+      size: AvatarSize.xs, // 24px
+    ),
+    Avatar(
+      image: 'https://picsum.photos/200',
+      size: AvatarSize.sm, // 32px
+    ),
+    Avatar(
+      image: 'https://picsum.photos/200',
+      size: AvatarSize.md, // 40px
+    ),
+    Avatar(
+      image: 'https://picsum.photos/200',
+      size: AvatarSize.lg, // 48px
+    ),
+    Avatar(
+      image: 'https://picsum.photos/200',
+      size: AvatarSize.xl, // 64px
+    ),
+    Avatar(
+      image: 'https://picsum.photos/200',
+      size: AvatarSize.xxl, // 80px
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Meta Layout with Title
+Avatar with just a title.
+
+<Preview src="avatar?style=name">
+
+```dart
+Avatar.meta(
+    size: AvatarSize.lg,
+    title: 'James Ryan',
+    image: 'https://picsum.photos/200',
+)
+```
+
+</Preview>
+
+---
+
+#### Meta Layout with Subtitle
+Avatar with title and subtitle.
+
+<Preview src="avatar?style=meta">
+
+```dart
+Avatar.meta(
+    size: AvatarSize.lg,
+    title: 'James Ryan',
+    subtitle: 'Product Design',
+    image: 'https://picsum.photos/200',
+)
+```
+
+</Preview>
+
+---
+
+#### Content Layout
+Reversed layout with longer text content.
+
+<Preview src="avatar?style=content">
+
+```dart
+Avatar.content(
+  image: 'https://picsum.photos/200',
+  title: 'Diversify & Amplify Book Clubs hosted by Craig',
+  subtitle: 'Last activity 6m ago',
+  size: AvatarSize.lg,
+)
+```
+
+</Preview>
+
+---
+
+#### Stacked with Label
+Multiple avatars with descriptive text.
+
+<Preview src="avatar?style=stackedLabel">
+
+```dart
+Avatar.stacked(
+    label: 'and 72 others',
+    images: List.filled(5, 'https://picsum.photos/200'),
+)
+```
+
+</Preview>
+
+---
+
+#### Stacked with Counter
+Multiple avatars with overflow counter.
+
+<Preview src="avatar?style=stackedCounter">
+
+```dart
+Avatar.stacked(
+    limit: 3,
+    images: List.filled(10, 'https://picsum.photos/200'),
+)
+```
+
+</Preview>
+
+---
+
+## Error Handling
+
+The Avatar component automatically handles image loading errors by displaying a fallback:
+
+1. Default fallback shows a person icon
+2. Custom fallback can be provided via `errorImage`
+3. Maintains consistent size and shape
+
+<Preview src="avatar?style=error">
+
+```dart
+Row(
+  spacing: 16,
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    // Default error fallback
+    Avatar(
+      image: 'invalid-url.jpg',
+      size: AvatarSize.lg,
+    ),
+    // Custom error fallback
+    Avatar(
+      image: 'invalid-url.jpg',
+      size: AvatarSize.lg,
+      errorImage: Icon(Icons.circle),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property          | Type            | Description                                                           |
+|-------------------|-----------------|-----------------------------------------------------------------------|
+| `image`           | `String`        | URL or asset path of the avatar image                                 |
+| `errorImage`      | `Widget?`       | Widget to display when image fails to load                            |
+| `size`            | `AvatarSize`    | Predefined size of the avatar (xs, sm, md, lg, xl, xxl)              |
+| `backgroundColor` | `Color?`        | Background color of the avatar                                        |
+
+### Meta Layout Properties
+| Property        | Type         | Description                                                           |
+|----------------|--------------|-----------------------------------------------------------------------|
+| `title`        | `String`     | Primary text displayed next to avatar                                 |
+| `subtitle`     | `String?`    | Secondary text displayed below title                                  |
+| `titleStyle`   | `TextStyle?` | Custom style for title text                                          |
+| `subtitleStyle`| `TextStyle?` | Custom style for subtitle text                                       |
+
+### Stacked Layout Properties
+| Property        | Type         | Description                                                           |
+|----------------|--------------|-----------------------------------------------------------------------|
+| `images`       | `List<String>`| List of image URLs or paths to display                               |
+| `limit`        | `int`        | Maximum number of visible avatars                                     |
+| `label`        | `String?`    | Text to display after the stack                                       |
+| `counterStyle` | `TextStyle?` | Style for the overflow counter                                        |
+</div>
