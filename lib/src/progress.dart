@@ -87,7 +87,7 @@ class Progress extends StatelessWidget {
         children: [
           Text(
             label!,
-            style: AppFonts.bodySm.copyWith(
+            style: AppFonts.regular14.copyWith(
               color: context.color.fgColorReverse,
             ),
           ),
@@ -96,7 +96,7 @@ class Progress extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             secondaryLabel!,
-            style: AppFonts.bodySm.copyWith(
+            style: AppFonts.regular14.copyWith(
               color: context.color.fgColorReverse,
             ),
           ),
@@ -109,7 +109,7 @@ class Progress extends StatelessWidget {
         children: [
           Text(
             label!,
-            style: AppFonts.bodySm.copyWith(
+            style: AppFonts.regular14.copyWith(
               color: context.color.fgColorReverse,
             ),
           ),
@@ -126,7 +126,7 @@ class Progress extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             label!,
-            style: AppFonts.bodySm.copyWith(
+            style: AppFonts.regular14.copyWith(
               color: context.color.fgColorReverse,
             ),
           ),
@@ -150,7 +150,7 @@ class Progress extends StatelessWidget {
       children: [
         Text(
           label!,
-          style: AppFonts.bodySm.copyWith(
+          style: AppFonts.regular14.copyWith(
             color: context.color.fgColorReverse,
           ),
         ),
@@ -158,7 +158,7 @@ class Progress extends StatelessWidget {
           const Spacer(),
           Text(
             secondaryLabel!,
-            style: AppFonts.bodySm.copyWith(
+            style: AppFonts.regular14.copyWith(
               color: context.color.fgColorReverse,
             ),
           ),

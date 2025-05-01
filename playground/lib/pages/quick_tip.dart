@@ -97,7 +97,7 @@ class QuickTipPage extends StatelessWidget {
                           const FlutterLogo(),
                           Text(
                             'Custom Content',
-                            style: AppFonts.bodySm.copyWith(
+                            style: AppFonts.regular14.copyWith(
                               color: context.color.fgBaseReverse,
                             ),
                           ),

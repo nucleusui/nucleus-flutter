@@ -85,7 +85,7 @@ class Badges extends StatelessWidget {
           child: Text(
             label,
             style: textStyle ??
-                AppFonts.bodyMd.copyWith(
+                AppFonts.regular16.copyWith(
                   color: textColor ?? Colors.white,
                   fontSize: notificationBadgeSize.fontSize,
                 ),
@@ -108,7 +108,7 @@ class Badges extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) icon!,
-          Text(label, style: textStyle ?? AppFonts.labelSm),
+          Text(label, style: textStyle ?? AppFonts.bold14),
         ],
       ),
       padding:

@@ -237,7 +237,7 @@ class _InputFieldStates extends State<InputField> {
               autovalidateMode:
                   widget.autovalidateMode ?? AutovalidateMode.onUserInteraction,
               textInputAction: widget.textInputAction ?? TextInputAction.next,
-              style: AppFonts.bodyMd,
+              style: AppFonts.regular16,
               cursorColor: context.color.fgBase,
               cursorHeight: widget.labelText == null ? 18 : 16,
               decoration: InputDecoration(
@@ -255,7 +255,7 @@ class _InputFieldStates extends State<InputField> {
                 errorBorder: InputBorder.none,
                 focusedErrorBorder: InputBorder.none,
                 disabledBorder: InputBorder.none,
-                floatingLabelStyle: AppFonts.bodyMd.copyWith(
+                floatingLabelStyle: AppFonts.regular16.copyWith(
                   color: context.color.grey50,
                 ),
                 counterText: '',
@@ -270,7 +270,7 @@ class _InputFieldStates extends State<InputField> {
                             0),
                         child: Text(
                           widget.labelText!,
-                          style: AppFonts.bodyMd.copyWith(
+                          style: AppFonts.regular16.copyWith(
                             color: context.color.grey50,
                           ),
                         ),
@@ -283,7 +283,7 @@ class _InputFieldStates extends State<InputField> {
                         child: widget.prefixIcon,
                       ),
                 hintText: widget.hintText,
-                hintStyle: AppFonts.bodyMd.copyWith(
+                hintStyle: AppFonts.regular16.copyWith(
                   color: context.color.grey50,
                 ),
                 prefixIconConstraints: const BoxConstraints(),
@@ -305,7 +305,7 @@ class _InputFieldStates extends State<InputField> {
             padding: const EdgeInsets.only(top: 5),
             child: Text(
               errorText,
-              style: AppFonts.bodyXs.copyWith(
+              style: AppFonts.regular12.copyWith(
                 color: context.color.fgError,
               ),
             ),

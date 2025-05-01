@@ -1,4 +1,5 @@
 // Components
+export 'src/avatar.dart';
 export 'src/badge.dart';
 export 'src/button.dart';
 export 'src/input_field.dart';

@@ -124,7 +124,7 @@ class QuickTip extends StatelessWidget {
             child: Text(
               message ?? '',
               style: textStyle ??
-                  AppFonts.bodySm.copyWith(
+                  AppFonts.regular14.copyWith(
                     color: context.color.fgBaseReverse,
                   ),
             ),

@@ -395,7 +395,7 @@ class Button extends StatelessWidget {
                     label!,
                     overflow: TextOverflow.ellipsis,
                     style: labelStyle ??
-                        AppFonts.labelMd.copyWith(color: textColor),
+                        AppFonts.bold16.copyWith(color: textColor),
                   ),
                 if (buttonType == ButtonType.social) const Spacer(),
                 if (suffixIcon != null) suffixIcon!,
