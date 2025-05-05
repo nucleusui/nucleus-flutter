@@ -1,4 +1,5 @@
 // Components
+export 'src/accordion.dart';
 export 'src/avatar.dart';
 export 'src/badge.dart';
 export 'src/button.dart';

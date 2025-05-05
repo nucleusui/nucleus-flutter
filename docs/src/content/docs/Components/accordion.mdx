@@ -1,0 +1,102 @@
+---
+title: Accordion
+sidebar:
+  order: 7
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A collapsible content component that displays a list of expandable items. Each item consists of a header and content that can be shown or hidden.
+
+The `Accordion` widget provides a flexible way to organize and present content in a compact format. It supports different styles, customizable appearance, and various configuration options.
+
+- **Styles**: Simple and Card
+- **Content Types**: Text content or custom widget content
+- **Customizable**: Supports custom styling, icons, and animations
+
+---
+
+## Variants
+
+#### Simple
+Basic accordion with a clean, minimalist design.
+
+<Preview src="accordion?style=simple" minHeight="300px">
+
+```dart
+Accordion(
+  items: [
+    AccordionItem(
+      title: 'What is accordion in UI design?',
+      content: 'An accordion is a vertically stacked list of items that can be expanded or collapsed to reveal more information.',
+    ),
+    AccordionItem(
+      title: 'How does it work?',
+      content: 'Click on any header to expand or collapse its content.',
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Card Style
+Accordion items with elevated card-like appearance.
+
+<Preview src="accordion?style=card" minHeight="300px">
+
+```dart
+Accordion(
+  type: AccordionType.card,
+  items: [
+    AccordionItem(
+      title: 'What is accordion in UI design?',
+      content: 'An accordion is a vertically stacked list of items that can be expanded or collapsed to reveal more information.',
+    ),
+    AccordionItem(
+      title: 'How does it work?',
+      content: 'Click on any header to expand or collapse its content.',
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property                  | Type                   | Description                                                                                     |
+|---------------------------|------------------------|-------------------------------------------------------------------------------------------------|
+| `items`                   | `List<AccordionItem>`  | **Required.** List of accordion items to display.                                               |
+| `type`                    | `AccordionType`        | Style of the accordion (simple, card). Default: simple.                                         |
+| `expandAll`               | `bool`                 | Whether all items should be expanded by default. Default: false.                                |
+| `borderRadius`            | `BorderRadius`         | Border radius of the accordion items. Default: 8px.                                             |
+| `dividerColor`            | `Color?`               | Color of the divider between items (simple style only).                                         |
+| `headerBackgroundColor`   | `Color?`               | Background color of the header sections.                                                        |
+| `headerTextStyle`         | `TextStyle?`           | Text style for the header titles.                                                               |
+| `contentBackgroundColor`  | `Color?`               | Background color of the content sections.                                                       |
+| `contentTextStyle`        | `TextStyle?`           | Text style for the content text.                                                                |
+| `expandIcon`              | `IconData`             | Icon shown when item is collapsed. Default: Icons.expand_more                                   |
+| `collapseIcon`            | `IconData`             | Icon shown when item is expanded. Default: Icons.expand_less                                    |
+| `customExpandIcon`        | `Widget?`              | Custom widget to replace default expand icon.                                                   |
+| `customCollapseIcon`      | `Widget?`              | Custom widget to replace default collapse icon.                                                 |
+| `iconColor`               | `Color?`               | Color of the expand/collapse icons.                                                             |
+| `padding`                 | `EdgeInsetsGeometry`   | Padding around the header. Default: vertical: 16px                                              |
+| `contentPadding`          | `EdgeInsetsGeometry`   | Padding around the content. Default: all sides: 16px                                            |
+| `animationDuration`       | `Duration`             | Duration of expand/collapse animation. Default: 300ms                                           |
+</div>
+
+## AccordionItem Properties
+
+<div class="docs-table">
+| Property  | Type     | Description                                                        |
+|-----------|----------|--------------------------------------------------------------------|
+| `title`   | `String` | **Required.** The title text displayed in the header.               |
+| `content` | `dynamic` | **Required.** The content to display when the item is expanded.     |
+</div>

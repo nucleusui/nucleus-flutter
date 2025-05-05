@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide ButtonStyle;
 import 'package:go_router/go_router.dart';
+import 'package:playground/pages/accordion.dart';
 import 'package:playground/pages/avatar.dart';
 import 'package:playground/pages/badge.dart';
 import 'package:playground/pages/button.dart';
@@ -69,6 +70,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'basic';
         return AvatarPage(
           style: AvatarStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/accordion',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'simple';
+        return AccordionPage(
+          style: AccordionStyle.values.byName(style),
         );
       },
     ),
