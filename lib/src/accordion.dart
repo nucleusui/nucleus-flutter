@@ -182,13 +182,15 @@ class Accordion extends StatelessWidget {
                         bottomRight: borderRadius.bottomRight,
                       ),
                     ),
-                    child: Text(
-                      e.content.toString(),
-                      style: contentTextStyle ??
-                          AppFonts.regular14.copyWith(
-                            color: context.color.fgMuted,
+                    child: e.content is Widget
+                        ? e.content as Widget
+                        : Text(
+                            e.content.toString(),
+                            style: contentTextStyle ??
+                                AppFonts.regular14.copyWith(
+                                  color: context.color.fgMuted,
+                                ),
                           ),
-                    ),
                   ),
                 ),
               ],
