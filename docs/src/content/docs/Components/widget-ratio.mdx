@@ -1,0 +1,297 @@
+---
+title: Widget Ratio
+sidebar:
+  order: 8
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A component that maintains a specific aspect ratio for its child content.
+
+The `WidgetRatio` widget ensures consistent proportional dimensions regardless of screen size. This is particularly useful for media content, cards, and responsive layouts.
+
+- **Responsive**: Maintains proportions across screen sizes
+- **Customizable**: Supports any ratio value and border radius
+- **Flexible**: Works with any child widget
+- **Clipping**: Supports custom clipping behavior
+
+---
+
+## Variants
+
+#### Square (1:1)
+Perfect for profile pictures, album covers, or square content.
+
+<Preview src="widget-ratio?style=square" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 1,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '1:1',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Landscape (3:2)
+Common in photography, particularly for DSLR cameras.
+
+<Preview src="widget-ratio?style=landscape3by2" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 3 / 2,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '3:2',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Standard (4:3)
+Traditional display format, common for slides and older media.
+
+<Preview src="widget-ratio?style=landscape4by3" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 4 / 3,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '4:3',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Photo (5:4)
+Common in photography and print formats.
+
+<Preview src="widget-ratio?style=landscape5by4" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 5 / 4,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '5:4',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Widescreen (16:9)
+Common format for videos, modern displays, and presentations.
+
+<Preview src="widget-ratio?style=landscape16by9" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 16 / 9,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '16:9',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Portrait (2:3)
+Standard for portrait photography and many printed materials.
+
+<Preview src="widget-ratio?style=portrait2by3" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 2 / 3,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '2:3',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Portrait (3:4)
+Vertical orientation of the classic 4:3 format.
+
+<Preview src="widget-ratio?style=portrait3by4" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 3 / 4,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '3:4',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Portrait (4:5)
+Common for vertical photos and UI elements.
+
+<Preview src="widget-ratio?style=portrait4by5" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 4 / 5,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '4:5',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### Portrait (9:16)
+Ideal for mobile-oriented content and vertical videos.
+
+<Preview src="widget-ratio?style=portrait9by16" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 9 / 16,
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '9:16',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+#### With Rounded Corners
+Using rounded corners with the aspect ratio container.
+
+<Preview src="widget-ratio?style=withRoundedCorners" minHeight="400px">
+
+```dart
+WidgetRatio(
+  ratio: 16 / 9,
+  clipBehavior: Clip.antiAlias,
+  borderRadius: BorderRadius.circular(12),
+  child: Container(
+    alignment: Alignment.center,
+    color: context.color.accentModerate,
+    child: Text(
+      '16:9 rounded',
+      style: AppFonts.regular14.copyWith(
+        color: context.color.accentOnAccent,
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property       | Type               | Default             | Description                                                    |
+|----------------|-------------------|---------------------|----------------------------------------------------------------|
+| `ratio`        | `double`          | **Required**        | The aspect ratio to enforce (width / height)                   |
+| `child`        | `Widget`          | **Required**        | The widget to size according to the specified aspect ratio     |
+| `clipBehavior` | `Clip`            | `Clip.none`         | How to clip the child content                                 |
+| `borderRadius` | `BorderRadiusGeometry?` | `null`        | The border radius to apply to the widget                      |
+</div>
+
+## Usage Guidelines
+
+- Use for content where maintaining specific proportions is important
+- Great for media content like images and videos
+- Helpful for creating consistent card layouts
+- Use `clipBehavior: Clip.antiAlias` when applying rounded corners for smooth edges
+- Consider using with `borderRadius` for enhanced visual design
+
+## Accessibility
+
+- Ensure content within the aspect ratio container remains accessible
+- Avoid cutting off important information when content is resized

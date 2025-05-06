@@ -7,6 +7,7 @@ import 'package:playground/pages/button.dart';
 import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/quick_tip.dart';
+import 'package:playground/pages/widget_ratio.dart';
 
 final router = GoRouter(
   debugLogDiagnostics: true,
@@ -79,6 +80,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'simple';
         return AccordionPage(
           style: AccordionStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/widget-ratio',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'square';
+        return WidgetRatioPage(
+          style: WidgetRatioStyle.values.byName(style),
         );
       },
     ),
