@@ -7,6 +7,7 @@ import 'package:playground/pages/button.dart';
 import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/quick_tip.dart';
+import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/widget_ratio.dart';
 
 final router = GoRouter(
@@ -89,6 +90,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'square';
         return WidgetRatioPage(
           style: WidgetRatioStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/separator',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'solid';
+        return SeparatorPage(
+          style: SeparatorStyle.values.byName(style),
         );
       },
     ),

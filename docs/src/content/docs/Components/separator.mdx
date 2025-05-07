@@ -1,0 +1,273 @@
+---
+title: Separator
+sidebar:
+  order: 9
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A horizontal or vertical line that separates content within a list or section.
+
+Separators help users visually distinguish between related groups of information, making interfaces easier to scan and understand while maintaining a clean, organized layout.
+
+- **Customizable**: Multiple variants, orientations, sizes, and label options
+- **Responsive**: Works with both horizontal and vertical layouts
+- **Accessible**: Provides visual distinction without disrupting screen readers
+
+---
+
+## Variants
+
+Separator variants control how strong or subtle the divider appears.
+
+#### Solid
+
+A continuous line for a clean, standard separation.
+
+<Preview src="separator?style=solid">
+
+```dart
+Separator(
+  variant: SeparatorVariant.solid,
+)
+```
+
+</Preview>
+
+---
+
+#### Dashed
+
+A broken line for lighter, less prominent division.
+
+<Preview src="separator?style=dashed">
+
+```dart
+Separator(
+  variant: SeparatorVariant.dashed,
+)
+```
+
+</Preview>
+
+---
+
+#### Dotted
+
+A dotted line for minimal visual interruption.
+
+<Preview src="separator?style=dotted">
+
+```dart
+Separator(
+  variant: SeparatorVariant.dotted,
+)
+```
+
+</Preview>
+
+---
+
+## Orientations
+
+Orientation defines whether the separator divides content horizontally or vertically.
+
+#### Horizontal
+
+Default orientation; divides horizontally stacked content (e.g., lists, sections or items).
+
+<Preview src="separator?style=solid">
+
+```dart
+Separator(
+  orientation: Axis.horizontal,
+)
+```
+
+</Preview>
+
+---
+
+#### Vertical
+
+Divides vertically stacked content (e.g., sidebars, columns).
+
+<Preview src="separator?style=vertical">
+
+```dart
+Separator(
+  orientation: Axis.vertical,
+)
+```
+
+</Preview>
+
+---
+
+## Label Positions
+
+When content is helpful, separators can include labels in different positions.
+
+#### Center
+
+Label appears centered within the divider.
+
+<Preview src="separator?style=labelCenter">
+
+```dart
+Separator(
+  label: 'LABEL - CENTER',
+  labelPosition: LabelPosition.center,
+)
+```
+
+</Preview>
+
+---
+
+#### Leading
+
+Label aligned to the start (left in LTR, right in RTL) of the divider.
+
+<Preview src="separator?style=labelLeading">
+
+```dart
+Separator(
+  label: 'LABEL - LEADING',
+  labelPosition: LabelPosition.leading,
+)
+```
+
+</Preview>
+
+---
+
+#### Trailing
+
+Label aligned to the end (right in LTR, left in RTL) of the divider.
+
+<Preview src="separator?style=labelTrailing">
+
+```dart
+Separator(
+  label: 'LABEL - TRAILING',
+  labelPosition: LabelPosition.trailing,
+)
+```
+
+</Preview>
+
+---
+
+## Sizes
+
+Use different sizes to align with content density or layout needs.
+
+#### Medium
+
+Standard width for most layouts.
+
+<Preview src="separator?style=solid">
+
+```dart
+Separator(
+  size: SeparatorSize.md,
+)
+```
+
+</Preview>
+
+---
+
+#### Large
+
+Expanded width for wider areas or content-heavy sections.
+
+<Preview src="separator?style=sizeLg">
+
+```dart
+Separator(
+  size: SeparatorSize.lg,
+  thickness: 8,
+)
+```
+
+</Preview>
+
+---
+
+## Examples
+
+#### Vertical with Label
+
+<Preview src="separator?style=verticalWithLabel">
+
+```dart
+Separator(
+  orientation: Axis.vertical,
+  label: 'Section',
+  labelPosition: LabelPosition.center,
+)
+```
+
+</Preview>
+
+#### Custom Colors
+
+<Preview src="separator?style=dashedWithColor">
+
+```dart
+Separator(
+  variant: SeparatorVariant.dashed,
+  color: Colors.purple,
+)
+```
+
+</Preview>
+
+<Preview src="separator?style=dottedWithColor">
+
+```dart
+Separator(
+  variant: SeparatorVariant.dotted,
+  color: Colors.teal,
+  dotSpacing: 12,
+  dotRadius: 2,
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property        | Type                    | Description                                               |
+|-----------------|-------------------------|-----------------------------------------------------------|
+| `variant`       | `SeparatorVariant`      | The visual style of the separator.                        |
+| `orientation`   | `Axis`                  | The directional layout of the separator.                  |
+| `label`         | `String?`               | Optional text label to display with the separator.        |
+| `labelPosition` | `LabelPosition`         | Position of the label along the separator.                |
+| `size`          | `SeparatorSize`         | Size category affecting the width/height of the separator.|
+| `color`         | `Color?`                | Custom color for the separator line.                      |
+| `thickness`     | `double?`               | Custom thickness for the separator line.                  |
+| `labelStyle`    | `TextStyle?`            | Custom text style for the label.                          |
+| `dashPattern`   | `List<double>`          | Pattern for dashed variant [dashLength, gapLength].       |
+| `dotSpacing`    | `double`                | Spacing between dots for dotted variant.                  |
+| `dotRadius`     | `double`                | Radius of dots for dotted variant.                        |
+| `padding`       | `EdgeInsetsGeometry?`   | Padding around the entire separator.                      |
+</div>
+
+## Best Practices
+
+1. **Visual Organization**: Use separators to visually divide content and provide clear distinctions between sections or elements within a section.
+
+2. **Maintain Simplicity**: Keep separators simple and subtle, enhancing the user interface without overwhelming or distracting from content.
+
+3. **Consistency**: Use separators evenly and avoid overusing them, as too many can make a screen feel crowded and fragmented.
+
+4. **Purposeful Placement**: Consider the number and purpose of separators; use thicker separators for strong visual separation and thinner ones for subtle grouping.
+
+5. **Accessibility**: Ensure appropriate contrast between separators and the background for better visibility.
