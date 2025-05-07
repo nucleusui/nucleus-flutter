@@ -2,6 +2,7 @@
 export 'src/accordion.dart';
 export 'src/avatar.dart';
 export 'src/badge.dart';
+export 'src/breadcrumb.dart';
 export 'src/button.dart';
 export 'src/input_field.dart';
 export 'src/progress.dart';

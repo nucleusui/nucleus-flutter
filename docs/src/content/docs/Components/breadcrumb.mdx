@@ -1,0 +1,154 @@
+---
+title: Breadcrumb
+sidebar:
+  order: 10
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A navigation component that shows users their current location within a site or app hierarchy. Breadcrumbs make it easy to backtrack or move between levels without starting over, especially in multi-level structures.
+
+The `Breadcrumb` widget provides consistent styling and behavior options for navigation paths. It supports flexible configurations with various separators, icons, and methods for handling long navigation paths.
+
+- **Customizable**: Supports various separators, icons, and styling options.
+- **Truncation Options**: Handles long paths with ellipsis or dropdown menus.
+- **Interactive**: Supports navigation through tap callbacks.
+
+---
+
+## Variants
+
+#### Slash
+A simple breadcrumb with default separator.
+
+<Preview src="breadcrumb?style=slash">
+
+```dart
+Breadcrumb(
+  items: [
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Current', isActive: true),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Chevron
+A simple breadcrumb with chevron separator.
+
+<Preview src="breadcrumb?style=chevron">
+
+```dart
+Breadcrumb(
+  separatorIcon: Icons.chevron_right,
+  items: [
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Current', isActive: true),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Breadcrumb with Icons
+A breadcrumb with custom icons for each item.
+
+<Preview src="breadcrumb?style=withIcons">
+
+```dart
+Breadcrumb(
+  items: [
+    BreadcrumbItem(
+        label: 'Parent',
+        icon: SvgPicture.asset('assets/home.svg', width: 14),
+    ),
+    BreadcrumbItem(
+        label: 'Parent',
+        icon: SvgPicture.asset('assets/cube.svg', width: 14),
+    ),
+    BreadcrumbItem(
+        label: 'Parent',
+        icon: SvgPicture.asset('assets/circle.svg', width: 14),
+    ),
+    BreadcrumbItem(
+        label: 'Current',
+        isActive: true,
+        icon: SvgPicture.asset('assets/square.svg', width: 14),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Ellipsis
+Collapses intermediate breadcrumb items with an ellipsis when space is limited or content is long.
+
+<Preview src="breadcrumb?style=withEllipsis">
+
+```dart
+Breadcrumb(
+  maxVisibleItems: 2,
+  showEllipsis: true,
+  items: [
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Current', isActive: true),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Dropdown
+Add a dropdown indicator to a specific breadcrumb item.
+
+<Preview src="breadcrumb?style=withDropdown">
+
+```dart
+Breadcrumb(
+  items: [
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(
+        label: 'Parent',
+        isDropdown: true,
+        onTap: () => debugPrint('object'),
+    ),
+    BreadcrumbItem(label: 'Parent'),
+    BreadcrumbItem(label: 'Current', isActive: true),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                     | Description                                                                 |
+|-----------------------|--------------------------|-----------------------------------------------------------------------------|
+| `items`               | `List<BreadcrumbItem>`   | The list of items to display in the breadcrumb.                            |
+| `separator`           | `String`                 | The separator character between breadcrumb items. Default is '/'.           |
+| `maxVisibleItems`     | `int?`                   | Maximum number of items to display before truncating.                       |
+| `dropdownIndex`       | `int?`                   | The index of the dropdown item in the breadcrumb.                          |
+| `showEllipsis`        | `bool`                   | Whether to show ellipsis for truncated items. Default is false.            |
+| `separatorIcon`       | `IconData?`              | The icon to use as a separator instead of text.                            |
+| `dropdownIcon`        | `IconData?`              | The icon to use for dropdown items. Default is keyboard_arrow_down.        |
+</div>

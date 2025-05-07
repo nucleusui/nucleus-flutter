@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:playground/pages/accordion.dart';
 import 'package:playground/pages/avatar.dart';
 import 'package:playground/pages/badge.dart';
+import 'package:playground/pages/breadcrumb.dart';
 import 'package:playground/pages/button.dart';
 import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/progress.dart';
@@ -99,6 +100,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'solid';
         return SeparatorPage(
           style: SeparatorStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/breadcrumb',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'slash';
+        return BreadcrumbPage(
+          style: BreadcrumbStyle.values.byName(style),
         );
       },
     ),
