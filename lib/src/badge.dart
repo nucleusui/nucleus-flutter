@@ -148,7 +148,7 @@ extension NotifSizeExtension on NotificationBadgeSize {
       case NotificationBadgeSize.small:
         return 8;
       case NotificationBadgeSize.medium:
-        return 16;
+        return 15;
       case NotificationBadgeSize.large:
         return 32;
     }
@@ -160,7 +160,7 @@ extension NotifSizeExtension on NotificationBadgeSize {
       case NotificationBadgeSize.small:
         return 1;
       case NotificationBadgeSize.medium:
-        return 3;
+        return 2;
       case NotificationBadgeSize.large:
         return 4;
     }
