@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+const kDefaultFontFamily = 'packages/nucleus_ui/Figtree';
 
 class AppFonts {
   // Helper method to determine font family based on current language
@@ -9,7 +11,7 @@ class AppFonts {
     double letterSpacing = 0,
   }) {
     return TextStyle(
-      fontFamily: 'Figtree',
+      fontFamily: kDefaultFontFamily,
       fontSize: fontSize,
       fontWeight: fontWeight,
       height: height,

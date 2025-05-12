@@ -1,0 +1,117 @@
+---
+title: Top Bar
+sidebar:
+  order: 11
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A flexible and customizable navigation bar component that adapts to different layout needs.
+
+Top Bar provides consistent navigation and context across your app while supporting various title styles, actions, and custom leading widgets. It automatically handles back navigation and adjusts its height based on the selected style.
+
+- **Versatile Layouts**: Supports centered, left-aligned, and large title styles
+- **Flexible Content**: Accommodates subtitles, action buttons, and custom leading widgets
+- **Responsive**: Automatically adjusts height and layout based on content
+- **Accessible**: Maintains clear navigation hierarchy and readability
+
+---
+
+## Variants
+
+Top Bar variants control how the title and content are laid out.
+
+#### Center Title
+
+Traditional app bar layout with centered title, suitable for most screens.
+
+<Preview src="top-bar?style=center">
+
+```dart
+TopBar(
+  title: 'Center Title',
+  type: TopBarType.centerTitle,
+)
+```
+
+</Preview>
+
+---
+
+#### Left Title
+
+Left-aligned title for hierarchical navigation or content-heavy screens.
+
+<Preview src="top-bar?style=left">
+
+```dart
+TopBar(
+  title: 'Left Title',
+  type: TopBarType.leftTitle,
+)
+```
+
+</Preview>
+
+---
+
+#### Large Title
+
+iOS-style large title with optional subtitle, perfect for primary navigation screens.
+
+<Preview src="top-bar?style=large">
+
+```dart
+TopBar(
+  title: 'Large Title',
+  subtitle: 'With optional subtitle',
+  type: TopBarType.largeTitle,
+)
+```
+
+</Preview>
+
+---
+
+#### With Actions
+
+Add action buttons to the right side of the top bar.
+
+<Preview src="top-bar?style=withAction">
+
+```dart
+TopBar(
+  title: 'With Actions',
+  actions: [
+    IconButton(
+      icon: Icon(Icons.search),
+      onPressed: () {},
+    ),
+    IconButton(
+      icon: Icon(Icons.more_vert),
+      onPressed: () {},
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property          | Type                  | Description                                                           |
+|-------------------|-----------------------|-----------------------------------------------------------------------|
+| `title`           | `String?`             | The primary text displayed in the top bar.                            |
+| `subtitle`        | `String?`             | Optional secondary text displayed below the title in largeTitle type. |
+| `type`            | `TopBarType`          | The layout style of the top bar.                                      |
+| `actions`         | `List<Widget>?`       | Optional list of widgets to display on the right side.                |
+| `leadingWidget`   | `Widget?`             | Custom widget to replace the default back button.                     |
+| `backgroundColor` | `Color`               | Background color of the top bar.                                      |
+| `textColor`       | `Color`               | Color applied to the title and subtitle text.                         |
+| `leadingSize`     | `double?`             | Size of the leading icon when using default back button.              |
+| `padding`         | `EdgeInsetsGeometry`  | Padding applied to the content of the top bar.                        |
+</div>

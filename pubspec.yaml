@@ -23,6 +23,7 @@ dev_dependencies:
   very_good_analysis: ^7.0.0
 
 flutter:
+  uses-material-design: true
   fonts:
     - family: Figtree
       fonts:
@@ -44,4 +45,3 @@ flutter:
           weight: 800
         - asset: fonts/Figtree-Black.ttf
           weight: 900
-  uses-material-design: true
