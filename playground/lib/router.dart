@@ -6,6 +6,7 @@ import 'package:playground/pages/badge.dart';
 import 'package:playground/pages/breadcrumb.dart';
 import 'package:playground/pages/button.dart';
 import 'package:playground/pages/input_field.dart';
+import 'package:playground/pages/nav_bar.dart';
 import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/quick_tip.dart';
 import 'package:playground/pages/separator.dart';
@@ -119,6 +120,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'center';
         return TopBarPage(
           style: TopBarStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/nav-bar',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'withLabel';
+        return NavBarPage(
+          style: NavBarStyle.values.byName(style),
         );
       },
     ),

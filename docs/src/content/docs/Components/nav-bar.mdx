@@ -1,0 +1,191 @@
+---
+title: Nav Bar
+sidebar:
+  order: 12
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A persistent bottom navigation bar that enables easy switching between different views or sections.
+
+Navigation Bar provides an intuitive way to navigate between primary destinations in your app. It maintains consistent placement and appearance while providing visual feedback for the current selection.
+
+- **Customizable**: Support for both icon-only and icon-with-label styles
+- **Interactive**: Visual feedback for selected and unselected states
+- **Flexible**: Optional active icons and labels for each item
+- **Consistent**: Fixed positioning at the bottom of the screen
+
+---
+
+## Variants
+
+#### With Label
+
+Basic navigation bar with icons and labels.
+
+<Preview src="nav-bar?style=withLabel">
+
+```dart
+NavBar(
+  onTabChanged: (index) {},
+  items: const [
+    BottomNavItem(
+      icon: Icon(Icons.home_filled),
+      label: 'Home',
+    ),
+    BottomNavItem(
+      icon: Icon(Icons.person),
+      label: 'Account',
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### No Label
+
+Navigation bar with icons only.
+
+<Preview src="nav-bar?style=noLabel">
+
+```dart
+NavBar(
+  onTabChanged: (index) {},
+  items: const [
+    BottomNavItem(
+      icon: Icon(Icons.home_filled),
+      label: 'Home',
+    ),
+    BottomNavItem(
+      icon: Icon(Icons.person),
+      label: 'Account',
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### With Badge
+
+Navigation bar with notification badge.
+
+<Preview src="nav-bar?style=badge">
+
+```dart
+NavBar(
+  onTabChanged: (index) {},
+  items: const [
+    BottomNavItem(
+      icon: Icon(Icons.home_filled),
+      label: 'Home',
+    ),
+    BottomNavItem(
+      icon: Badges(
+        label: '1',
+        type: BadgeType.notification,
+        textStyle: TextStyle(
+          fontSize: 8,
+          height: 1.4,
+          color: Colors.white,
+        ),
+        child: Icon(Icons.person),
+      ),
+      label: 'Account',
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### With Dot Badge
+
+Navigation bar with dot notification badge.
+
+<Preview src="nav-bar?style=dotBadge">
+
+```dart
+NavBar(
+  onTabChanged: (index) {},
+  items: const [
+    BottomNavItem(
+      icon: Icon(Icons.home_filled),
+      label: 'Home',
+    ),
+    BottomNavItem(
+      icon: Badges(
+        label: '1',
+        type: BadgeType.notification,
+        notificationBadgeSize: NotificationBadgeSize.small,
+        child: Icon(Icons.person),
+      ),
+      label: 'Account',
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Five Tabs
+
+Navigation bar with maximum number of tabs.
+
+<Preview src="nav-bar?style=fiveTabs">
+
+```dart
+NavBar(
+  onTabChanged: (index) {},
+  items: const [
+    BottomNavItem(
+      icon: Icon(Icons.home_filled),
+      label: 'Home',
+    ),
+    BottomNavItem(
+      icon: Icon(Icons.search),
+      label: 'Search',
+    ),
+    BottomNavItem(
+      icon: Icon(Icons.add_circle_outlined),
+      label: 'Create',
+    ),
+    BottomNavItem(
+      icon: Icon(Icons.favorite_border),
+      label: 'Saved',
+    ),
+    BottomNavItem(
+      icon: Icon(Icons.person),
+      label: 'Account',
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property               | Type                  | Description                                  |
+|------------------------|-----------------------|----------------------------------------------|
+| `items`                | `List<BottomNavItem>` | List of navigation items to display.         |
+| `onTabChanged`         | `ValueChanged<int>`   | Callback triggered when a tab is selected.   |
+| `selectedLabelStyle`   | `TextStyle?`          | Text style for the selected tab's label.     |
+| `unselectedLabelStyle` | `TextStyle?`          | Text style for unselected tabs' labels.      |
+| `selectedItemColor`    | `Color?`              | Color for the selected tab's icon and label. |
+| `unselectedItemColor`  | `Color?`              | Color for unselected tabs' icons and labels. |
+| `backgroundColor`      | `Color?`              | Background color of the navigation bar.      |
+</div>

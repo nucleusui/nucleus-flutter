@@ -4,6 +4,7 @@ export 'src/badge.dart';
 export 'src/breadcrumb.dart';
 export 'src/button.dart';
 export 'src/input_field.dart';
+export 'src/nav_bar.dart';
 export 'src/progress.dart';
 export 'src/quick_tip.dart';
 export 'src/separator.dart';
