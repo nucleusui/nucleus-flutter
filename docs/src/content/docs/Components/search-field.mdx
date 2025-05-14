@@ -1,0 +1,91 @@
+---
+title: Search Field
+sidebar:
+  order: 13
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A specialized search input component that provides consistent styling and behavior for search functionality across the application.
+
+The `SearchField` component is built on top of `InputField` and offers additional features specific to search interactions, such as optional back navigation, leading/trailing icons, and container styling variants.
+
+---
+
+## Variants
+
+#### With Container (Default)
+Basic search field with a container background and microphone icon.
+
+<Preview src="search-field?style=withContainer">
+
+```dart
+SearchField(
+  hintText: 'Search',
+  suffixIcon: Icon(Icons.mic_none, color: context.color.fgMuted),
+)
+```
+
+</Preview>
+
+---
+
+#### No Container
+Search field without a container background, with search and microphone icons.
+
+<Preview src="search-field?style=noContainer">
+
+```dart
+SearchField(
+  hintText: 'Search',
+  type: SearchFieldType.noContainer,
+  prefixIcon: Icon(Icons.search, color: context.color.fgMuted),
+  suffixIcon: Icon(Icons.mic_none, color: context.color.fgMuted),
+)
+```
+
+</Preview>
+
+---
+
+#### With Back Navigation
+Search field with a back button and clear icon for navigation.
+
+<Preview src="search-field?style=withLeading">
+
+```dart
+SearchField(
+  hintText: 'Search',
+  autoImautomaticallyImplyLeading: true,
+  suffixIcon: Icon(Icons.clear, color: context.color.fgMuted),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+
+| Property                          | Type                     | Description                                                           |
+|-----------------------------------|--------------------------|-----------------------------------------------------------------------|
+| `type`                            | `SearchFieldType`        | Visual style of the search field (withContainer or noContainer).      |
+| `hintText`                        | `String?`                | Placeholder text displayed when the search field is empty.            |
+| `fillColor`                       | `Color?`                 | Background color of the search field.                                 |
+| `borderRadius`                    | `BorderRadiusGeometry?`  | Corner radius for the search field borders.                           |
+| `prefixIcon`                      | `Widget?`                | Widget displayed at the start of the search field.                    |
+| `suffixIcon`                      | `Widget?`                | Widget displayed at the end of the search field.                      |
+| `onChanged`                       | `Function(String)?`      | Callback function when the search text changes.                       |
+| `controller`                      | `TextEditingController?` | Controller for the search field input.                                |
+| `autofocus`                       | `bool`                   | When true, the search field will be focused when first created.       |
+| `height`                          | `double`                 | Height of the search field container.                                 |
+| `textInputAction`                 | `TextInputAction?`       | Determines the action button on the keyboard.                         |
+| `contentPadding`                  | `EdgeInsetsGeometry?`    | Custom padding for the content inside the search field.               |
+| `border`                          | `BoxBorder?`             | Custom border for the search field.                                   |
+| `leading`                         | `Widget?`                | Custom leading widget (typically used for back button).               |
+| `autoImautomaticallyImplyLeading` | `bool`                   | When true, shows a default back button if no leading widget provided. |
+| `onTapBack`                       | `Function()?`            | Callback function when the back button is tapped.                     |
+</div>

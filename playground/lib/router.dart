@@ -9,6 +9,7 @@ import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/nav_bar.dart';
 import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/quick_tip.dart';
+import 'package:playground/pages/search_bar.dart';
 import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/top_bar.dart';
 import 'package:playground/pages/widget_ratio.dart';
@@ -129,6 +130,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'withLabel';
         return NavBarPage(
           style: NavBarStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/search-field',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'withContainer';
+        return SearchFieldPage(
+          style: SearchFieldStyle.values.byName(style),
         );
       },
     ),
