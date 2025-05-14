@@ -192,7 +192,7 @@ class _InputFieldStates extends State<InputField> {
                           ? Colors.red
                           : isFocus
                               ? context.color.accentBold
-                              : context.color.grey20,
+                              : widget.fillColor ?? context.color.grey20,
                     ),
             boxShadow: [
               if (isFocus && widget.border == null)
@@ -220,7 +220,7 @@ class _InputFieldStates extends State<InputField> {
                 FocusManager.instance.primaryFocus?.unfocus();
               },
               autofocus: widget.autofocus,
-              controller: controller,
+              controller: widget.initialValue == null ? controller : null,
               obscureText: hidePass,
               keyboardType: widget.textInputType ?? TextInputType.text,
               onFieldSubmitted: (value) {
@@ -245,9 +245,9 @@ class _InputFieldStates extends State<InputField> {
                 contentPadding: widget.contentPadding ??
                     EdgeInsets.fromLTRB(
                       16,
-                      (widget.labelText == null ? 7 : 0) + (kIsWeb ? 5 : 0),
+                      (widget.labelText == null ? 4 : 0) + (kIsWeb ? 4 : 0),
                       16,
-                      widget.labelText == null ? 10 : 7,
+                      widget.labelText == null ? 10 : 4,
                     ),
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,
