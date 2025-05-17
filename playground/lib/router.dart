@@ -5,6 +5,7 @@ import 'package:playground/pages/avatar.dart';
 import 'package:playground/pages/badge.dart';
 import 'package:playground/pages/breadcrumb.dart';
 import 'package:playground/pages/button.dart';
+import 'package:playground/pages/button_group.dart';
 import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/nav_bar.dart';
 import 'package:playground/pages/progress.dart';
@@ -139,6 +140,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'withContainer';
         return SearchFieldPage(
           style: SearchFieldStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/button-group',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'noIcon';
+        return ButtonGroupPage(
+          style: ButtonGroupStyle.values.byName(style),
         );
       },
     ),

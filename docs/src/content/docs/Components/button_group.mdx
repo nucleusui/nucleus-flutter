@@ -1,0 +1,94 @@
+---
+title: Button Group
+sidebar:
+  order: 14
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable button group component that displays a row of connected button options.
+
+The `ButtonGroup` widget provides a horizontal arrangement of buttons that share borders and appear as a single connected unit. It's commonly used for mutually exclusive options, navigation sections, or view toggles.
+
+- **Features**: Connected buttons with shared borders
+- **States**: Normal, Interactive
+- **Customizable**: Supports icons, custom styling, and border radius
+
+---
+
+## Variants
+
+#### Basic
+A simple button group with text-only options.
+
+<Preview src="button-group?style=noIcon">
+
+```dart
+ButtonGroup(
+  onOptionSelected: (index) {
+    debugPrint('Selected index: $index');
+  },
+  options: const [
+    ButtonGroupOption(label: 'Option 1'),
+    ButtonGroupOption(label: 'Option 2'),
+    ButtonGroupOption(label: 'Option 3'),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### With Icons
+A button group with icons alongside text labels.
+
+<Preview src="button-group?style=hasIcon">
+
+```dart
+ButtonGroup(
+  onOptionSelected: (index) {
+    debugPrint('Selected index: $index');
+  },
+  options: [
+    ButtonGroupOption(
+      label: 'Option 1',
+      icon: SvgPicture.asset('assets/cube.svg', width: 16),
+    ),
+    ButtonGroupOption(
+      label: 'Option 2',
+      icon: SvgPicture.asset('assets/cube.svg', width: 16),
+    ),
+    ButtonGroupOption(
+      label: 'Option 3',
+      icon: SvgPicture.asset('assets/cube.svg', width: 16),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property          | Type                     | Description                                                                              |
+|-------------------|--------------------------|------------------------------------------------------------------------------------------|
+| `options`         | `List<ButtonGroupOption>`| The list of options to display in the button group.                                      |
+| `onOptionSelected`| `Function(int)`          | Callback function when an option is selected. Receives the index of the selected option. |
+| `textStyle`       | `TextStyle?`             | Custom text style for the button labels. Defaults to semiBold14 with accent color.       |
+| `radius`          | `double`                 | The border radius of the button group's outer corners. Defaults to 100.                  |
+| `backgroundColor` | `Color?`                 | Background color of the buttons. If not provided, uses default background.               |
+</div>
+
+### ButtonGroupOption Properties
+
+<div class="docs-table">
+| Property  | Type      | Description                                                |
+|-----------|-----------|----------------------------------------------------------|
+| `label`   | `String`  | The text to be displayed for this option.                 |
+| `icon`    | `Widget?` | An optional icon widget to display before the label.      |
+</div>
