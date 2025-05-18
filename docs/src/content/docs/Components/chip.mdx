@@ -1,0 +1,171 @@
+---
+title: Chip
+sidebar:
+  order: 15
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A chip component that represents compact information elements, choices, filters or actions.
+
+The `CustomChip` widget provides a flexible way to display small interactive elements with various visual styles. Chips can include text labels, icons, avatars and support different states and interactions.
+
+- **Types**: Filled, Outline, Avatar variations
+- **Content Types**: Text with optional icons or avatar
+- **States**: Normal, Active, Disabled, Error
+- **Customizable**: Supports different styles, icons and full width mode
+
+---
+
+## Variants
+
+#### Filled
+Basic chip with solid background.
+
+<Preview src="chip?style=filled">
+
+```dart
+CustomChip(
+  label: 'Label',
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### Outline
+Chip with transparent background and border.
+
+<Preview src="chip?style=outline">
+
+```dart
+CustomChip(
+  label: 'Label',
+  type: ChipType.outline,
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### With Prefix Icon
+Chip with an icon before the label.
+
+<Preview src="chip?style=prefixIcon">
+
+```dart
+CustomChip(
+  label: 'Label',
+  prefixIcon: Icon(Icons.add, size: 16),
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### With Suffix Icon
+Chip with an icon after the label.
+
+<Preview src="chip?style=suffixIcon">
+
+```dart
+CustomChip(
+  label: 'Label',
+  suffixIcon: Icon(Icons.clear, size: 16),
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### With Avatar
+Chip with a circular avatar image.
+
+<Preview src="chip?style=avatar">
+
+```dart
+CustomChip(
+  label: 'Label',
+  avatar: 'https://picsum.photos/200',
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+#### Disabled State
+Non-interactive chip with disabled styling.
+
+<Preview src="chip?style=disabled">
+
+```dart
+const CustomChip(
+  label: 'Label',
+  state: ChipState.disabled,
+)
+```
+
+</Preview>
+
+---
+
+#### Error State
+Chip indicating an error condition.
+
+<Preview src="chip?style=error">
+
+```dart
+const CustomChip(
+  label: 'Label',
+  state: ChipState.error,
+)
+```
+
+</Preview>
+
+---
+
+#### Full Width
+Chip that expands to fill container width.
+
+<Preview src="chip?style=fullWidth">
+
+```dart
+CustomChip(
+  label: 'Label',
+  fullWidth: true,
+  onPressed: () {},
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property       | Type                  | Description                                                                                     |
+|----------------|-----------------------|-------------------------------------------------------------------------------------------------|
+| `label`        | `String`              | **Required.** The text to be displayed in the chip.                                             |
+| `prefixIcon`   | `Widget?`             | Widget to display before the label, typically an icon.                                          |
+| `suffixIcon`   | `Widget?`             | Widget to display after the label, typically an action icon.                                    |
+| `avatar`       | `String?`             | URL of an avatar image to display at the start of the chip.                                     |
+| `type`         | `ChipType`            | Visual style variant of the chip (filled, outline, etc). Default: filled.                       |
+| `state`        | `ChipState`           | Interaction state affecting appearance (enabled, disabled, error, etc). Default: enabled.        |
+| `isActive`     | `bool`                | Whether the chip is in selected/active state. Changes colors when true. Default: false.         |
+| `fullWidth`    | `bool`                | Makes the chip expand to fill container width. Default: false.                                  |
+| `onPressed`    | `VoidCallback?`       | Callback function when the chip is tapped. If null, chip appears disabled.                      |
+
+</div>

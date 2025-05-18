@@ -1,7 +1,7 @@
 name: playground
 description: "The components playground rendered in the Docs site."
 publish_to: 'none'
-version: 1.0.0+18
+version: 1.0.0+19
 environment:
   sdk: ^3.0.0
 
