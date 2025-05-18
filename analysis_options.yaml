@@ -11,3 +11,4 @@ linter:
     lines_longer_than_80_chars: false
     require_trailing_commas: false
     comment_references: false
+    no_default_cases: false
