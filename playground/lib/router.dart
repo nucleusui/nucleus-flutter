@@ -7,6 +7,7 @@ import 'package:playground/pages/breadcrumb.dart';
 import 'package:playground/pages/button.dart';
 import 'package:playground/pages/button_group.dart';
 import 'package:playground/pages/chip.dart';
+import 'package:playground/pages/dialog.dart';
 import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/nav_bar.dart';
 import 'package:playground/pages/progress.dart';
@@ -159,6 +160,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'filled';
         return CustomChipPage(
           style: CustomChipStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/dialog',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'confirm';
+        return DialogPage(
+          style: DialogStyle.values.byName(style),
         );
       },
     ),

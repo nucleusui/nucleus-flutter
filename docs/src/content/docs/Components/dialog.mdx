@@ -1,0 +1,189 @@
+---
+title: Dialog
+sidebar:
+  order: 15
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable modal dialog component that provides a consistent way to display information and get user input.
+
+The `KitDialog` widget provides a flexible system for creating dialogs with various configurations including hero images, titles, custom content, and action buttons. The `showKitDialog` function provides a convenient way to display these dialogs.
+
+- **Content Types**: Title, subtitle, custom content, hero images
+- **Actions**: Primary and secondary buttons
+- **Layouts**: Standard and full-width modes
+- **Customizable**: Supports custom styling and content
+
+---
+
+## Variants
+
+#### Confirm Dialog
+Basic confirmation dialog with two actions.
+
+<Preview src="dialog?style=confirm" minHeight="500px">
+
+```dart
+showKitDialog<void>(
+  context,
+  title: 'Remove item?',
+  subtitle: 'Are you sure want to remove this item from your cart?',
+  primaryLabel: 'Remove',
+  secondaryLabel: 'Cancel',
+  onPrimary: () => Navigator.pop(context),
+  onSecondary: () => Navigator.pop(context),
+);
+```
+
+</Preview>
+
+---
+
+#### Error Dialog
+Simple error message dialog without actions.
+
+<Preview src="dialog?style=error" minHeight="500px">
+
+```dart
+showKitDialog<void>(
+  context,
+  title: 'Opps!\nSomething went wrong',
+  subtitle: 'Please try again later.',
+);
+```
+
+</Preview>
+
+---
+
+#### Error with Button
+Error dialog with a dismissal action.
+
+<Preview src="dialog?style=errorWithButton" minHeight="500px">
+
+```dart
+showKitDialog<void>(
+  context,
+  title: 'Opps!\nSomething went wrong',
+  subtitle: 'Please try again later.',
+  primaryLabel: 'OK',
+  onPrimary: () => Navigator.pop(context),
+);
+```
+
+</Preview>
+
+---
+
+#### Input Dialog
+Dialog with form input and actions.
+
+<Preview src="dialog?style=input" minHeight="500px">
+
+```dart
+showKitDialog<void>(
+  context,
+  title: "What's your team name",
+  subtitle: 'The team name will be shown for all members.',
+  content: InputField(
+    hintText: 'Placeholder text',
+    border: Border.all(color: context.color.borderDisabled),
+    validator: (value) {
+      if (value == null || value.isEmpty) {
+        return 'This field is required';
+      }
+      return null;
+    },
+  ),
+  primaryLabel: 'Create',
+  onPrimary: () => Navigator.pop(context),
+  secondaryLabel: 'Cancel',
+  onSecondary: () => Navigator.pop(context),
+);
+```
+
+</Preview>
+
+---
+
+#### Avatar Dialog
+Dialog with a small circular image at the top.
+
+<Preview src="dialog?style=avatar" minHeight="500px">
+
+```dart
+showKitDialog<void>(
+  context,
+  heroImage: ClipRRect(
+    borderRadius: BorderRadius.circular(16),
+    child: Image.network(
+      'https://picsum.photos/200',
+      width: 80,
+      height: 80,
+    ),
+  ),
+  title: 'Remove item?',
+  subtitle: 'Are you sure want to remove this item from your cart?',
+  primaryLabel: 'Remove',
+  secondaryLabel: 'Cancel',
+  onPrimary: () => Navigator.pop(context),
+  onSecondary: () => Navigator.pop(context),
+);
+```
+
+</Preview>
+
+---
+
+#### Full-width Image Dialog
+Dialog with full-width layout and hero image.
+
+<Preview src="dialog?style=fullImage" minHeight="500px">
+
+```dart
+showKitDialog<void>(
+  context,
+  isFull: true,
+  heroImage: ClipRRect(
+    borderRadius: const BorderRadius.only(
+      topLeft: Radius.circular(12),
+      topRight: Radius.circular(12),
+    ),
+    child: Image.network(
+      'https://picsum.photos/1000',
+      height: 200,
+      width: double.infinity,
+      fit: BoxFit.cover,
+    ),
+  ),
+  title: 'Introducing Virtual Reality',
+  subtitle: 'Please check out all-new feature',
+  primaryLabel: 'Remove',
+  onPrimary: () => Navigator.pop(context),
+);
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                  | Description                                                         |
+|-----------------------|-----------------------|---------------------------------------------------------------------|
+| `heroImage`           | `Widget?`             | Optional widget displayed as a banner at the top of the dialog.     |
+| `title`               | `String?`             | Primary text displayed at the top of the dialog content.            |
+| `subtitle`            | `String?`             | Secondary text displayed below the title.                           |
+| `content`             | `Widget?`             | Custom widget displayed in the dialog's content area.               |
+| `primaryLabel`        | `String?`             | Text label for the primary action button.                           |
+| `onPrimary`           | `VoidCallback?`       | Callback triggered when the primary button is pressed.              |
+| `secondaryLabel`      | `String?`             | Text label for the optional secondary action button.                |
+| `onSecondary`         | `VoidCallback?`       | Callback triggered when the secondary button is pressed.            |
+| `radius`              | `double`              | Corner radius of the dialog container and hero image. Default: 12.  |
+| `isFull`              | `bool`                | Makes the dialog content expand to full width. Default: false.      |
+| `padding`             | `EdgeInsetsGeometry`  | Padding around the dialog content. Default: EdgeInsets.all(16).     |
+| `barrierDismissible`  | `bool`                | Whether clicking outside the dialog dismisses it. Default: true.    |
+</div>
