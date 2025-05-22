@@ -78,6 +78,34 @@ class Progress extends StatelessWidget {
   /// The alignment of the progress bar and labels.
   final AlignmentGeometry alignment;
 
+  /// Creates a circular progress indicator with optional label
+  static Widget circle({
+    Key? key,
+    required double value,
+    String? label,
+    Color? color,
+    Color? backgroundColor,
+    double? strokeWidth,
+    TextStyle? labelStyle,
+    BoxConstraints? constraints =
+        const BoxConstraints(minWidth: 75, minHeight: 75),
+  }) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        CircularProgressIndicator(
+          key: key,
+          value: value / 100,
+          strokeWidth: strokeWidth,
+          color: color ?? const Color(0xFF846AFB),
+          backgroundColor: backgroundColor ?? const Color(0xFFE6E9EB),
+          constraints: constraints,
+        ),
+        if (label != null) Text(label, style: labelStyle ?? AppFonts.bold18),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (alignment == Alignment.center &&

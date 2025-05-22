@@ -3,6 +3,8 @@ import 'package:nucleus_ui/nucleus_ui.dart';
 
 enum ProgressStyle {
   basic,
+  circle,
+  circleLabel,
   labelBottomLeft,
   labelBottomRight,
   labelBottomCenter,
@@ -31,8 +33,11 @@ class ProgressPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               switch (style) {
-                ProgressStyle.basic => const Progress(
+                ProgressStyle.basic => const Progress(value: 15),
+                ProgressStyle.circle => Progress.circle(value: 15),
+                ProgressStyle.circleLabel => Progress.circle(
                     value: 15,
+                    label: '10%',
                   ),
                 ProgressStyle.labelBottomLeft => const Progress(
                     value: 15,
