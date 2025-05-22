@@ -10,6 +10,7 @@ import 'package:playground/pages/chip.dart';
 import 'package:playground/pages/dialog.dart';
 import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/nav_bar.dart';
+import 'package:playground/pages/page_control.dart';
 import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/quick_tip.dart';
 import 'package:playground/pages/search_bar.dart';
@@ -179,6 +180,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'subtle';
         return ToastPage(
           style: ToastStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/page-control',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'dotDefault';
+        return PageControlPage(
+          style: PageControlStyle.values.byName(style),
         );
       },
     ),

@@ -1,0 +1,103 @@
+---
+title: Page Control
+sidebar:
+  order: 17
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable page indicator component that displays the current position within a sequence of pages. The Page Control supports both dot and bar styles, making it suitable for various use cases like carousels, onboarding flows, or image galleries.
+
+- **Styles**: Dot and bar variants
+- **Customization**: Colors, sizes, and spacing
+- **Background Support**: Works on both solid and image backgrounds
+- **Interactive**: Optional tap handling for direct page navigation
+
+---
+
+## Variants
+
+#### Dot Style
+Classic dot-style page indicators.
+
+<Preview src="page_control?style=dot">
+
+```dart
+PageControl(
+  total: 5,
+  current: 2,
+);
+```
+
+</Preview>
+
+---
+
+#### Bar Style
+Modern bar-style page indicators.
+
+<Preview src="page_control?style=bar">
+
+```dart
+PageControl.bar(
+  total: 5,
+  current: 2,
+);
+```
+
+</Preview>
+
+---
+
+#### Dot Style on Image
+Dot indicators optimized for image backgrounds.
+
+<Preview src="page_control?style=dotOnImage">
+
+```dart
+PageControl(
+  total: 5,
+  current: 2,
+  activeColor: Colors.white,
+  inactiveColor: Colors.white.withValues(alpha: .3),
+);
+```
+
+</Preview>
+
+---
+
+#### Bar Style on Image
+Bar indicators optimized for image backgrounds.
+
+<Preview src="page_control?style=barOnImage">
+
+```dart
+PageControl.bar(
+  total: 5,
+  current: 2,
+  activeColor: Colors.white,
+  inactiveColor: Colors.white.withValues(alpha: .3),
+);
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property          | Type                  | Description                                                   |
+|-------------------|-----------------------|---------------------------------------------------------------|
+| `total`           | `int`                 | The total number of pages.                                    |
+| `current`         | `int`                 | The current active page index, 0-based.                       |
+| `activeColor`     | `Color?`              | Color of the active indicator. Defaults to accent color.      |
+| `inactiveColor`   | `Color?`              | Color of inactive indicators. Defaults to muted background.   |
+| `dotSize`         | `double`              | Size of dots in dot style. Default: 8.0.                      |
+| `barWidth`        | `double`              | Width of bars in bar style. Default: 32.0.                    |
+| `barHeight`       | `double`              | Height of bars in bar style. Default: 4.0.                    |
+| `spacing`         | `double`              | Space between indicators. Default: 8.0.                       |
+| `onPageTapped`    | `ValueChanged<int>?`  | Callback when an indicator is tapped.                         |
+</div>
