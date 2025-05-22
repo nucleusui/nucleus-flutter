@@ -14,6 +14,7 @@ import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/quick_tip.dart';
 import 'package:playground/pages/search_bar.dart';
 import 'package:playground/pages/separator.dart';
+import 'package:playground/pages/toast.dart';
 import 'package:playground/pages/top_bar.dart';
 import 'package:playground/pages/widget_ratio.dart';
 
@@ -169,6 +170,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'confirm';
         return DialogPage(
           style: DialogStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/toast',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'subtle';
+        return ToastPage(
+          style: ToastStyle.values.byName(style),
         );
       },
     ),

@@ -1,0 +1,169 @@
+---
+title: Toast
+sidebar:
+  order: 16
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A toast notification component that displays temporary messages at the bottom of the screen. Toasts are used to show brief, non-intrusive feedback about an operation.
+
+The `Toast` widget provides a flexible system for showing notifications with various configurations including message, caption, icons, and action buttons. The `Toast.show()` static method provides a convenient way to display these notifications.
+
+- **Content Types**: Message, caption, icons
+- **Actions**: Optional action button with text or icon
+- **Styles**: Subtle, contrast, and accent variants
+- **Auto-dismiss**: Automatic dismissal with customizable duration
+
+---
+
+## Variants
+
+#### Subtle
+Basic toast with default subtle styling.
+
+<Preview src="toast?style=subtle">
+
+```dart
+Toast.show(
+  context,
+  type: ToastType.subtle,
+  message: 'This is a snack bar',
+);
+```
+
+</Preview>
+
+---
+
+#### Contrast Toast
+Toast with contrasting background for better visibility.
+
+<Preview src="toast?style=contrast">
+
+```dart
+Toast.show(
+  context,
+  type: ToastType.contrast,
+  message: 'This is a snack bar',
+);
+```
+
+</Preview>
+
+---
+
+#### Accent Toast
+Toast with accent color background for important messages.
+
+<Preview src="toast?style=accent">
+
+```dart
+Toast.show(
+  context,
+  type: ToastType.accent,
+  message: 'This is a snack bar',
+);
+```
+
+</Preview>
+
+---
+
+#### With Caption
+Toast with an additional caption text.
+
+<Preview src="toast?style=caption">
+
+```dart
+Toast.show(
+  context,
+  type: ToastType.contrast,
+  message: 'This is a snack bar',
+  caption: 'Caption',
+);
+```
+
+</Preview>
+
+---
+
+#### Action Text
+Toast with a text action button.
+
+<Preview src="toast?style=actionText">
+
+```dart
+Toast.show(
+  context,
+  message: 'This is a snack bar',
+  actionText: 'Action',
+  onActionPressed: () {},
+);
+```
+
+</Preview>
+
+---
+
+#### Action Icon
+Toast with an icon button action.
+
+<Preview src="toast?style=actionIcon">
+
+```dart
+Toast.show(
+  context,
+  message: 'This is a snack bar',
+  actionIcon: Icon(
+    Icons.arrow_forward_ios,
+    size: 16,
+    color: context.color.accentModerate,
+  ),
+  onActionPressed: () {},
+);
+```
+
+</Preview>
+
+---
+
+#### Leading Icon
+Toast with a leading icon.
+
+<Preview src="toast?style=leadingIcon">
+
+```dart
+Toast.show(
+  context,
+  message: 'This is a snack bar',
+  leadingIcon: SvgPicture.asset('assets/circle.svg'),
+);
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property          | Type              | Description                                                   |
+|-------------------|-------------------|---------------------------------------------------------------|
+| `message`         | `String`          | The main text displayed in the toast.                         |
+| `caption`         | `String?`         | Optional secondary text shown below the main message.         |
+| `type`            | `ToastType`       | Visual style of the toast.                                    |
+| `leadingIcon`     | `Widget?`         | Optional icon widget displayed at the start of the toast.     |
+| `actionText`      | `String?`         | Text for the optional action button.                          |
+| `onActionPressed` | `VoidCallback?`   | Callback function when the action button is pressed.          |
+| `actionIcon`      | `Widget?`         | Optional icon widget for the action instead of text.          |
+| `duration`        | `Duration`        | Time before the toast auto-dismisses. Default: 4 seconds.     |
+| `margin`          | `EdgeInsets?`     | Custom margin around the toast container.                     |
+| `padding`         | `EdgeInsets?`     | Custom padding inside the toast container.                    |
+| `borderRadius`    | `BorderRadius?`   | Custom border radius for the toast container.                 |
+| `elevation`       | `double?`         | Custom elevation (shadow) for the toast.                      |
+| `messageStyle`    | `TextStyle?`      | Custom text style for the main message.                       |
+| `captionStyle`    | `TextStyle?`      | Custom text style for the caption.                            |
+| `actionTextStyle` | `TextStyle?`      | Custom text style for the action button text.                 |
+</div>
