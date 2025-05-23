@@ -1,5 +1,5 @@
 ---
-title: Widget Ratio
+title: Aspect Ratio
 sidebar:
   order: 2
 ---
@@ -9,7 +9,7 @@ import "../../../styles/docs.css";
 
 A component that maintains a specific aspect ratio for its child content.
 
-The `WidgetRatio` widget ensures consistent proportional dimensions regardless of screen size. This is particularly useful for media content, cards, and responsive layouts.
+The `RatioBox` widget ensures consistent proportional dimensions regardless of screen size. This is particularly useful for media content, cards, and responsive layouts.
 
 - **Responsive**: Maintains proportions across screen sizes
 - **Customizable**: Supports any ratio value and border radius
@@ -23,10 +23,10 @@ The `WidgetRatio` widget ensures consistent proportional dimensions regardless o
 #### Square (1:1)
 Perfect for profile pictures, album covers, or square content.
 
-<Preview src="widget-ratio?style=square" minHeight="400px">
+<Preview src="aspect-ratio?style=square" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 1,
   child: Container(
     alignment: Alignment.center,
@@ -48,10 +48,10 @@ WidgetRatio(
 #### Landscape (3:2)
 Common in photography, particularly for DSLR cameras.
 
-<Preview src="widget-ratio?style=landscape3by2" minHeight="400px">
+<Preview src="aspect-ratio?style=landscape3by2" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 3 / 2,
   child: Container(
     alignment: Alignment.center,
@@ -73,10 +73,10 @@ WidgetRatio(
 #### Standard (4:3)
 Traditional display format, common for slides and older media.
 
-<Preview src="widget-ratio?style=landscape4by3" minHeight="400px">
+<Preview src="aspect-ratio?style=landscape4by3" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 4 / 3,
   child: Container(
     alignment: Alignment.center,
@@ -98,10 +98,10 @@ WidgetRatio(
 #### Photo (5:4)
 Common in photography and print formats.
 
-<Preview src="widget-ratio?style=landscape5by4" minHeight="400px">
+<Preview src="aspect-ratio?style=landscape5by4" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 5 / 4,
   child: Container(
     alignment: Alignment.center,
@@ -123,10 +123,10 @@ WidgetRatio(
 #### Widescreen (16:9)
 Common format for videos, modern displays, and presentations.
 
-<Preview src="widget-ratio?style=landscape16by9" minHeight="400px">
+<Preview src="aspect-ratio?style=landscape16by9" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 16 / 9,
   child: Container(
     alignment: Alignment.center,
@@ -148,10 +148,10 @@ WidgetRatio(
 #### Portrait (2:3)
 Standard for portrait photography and many printed materials.
 
-<Preview src="widget-ratio?style=portrait2by3" minHeight="400px">
+<Preview src="aspect-ratio?style=portrait2by3" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 2 / 3,
   child: Container(
     alignment: Alignment.center,
@@ -173,10 +173,10 @@ WidgetRatio(
 #### Portrait (3:4)
 Vertical orientation of the classic 4:3 format.
 
-<Preview src="widget-ratio?style=portrait3by4" minHeight="400px">
+<Preview src="aspect-ratio?style=portrait3by4" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 3 / 4,
   child: Container(
     alignment: Alignment.center,
@@ -198,10 +198,10 @@ WidgetRatio(
 #### Portrait (4:5)
 Common for vertical photos and UI elements.
 
-<Preview src="widget-ratio?style=portrait4by5" minHeight="400px">
+<Preview src="aspect-ratio?style=portrait4by5" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 4 / 5,
   child: Container(
     alignment: Alignment.center,
@@ -223,10 +223,10 @@ WidgetRatio(
 #### Portrait (9:16)
 Ideal for mobile-oriented content and vertical videos.
 
-<Preview src="widget-ratio?style=portrait9by16" minHeight="400px">
+<Preview src="aspect-ratio?style=portrait9by16" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 9 / 16,
   child: Container(
     alignment: Alignment.center,
@@ -248,10 +248,10 @@ WidgetRatio(
 #### With Rounded Corners
 Using rounded corners with the aspect ratio container.
 
-<Preview src="widget-ratio?style=withRoundedCorners" minHeight="400px">
+<Preview src="aspect-ratio?style=withRoundedCorners" minHeight="400px">
 
 ```dart
-WidgetRatio(
+RatioBox(
   ratio: 16 / 9,
   clipBehavior: Clip.antiAlias,
   borderRadius: BorderRadius.circular(12),

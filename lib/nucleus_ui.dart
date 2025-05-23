@@ -1,4 +1,5 @@
 export 'src/accordion.dart';
+export 'src/aspect_ratio.dart';
 export 'src/avatar.dart';
 export 'src/badge.dart';
 export 'src/breadcrumb.dart';
@@ -15,4 +16,3 @@ export 'src/search_field.dart';
 export 'src/separator.dart';
 export 'src/toast.dart';
 export 'src/top_bar.dart';
-export 'src/widget_ratio.dart';

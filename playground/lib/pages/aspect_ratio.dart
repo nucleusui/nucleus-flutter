@@ -4,7 +4,7 @@ import 'package:nucleus_ui/constant/typography.dart';
 import 'package:nucleus_ui/extension/context.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
-enum WidgetRatioStyle {
+enum RatioBoxStyle {
   square,
   landscape3by2,
   landscape4by3,
@@ -17,10 +17,10 @@ enum WidgetRatioStyle {
   withRoundedCorners,
 }
 
-class WidgetRatioPage extends StatelessWidget {
-  const WidgetRatioPage({super.key, required this.style});
+class RatioBoxPage extends StatelessWidget {
+  const RatioBoxPage({super.key, required this.style});
 
-  final WidgetRatioStyle style;
+  final RatioBoxStyle style;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class WidgetRatioPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               switch (style) {
-                WidgetRatioStyle.square => WidgetRatio(
+                RatioBoxStyle.square => RatioBox(
                     ratio: 1,
                     child: Container(
                       alignment: Alignment.center,
@@ -45,7 +45,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.landscape3by2 => WidgetRatio(
+                RatioBoxStyle.landscape3by2 => RatioBox(
                     ratio: 3 / 2,
                     child: Container(
                       alignment: Alignment.center,
@@ -58,7 +58,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.landscape4by3 => WidgetRatio(
+                RatioBoxStyle.landscape4by3 => RatioBox(
                     ratio: 4 / 3,
                     child: Container(
                       alignment: Alignment.center,
@@ -71,7 +71,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.landscape5by4 => WidgetRatio(
+                RatioBoxStyle.landscape5by4 => RatioBox(
                     ratio: 5 / 4,
                     child: Container(
                       alignment: Alignment.center,
@@ -84,7 +84,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.landscape16by9 => WidgetRatio(
+                RatioBoxStyle.landscape16by9 => RatioBox(
                     ratio: 16 / 9,
                     child: Container(
                       alignment: Alignment.center,
@@ -97,7 +97,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.portrait2by3 => WidgetRatio(
+                RatioBoxStyle.portrait2by3 => RatioBox(
                     ratio: 2 / 3,
                     child: Container(
                       alignment: Alignment.center,
@@ -110,7 +110,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.portrait3by4 => WidgetRatio(
+                RatioBoxStyle.portrait3by4 => RatioBox(
                     ratio: 3 / 4,
                     child: Container(
                       alignment: Alignment.center,
@@ -123,7 +123,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.portrait4by5 => WidgetRatio(
+                RatioBoxStyle.portrait4by5 => RatioBox(
                     ratio: 4 / 5,
                     child: Container(
                       alignment: Alignment.center,
@@ -136,7 +136,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.portrait9by16 => WidgetRatio(
+                RatioBoxStyle.portrait9by16 => RatioBox(
                     ratio: 9 / 16,
                     child: Container(
                       alignment: Alignment.center,
@@ -149,7 +149,7 @@ class WidgetRatioPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                WidgetRatioStyle.withRoundedCorners => WidgetRatio(
+                RatioBoxStyle.withRoundedCorners => RatioBox(
                     ratio: 16 / 9,
                     clipBehavior: Clip.antiAlias,
                     borderRadius: BorderRadius.circular(12),

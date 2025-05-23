@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 /// A widget that maintains a specific aspect ratio for its child.
 ///
-/// The `WidgetRatio` widget ensures that its child maintains a specific width-to-height ratio,
+/// The `RatioBox` widget ensures that its child maintains a specific width-to-height ratio,
 /// regardless of the available space. This is useful for creating responsive UI elements
 /// that need to maintain specific proportions.
 ///
 /// Example usage:
 /// ```dart
-/// WidgetRatio(
+/// RatioBox(
 ///   ratio: 16 / 9,
 ///   child: Image.network('https://picsum.photos/1024'),
 /// )
 /// ```
-class WidgetRatio extends StatelessWidget {
-  /// Creates an `WidgetRatio` widget.
+class RatioBox extends StatelessWidget {
+  /// Creates an `RatioBox` widget.
   ///
   /// The [ratio] parameter is required and specifies the desired aspect ratio (width / height).
   /// The [child] parameter is required and specifies the widget to be sized.
-  const WidgetRatio({
+  const RatioBox({
     super.key,
     required this.ratio,
     required this.child,

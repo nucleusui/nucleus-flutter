@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide ButtonStyle;
 import 'package:go_router/go_router.dart';
 import 'package:playground/pages/accordion.dart';
+import 'package:playground/pages/aspect_ratio.dart';
 import 'package:playground/pages/avatar.dart';
 import 'package:playground/pages/badge.dart';
 import 'package:playground/pages/breadcrumb.dart';
@@ -17,7 +18,6 @@ import 'package:playground/pages/search_bar.dart';
 import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/toast.dart';
 import 'package:playground/pages/top_bar.dart';
-import 'package:playground/pages/widget_ratio.dart';
 
 final router = GoRouter(
   debugLogDiagnostics: true,
@@ -94,11 +94,11 @@ final router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/widget-ratio',
+      path: '/aspect-ratio',
       builder: (context, state) {
         final style = state.uri.queryParameters['style'] ?? 'square';
-        return WidgetRatioPage(
-          style: WidgetRatioStyle.values.byName(style),
+        return RatioBoxPage(
+          style: RatioBoxStyle.values.byName(style),
         );
       },
     ),
