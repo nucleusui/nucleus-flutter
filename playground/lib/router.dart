@@ -13,10 +13,10 @@ import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/nav_bar.dart';
 import 'package:playground/pages/page_control.dart';
 import 'package:playground/pages/progress.dart';
-import 'package:playground/pages/quick_tip.dart';
 import 'package:playground/pages/search_bar.dart';
 import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/toast.dart';
+import 'package:playground/pages/tooltip.dart';
 import 'package:playground/pages/top_bar.dart';
 
 final router = GoRouter(
@@ -49,7 +49,7 @@ final router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/quick-tip',
+      path: '/tooltip',
       builder: (context, state) {
         final style = state.uri.queryParameters['style'] ?? 'up';
         return QuickTipPage(
