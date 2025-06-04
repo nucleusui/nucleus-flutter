@@ -68,6 +68,62 @@ class Badges extends StatelessWidget {
   /// The size of the notification badge, applicable when [type] is `BadgeType.notification`.
   final NotificationBadgeSize notificationBadgeSize;
 
+  static Badges status({
+    required String label,
+    Key? key,
+    EdgeInsetsGeometry? padding,
+    Offset? offset,
+    Color? backgroundColor,
+    Color? textColor,
+    TextStyle? textStyle,
+    AlignmentGeometry? alignment,
+    Widget? child,
+    Widget? icon,
+    BadgeType type = BadgeType.basic,
+  }) {
+    return Badges(
+      key: key,
+      label: label,
+      padding: padding,
+      offset: offset,
+      backgroundColor: backgroundColor,
+      textColor: textColor,
+      textStyle: textStyle,
+      alignment: alignment,
+      type: type,
+      icon: icon,
+      child: child,
+    );
+  }
+
+  static Badges count({
+    required String label,
+    Key? key,
+    EdgeInsetsGeometry? padding,
+    Offset? offset,
+    Color? backgroundColor,
+    Color? textColor,
+    TextStyle? textStyle,
+    AlignmentGeometry? alignment,
+    Widget? child,
+    Widget? icon,
+    NotificationBadgeSize notificationBadgeSize = NotificationBadgeSize.medium,
+  }) {
+    return Badges(
+      key: key,
+      label: label,
+      padding: padding,
+      offset: offset,
+      backgroundColor: backgroundColor,
+      textColor: textColor,
+      textStyle: textStyle,
+      alignment: alignment,
+      type: BadgeType.notification,
+      notificationBadgeSize: notificationBadgeSize,
+      child: child,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (type == BadgeType.notification) {

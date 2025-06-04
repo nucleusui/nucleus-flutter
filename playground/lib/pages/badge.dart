@@ -26,26 +26,26 @@ class BadgePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             switch (style) {
-              BadgeStyle.basic => const Badges(
+              BadgeStyle.basic => Badges.status(
                   label: 'Default',
                 ),
-              BadgeStyle.success => const Badges(
+              BadgeStyle.success => Badges.status(
                   label: 'Success',
                   type: BadgeType.success,
                 ),
-              BadgeStyle.warning => const Badges(
+              BadgeStyle.warning => Badges.status(
                   label: 'Warning',
                   type: BadgeType.warning,
                 ),
-              BadgeStyle.error => const Badges(
+              BadgeStyle.error => Badges.status(
                   label: 'Error',
                   type: BadgeType.error,
                 ),
-              BadgeStyle.info => const Badges(
+              BadgeStyle.info => Badges.status(
                   label: 'Info',
                   type: BadgeType.info,
                 ),
-              BadgeStyle.withIcon => Badges(
+              BadgeStyle.withIcon => Badges.status(
                   label: 'With Icon',
                   type: BadgeType.success,
                   icon: Padding(
@@ -56,28 +56,25 @@ class BadgePage extends StatelessWidget {
                     ),
                   ),
                 ),
-              BadgeStyle.notificationLarge => const Badges(
+              BadgeStyle.notificationLarge => Badges.count(
                   label: '3',
-                  type: BadgeType.notification,
                   notificationBadgeSize: NotificationBadgeSize.large,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 32,
                     child: Icon(Icons.person, size: 36),
                   ),
                 ),
-              BadgeStyle.notificationMedium => const Badges(
+              BadgeStyle.notificationMedium => Badges.count(
                   label: '3',
-                  type: BadgeType.notification,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 20,
                     child: Icon(Icons.person, size: 24),
                   ),
                 ),
-              BadgeStyle.notificationSmall => const Badges(
+              BadgeStyle.notificationSmall => Badges.count(
                   label: '3',
-                  type: BadgeType.notification,
                   notificationBadgeSize: NotificationBadgeSize.small,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 16,
                     child: Icon(Icons.person, size: 20),
                   ),

@@ -1,7 +1,5 @@
 ---
-title: Badge
-sidebar:
-  order: 4
+title: Badge - Status
 ---
 
 import Preview from "../../../components/Preview.astro";
@@ -25,9 +23,8 @@ Default badge style.
 <Preview src="badge?style=basic">
 
 ```dart
-Badges(
-  label: 'Basic',
-  type: BadgeType.basic,
+Badges.status(
+  label: 'Default',
 )
 ```
 
@@ -41,7 +38,7 @@ Badge with success styling.
 <Preview src="badge?style=success">
 
 ```dart
-Badges(
+Badges.status(
   label: 'Success',
   type: BadgeType.success,
 )
@@ -57,7 +54,7 @@ Badge with warning styling.
 <Preview src="badge?style=warning">
 
 ```dart
-Badges(
+Badges.status(
   label: 'Warning',
   type: BadgeType.warning,
 )
@@ -73,7 +70,7 @@ Badge with error styling.
 <Preview src="badge?style=error">
 
 ```dart
-Badges(
+Badges.status(
   label: 'Error',
   type: BadgeType.error,
 )
@@ -89,7 +86,7 @@ Badge with info styling.
 <Preview src="badge?style=info">
 
 ```dart
-Badges(
+Badges.status(
   label: 'Info',
   type: BadgeType.info,
 )
@@ -105,71 +102,15 @@ Badge including an icon alongside the label.
 <Preview src="badge?style=withIcon">
 
 ```dart
-Badges(
+Badges.status(
   label: 'With Icon',
-  icon: Icon(Icons.star, size: 16),
-  type: BadgeType.basic,
-)
-```
-
-</Preview>
-
----
-
-#### Large Notification Badge
-Badge with a large notification size.
-
-<Preview src="badge?style=notificationLarge">
-
-```dart
-const Badges(
-  label: '3',
-  type: BadgeType.notification,
-  notificationBadgeSize: NotificationBadgeSize.large,
-  child: CircleAvatar(
-    radius: 32,
-    child: Icon(Icons.person, size: 36),
-  ),
-)
-```
-
-</Preview>
-
----
-
-#### Medium Notification Badge
-Badge with a medium notification size.
-
-<Preview src="badge?style=notificationMedium">
-
-```dart
-const Badges(
-  label: '3',
-  type: BadgeType.notification,
-  child: CircleAvatar(
-    radius: 20,
-    child: Icon(Icons.person, size: 24),
-  ),
-)
-```
-
-</Preview>
-
----
-
-#### Small Notification badge
-Badge with a small notification size.
-
-<Preview src="badge?style=notificationSmall">
-
-```dart
-const Badges(
-  label: '3',
-  type: BadgeType.notification,
-  notificationBadgeSize: NotificationBadgeSize.small,
-  child: CircleAvatar(
-    radius: 16,
-    child: Icon(Icons.person, size: 20),
+  type: BadgeType.success,
+  icon: Padding(
+    padding: const EdgeInsets.only(right: 5),
+    child: Icon(
+      Icons.circle_outlined,
+      color: BadgeType.success.fgColor(context),
+    ),
   ),
 )
 ```
@@ -193,5 +134,4 @@ const Badges(
 | `child`                 | `Widget?`               | Optional child widget that the badge will be attached to.                   |
 | `icon`                  | `Widget?`               | Optional icon to display before the label text.                             |
 | `type`                  | `BadgeType`             | Type of badge (basic, success, warning, error, info). Default: basic        |
-| `notificationBadgeSize` | `NotificationBadgeSize` | Type of NotificationBadgeSize (small, medium, large). Default: medium       |
 </div>
