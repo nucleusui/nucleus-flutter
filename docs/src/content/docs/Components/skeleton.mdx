@@ -1,0 +1,134 @@
+---
+title: Skeleton
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A placeholder component that displays a shimmer effect while content is loading. Skeleton loaders provide visual feedback to users that content is being fetched, improving perceived performance and user experience.
+
+The `Skeleton` widget provides customizable shimmer animations that can mimic the shape and layout of your actual content. It supports various sizes, shapes, and layouts to match different UI patterns.
+
+- **Customizable**: Supports various sizes, shapes, colors, and border radius options.
+- **Shimmer Animation**: Built-in shimmer effect for smooth loading animations.
+- **Flexible Layout**: Can be combined to create complex loading layouts.
+
+---
+
+## Variants
+
+#### Line
+A simple rectangular skeleton for text placeholders.
+
+<Preview src="skeleton?style=line">
+
+```dart
+Skeleton(
+  width: 200,
+  height: 16,
+)
+```
+
+</Preview>
+
+---
+
+#### Circle
+A circular skeleton for avatar or profile picture placeholders.
+
+<Preview src="skeleton?style=circle">
+
+```dart
+Skeleton(
+  width: 60,
+  height: 60,
+  borderRadius: BorderRadius.all(Radius.circular(60)),
+)
+```
+
+</Preview>
+
+---
+
+#### Avatar with Text
+A combination of circular and rectangular skeletons mimicking a user profile layout.
+
+<Preview src="skeleton?style=avatarWithText">
+
+```dart
+Row(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Skeleton(
+      width: 48,
+      height: 48,
+      borderRadius: BorderRadius.all(Radius.circular(48)),
+    ),
+    SizedBox(width: 12),
+    Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Skeleton(width: double.infinity, height: 14),
+          SizedBox(height: 8),
+          Skeleton(width: 180, height: 14),
+        ],
+      ),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Card List
+Multiple skeleton cards arranged in a list layout for content loading states.
+
+<Preview src="skeleton?style=cardList">
+
+```dart
+Column(
+  children: List.generate(
+    2,
+    (index) => Padding(
+      padding: EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        children: [
+          Skeleton(width: 80, height: 80),
+          SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Skeleton(width: double.infinity, height: 16),
+                SizedBox(height: 8),
+                Skeleton(width: 150, height: 14),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  ),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                     | Description                                                     |
+|-----------------------|--------------------------|-----------------------------------------------------------------|
+| `width`               | `double`                 | The width of the skeleton box. Required.                        |
+| `height`              | `double`                 | The height of the skeleton box. Required.                       |
+| `borderRadius`        | `BorderRadius`           | The border radius of the skeleton box. Default is 8px radius.   |
+| `baseColor`           | `Color`                  | The base shimmer color. Default is Color(0xFFE0E0E0).           |
+| `highlightColor`      | `Color`                  | The highlight shimmer color. Default is Color(0xFFF5F5F5).      |
+| `margin`              | `EdgeInsetsGeometry?`    | Optional margin around the skeleton.                            |
+| `padding`             | `EdgeInsetsGeometry?`    | Optional padding inside the skeleton.                           |
+</div>

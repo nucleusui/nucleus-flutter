@@ -15,6 +15,7 @@ import 'package:playground/pages/page_control.dart';
 import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/search_bar.dart';
 import 'package:playground/pages/separator.dart';
+import 'package:playground/pages/skeleton.dart';
 import 'package:playground/pages/toast.dart';
 import 'package:playground/pages/tooltip.dart';
 import 'package:playground/pages/top_bar.dart';
@@ -189,6 +190,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'dotDefault';
         return PageControlPage(
           style: PageControlStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/skeleton',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'line';
+        return SkeletonPage(
+          style: SkeletonStyle.values.byName(style),
         );
       },
     ),

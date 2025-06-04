@@ -13,6 +13,7 @@ export 'src/page_control.dart';
 export 'src/progress.dart';
 export 'src/search_field.dart';
 export 'src/separator.dart';
+export 'src/skeleton.dart';
 export 'src/toast.dart';
 export 'src/tooltip.dart';
 export 'src/top_bar.dart';
