@@ -48,21 +48,20 @@ class NavBarPage extends StatelessWidget {
               ),
             NavBarStyle.badge => NavBar(
                 onTabChanged: (index) => debugPrint('$index'),
-                items: const [
-                  BottomNavItem(
+                items: [
+                  const BottomNavItem(
                     icon: Icon(Icons.home_filled),
                     label: 'Home',
                   ),
                   BottomNavItem(
-                    icon: Badges(
+                    icon: Badges.count(
                       label: '1',
-                      type: BadgeType.notification,
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         fontSize: 8,
                         height: 1.4,
                         color: Colors.white,
                       ),
-                      child: Icon(Icons.person),
+                      child: const Icon(Icons.person),
                     ),
                     label: 'Account',
                   ),
@@ -70,17 +69,16 @@ class NavBarPage extends StatelessWidget {
               ),
             NavBarStyle.dotBadge => NavBar(
                 onTabChanged: (index) => debugPrint('$index'),
-                items: const [
-                  BottomNavItem(
+                items: [
+                  const BottomNavItem(
                     icon: Icon(Icons.home_filled),
                     label: 'Home',
                   ),
                   BottomNavItem(
-                    icon: Badges(
+                    icon: Badges.count(
                       label: '1',
-                      type: BadgeType.notification,
                       notificationBadgeSize: NotificationBadgeSize.small,
-                      child: Icon(Icons.person),
+                      child: const Icon(Icons.person),
                     ),
                     label: 'Account',
                   ),
