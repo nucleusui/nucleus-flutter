@@ -144,6 +144,7 @@ class Badges extends StatelessWidget {
                 AppFonts.regular16.copyWith(
                   color: textColor ?? Colors.white,
                   fontSize: notificationBadgeSize.fontSize,
+                  height: 1.2,
                 ),
           ),
         ),
@@ -192,7 +193,7 @@ extension NotifSizeExtension on NotificationBadgeSize {
       case NotificationBadgeSize.small:
         return 0;
       case NotificationBadgeSize.medium:
-        return 8;
+        return 10;
       case NotificationBadgeSize.large:
         return 16;
     }
