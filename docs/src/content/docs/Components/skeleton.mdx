@@ -17,15 +17,15 @@ The `Skeleton` widget provides customizable shimmer animations that can mimic th
 
 ## Variants
 
-#### Line
+#### Rectangle
 A simple rectangular skeleton for text placeholders.
 
-<Preview src="skeleton?style=line">
+<Preview src="skeleton?style=rectangle">
 
 ```dart
 Skeleton(
-  width: 200,
-  height: 16,
+  width: 350,
+  height: 200,
 )
 ```
 
@@ -86,7 +86,7 @@ Row(
 #### Card List
 Multiple skeleton cards arranged in a list layout for content loading states.
 
-<Preview src="skeleton?style=cardList">
+<Preview src="skeleton?style=cardList" minHeight="300px">
 
 ```dart
 Column(
@@ -122,13 +122,13 @@ Column(
 ## Properties
 
 <div class="docs-table">
-| Property              | Type                     | Description                                                     |
-|-----------------------|--------------------------|-----------------------------------------------------------------|
-| `width`               | `double`                 | The width of the skeleton box. Required.                        |
-| `height`              | `double`                 | The height of the skeleton box. Required.                       |
-| `borderRadius`        | `BorderRadius`           | The border radius of the skeleton box. Default is 8px radius.   |
-| `baseColor`           | `Color`                  | The base shimmer color. Default is Color(0xFFE0E0E0).           |
-| `highlightColor`      | `Color`                  | The highlight shimmer color. Default is Color(0xFFF5F5F5).      |
-| `margin`              | `EdgeInsetsGeometry?`    | Optional margin around the skeleton.                            |
-| `padding`             | `EdgeInsetsGeometry?`    | Optional padding inside the skeleton.                           |
+| Property              | Type                     | Description                                  |
+|-----------------------|--------------------------|----------------------------------------------|
+| `width`               | `double`                 | The width of the skeleton box. Required.     |
+| `height`              | `double`                 | The height of the skeleton box. Required.    |
+| `borderRadius`        | `BorderRadius`           | The border radius of the skeleton boxColor   |
+| `baseColor`           | `Color`                  | The base shimmer Color                       |
+| `highlightColor`      | `Color`                  | The highlight shimmer Color                  |
+| `margin`              | `EdgeInsetsGeometry?`    | Optional margin around the skeleton.         |
+| `padding`             | `EdgeInsetsGeometry?`    | Optional padding inside the skeleton.        |
 </div>

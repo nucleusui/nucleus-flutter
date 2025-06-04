@@ -196,7 +196,7 @@ final router = GoRouter(
     GoRoute(
       path: '/skeleton',
       builder: (context, state) {
-        final style = state.uri.queryParameters['style'] ?? 'line';
+        final style = state.uri.queryParameters['style'] ?? 'rectangle';
         return SkeletonPage(
           style: SkeletonStyle.values.byName(style),
         );

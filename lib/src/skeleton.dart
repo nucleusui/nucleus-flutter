@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nucleus_ui/constant/colors.dart';
+import 'package:nucleus_ui/extension/context.dart';
 import 'package:nucleus_ui/src/shimmer.dart';
 
 /// A customizable skeleton placeholder for loading UI.
@@ -17,8 +19,8 @@ class Skeleton extends StatelessWidget {
     required this.width,
     required this.height,
     this.borderRadius = const BorderRadius.all(Radius.circular(8)),
-    this.baseColor = const Color(0xFFE0E0E0),
-    this.highlightColor = const Color(0xFFF5F5F5),
+    this.baseColor,
+    this.highlightColor,
     this.margin,
     this.padding,
   });
@@ -33,10 +35,10 @@ class Skeleton extends StatelessWidget {
   final BorderRadius borderRadius;
 
   /// The base shimmer color.
-  final Color baseColor;
+  final Color? baseColor;
 
   /// The highlight shimmer color.
-  final Color highlightColor;
+  final Color? highlightColor;
 
   /// Optional margin around the skeleton.
   final EdgeInsetsGeometry? margin;
@@ -46,16 +48,27 @@ class Skeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Use theme-aware colors for better dark mode support
+    final defaultBaseColor = context.color.brightness == Brightness.dark
+        ? context.color.grey80
+        : context.color.bgMuted;
+
+    final defaultHighlightColor = context.color.brightness == Brightness.dark
+        ? context.color.grey70
+        : const Color(0xFFF5F5F5);
+
     return Shimmer.fromColors(
-      baseColor: baseColor,
-      highlightColor: highlightColor,
+      baseColor: baseColor ?? defaultBaseColor,
+      highlightColor: highlightColor ?? defaultHighlightColor,
       child: Container(
         margin: margin,
         padding: padding,
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: context.color.brightness == Brightness.dark
+              ? const Color(0xFF2F3133)
+              : Colors.white,
           borderRadius: borderRadius,
         ),
       ),

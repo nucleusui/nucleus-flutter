@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
 enum SkeletonStyle {
-  line,
+  rectangle,
   circle,
   avatarWithText,
   cardList,
@@ -25,7 +25,8 @@ class SkeletonPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 switch (style) {
-                  SkeletonStyle.line => const Skeleton(width: 200, height: 16),
+                  SkeletonStyle.rectangle =>
+                    const Skeleton(width: 250, height: 100),
                   SkeletonStyle.circle => const Skeleton(
                       width: 60,
                       height: 60,
