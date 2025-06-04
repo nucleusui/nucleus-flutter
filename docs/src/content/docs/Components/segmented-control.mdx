@@ -1,0 +1,124 @@
+---
+title: Segmented Control
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable segmented control widget for selecting between multiple options.
+
+The `SegmentedControl` widget creates a horizontal row of selectable segments with different layout types. It supports customizable appearance and selection handling, making it perfect for tab-like interfaces, filter options, or multi-choice selections.
+
+- **Customizable Appearance**: Colors, border radius, padding, and typography
+- **Interactive States**: Selected and unselected states with smooth transitions
+- **Theme Support**: Automatically adapts to light and dark themes
+
+---
+
+## Variants
+
+#### Two Segments
+A simple two-option segmented control.
+
+<Preview src="segmented-control?style=twoSegments">
+
+```dart
+SegmentedControl(
+  segments: const ['Segment', 'Segment'],
+  selectedIndex: selectedIndex,
+  onSelectionChanged: (index) {
+    setState(() => selectedIndex = index);
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Three Segments
+A three-option segmented control for more choices.
+
+<Preview src="segmented-control?style=threeSegments">
+
+```dart
+SegmentedControl(
+  segments: const ['Segment', 'Segment', 'Segment'],
+  selectedIndex: selectedIndex,
+  onSelectionChanged: (index) {
+    setState(() => selectedIndex = index);
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Four Segments
+A four-option segmented control.
+
+<Preview src="segmented-control?style=fourSegments">
+
+```dart
+SegmentedControl(
+  segments: const [
+    'Segment',
+    'Segment', 
+    'Segment',
+    'Segment'
+  ],
+  selectedIndex: selectedIndex,
+  onSelectionChanged: (index) {
+    setState(() => selectedIndex = index);
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Five Segments
+A five-option segmented control for maximum choices.
+
+<Preview src="segmented-control?style=fiveSegments">
+
+```dart
+SegmentedControl(
+  segments: const [
+    'Segment',
+    'Segment',
+    'Segment', 
+    'Segment',
+    'Segment'
+  ],
+  selectedIndex: selectedIndex,
+  onSelectionChanged: (index) {
+    setState(() => selectedIndex = index);
+  },
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property                | Type                      | Description                                                                                    |
+|-------------------------|---------------------------|------------------------------------------------------------------------------------------------|
+| `segments`              | `List`                    | The list of segment data to display.                                                           |
+| `selectedIndex`         | `int`                     | The index of the currently selected segment.                                                   |
+| `onSelectionChanged`    | `ValueChanged<int>?`      | Callback function called when selection changes. Receives the selected index.                  |
+| `height`                | `double`                  | The height of the segmented control.                                                           |
+| `borderRadius`          | `BorderRadiusGeometry?`   | The border radius to apply to the control.                                                     |
+| `backgroundColor`       | `Color?`                  | The background color of the control. Uses theme-appropriate default if null.                   |
+| `selectedColor`         | `Color?`                  | The color of the selected segment. Defaults to white.                                          |
+| `unselectedTextColor`   | `Color?`                  | The text color for unselected segments. Uses theme-appropriate default if null.                |
+| `selectedTextColor`     | `Color?`                  | The text color for the selected segment. Uses theme-appropriate default if null.               |
+| `padding`               | `EdgeInsetsGeometry`      | The padding around the entire control.                                                         |
+| `segmentPadding`        | `EdgeInsetsGeometry?`     | The padding inside each segment. Optional.                                                     |
+
+</div>

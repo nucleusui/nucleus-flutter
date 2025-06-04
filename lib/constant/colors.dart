@@ -184,4 +184,7 @@ extension AppColors on ColorScheme {
   Color get fgColorReverse => _themeColor(bgCanvas, bgContrast);
   Color get bgColor => _themeColor(bgContrast, bgMuted);
   Color get bgColorReverse => _themeColor(bgMuted, bgContrast);
+  Color get baseColor => _themeColor(const Color(0xFF1B1C1F), bgSubtle);
+  Color get chipColor => _themeColor(const Color(0xFF646368), bgCanvas);
+  Color get chipFgColor => _themeColor(Colors.white, const Color(0xFF846AFB));
 }

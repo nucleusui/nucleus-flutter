@@ -12,6 +12,7 @@ export 'src/nav_bar.dart';
 export 'src/page_control.dart';
 export 'src/progress.dart';
 export 'src/search_field.dart';
+export 'src/segmented_control.dart';
 export 'src/separator.dart';
 export 'src/skeleton.dart';
 export 'src/toast.dart';
