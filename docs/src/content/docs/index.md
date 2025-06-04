@@ -2,8 +2,6 @@
 title: Getting started
 description: Nucleus UI - A modern, customizable UI component library for Flutter applications
 prev: false
-sidebar:
-  order: 1
 ---
 
 Welcome to Nucleus UI for Flutter! This library provides a comprehensive set of customizable UI components designed to help you build beautiful Flutter applications faster.
