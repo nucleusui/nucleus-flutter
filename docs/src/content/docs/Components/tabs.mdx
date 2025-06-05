@@ -1,0 +1,124 @@
+---
+title: Tabs
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A navigation component that allows users to switch between different content areas within the same context. Tabs organize content into distinct sections, making it easy to access related information without navigating away from the current page.
+
+The `Tabs` widget is a wrapper around Flutter's TabBar that provides consistent styling and behavior aligned with the nucleus_ui design system. It automatically handles tab controller creation if none is provided.
+
+- **Customizable**: Supports various styling options for indicators, labels, and separators.
+- **Flexible Layout**: Can be scrollable or fixed-width depending on content needs.
+- **Accessible**: Built-in support for keyboard navigation and screen readers.
+
+---
+
+## Variants
+
+#### Basic
+Simple text-based tabs with clean styling.
+
+<Preview src="tabs?style=basic">
+
+```dart
+Tabs(
+  tabs: [
+    Tab(text: 'Tab 1'),
+    Tab(text: 'Tab 2'),
+    Tab(text: 'Tab 3'),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Top Icon
+Tabs with icons positioned above the text labels.
+
+<Preview src="tabs?style=topIcon">
+
+```dart
+Tabs(
+  tabs: [
+    Tab(
+      text: 'Tab 1',
+      icon: Icon(Icons.circle_outlined, size: 20),
+    ),
+    Tab(
+      text: 'Tab 2',
+      icon: Icon(Icons.circle_outlined, size: 20),
+    ),
+    Tab(
+      text: 'Tab 3',
+      icon: Icon(Icons.circle_outlined, size: 20),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Bottom Icon
+Custom tabs with icons positioned below the text labels using custom layout.
+
+<Preview src="tabs?style=bottomIcon">
+
+```dart
+Tabs(
+  onTap: (value) => setState(() => selectedIndex = value),
+  tabs: [
+    Tab(
+      child: Column(
+        spacing: 4,
+        children: [
+          SvgPicture.asset(
+            'assets/home.svg',
+            width: 16,
+            height: 16,
+            colorFilter: ColorFilter.mode(
+              active ? context.color.accentModerate : context.color.fgSubtle,
+              BlendMode.srcIn,
+            ),
+          ),
+          Text(
+            'Home',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: active ? FontWeight.w600 : FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property                | Type                               | Description                                                                |
+|-------------------------|------------------------------------|----------------------------------------------------------------------------|
+| `tabs`                  | `List<Widget>`                     | The list of tabs to display. Required.                                     |
+| `controller`            | `TabController?`                   | Tab controller for managing tab state. Auto-created if null.               |
+| `indicatorColor`        | `Color?`                           | Color of the line below the selected tab. Defaults to accent color.        |
+| `labelColor`            | `Color?`                           | Color of the selected tab's label. Defaults to accent color.               |
+| `unselectedLabelColor`  | `Color?`                           | Color of unselected tab labels. Defaults to subtle foreground color.       |
+| `indicatorSize`         | `TabBarIndicatorSize`              | How the indicator size is computed. Defaults to `TabBarIndicatorSize.tab`. |
+| `indicatorPadding`      | `EdgeInsetsGeometry`               | Padding around the tab indicator. Defaults to `EdgeInsets.zero`.           |
+| `labelPadding`          | `EdgeInsetsGeometry`               | Padding around each tab's label. Defaults to `EdgeInsets.zero`.            |
+| `onTap`                 | `ValueChanged<int>?`               | Callback when a tab is tapped. Receives the tapped tab's index.            |
+| `indicatorWeight`       | `double`                           | Thickness of the selected tab indicator line. Defaults to 1.0.             |
+| `isScrollable`          | `bool`                             | Whether tabs can scroll horizontally. Defaults to false.                   |
+| `overlayColor`          | `WidgetStateProperty<Color?>?`     | Color shown during tab interactions. Defaults to transparent.              |
+</div>

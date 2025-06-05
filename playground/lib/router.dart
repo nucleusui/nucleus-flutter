@@ -17,6 +17,7 @@ import 'package:playground/pages/search_bar.dart';
 import 'package:playground/pages/segmented_control.dart';
 import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/skeleton.dart';
+import 'package:playground/pages/tabs.dart';
 import 'package:playground/pages/toast.dart';
 import 'package:playground/pages/tooltip.dart';
 import 'package:playground/pages/top_bar.dart';
@@ -209,6 +210,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'twoSegments';
         return SegmentedControlPage(
           style: SegmentedControlStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/tabs',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'basic';
+        return TabsPage(
+          style: TabsStyle.values.byName(style),
         );
       },
     ),
