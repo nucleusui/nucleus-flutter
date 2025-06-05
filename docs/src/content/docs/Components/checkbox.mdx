@@ -1,0 +1,194 @@
+---
+title: Checkbox
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable checkbox widget with optional label and description text. It supports various states including checked, unchecked, indeterminate, error, and read-only states.
+
+The `CheckTile` widget provides a flexible way to handle boolean input from users. It can be used standalone or with labels and descriptions for better user experience.
+
+- **States**: Active, Inactive, Indeterminate, Disabled, Error
+- **Content**: Supports labels and descriptions
+- **Customizable**: Supports custom styling, colors, and sizing
+
+---
+
+## Variants
+
+#### Active
+Checkbox in checked state.
+
+<Preview src="checkbox?style=active">
+
+```dart
+CheckTile(
+  value: true,
+  onChanged: (value) {
+    // Handle state change
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Inactive
+Checkbox in unchecked state.
+
+<Preview src="checkbox?style=inactive">
+
+```dart
+CheckTile(
+  value: false,
+  onChanged: (value) {
+    // Handle state change
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Indeterminate
+Checkbox in indeterminate state, typically used for parent checkboxes when some but not all children are selected.
+
+<Preview src="checkbox?style=indeterminate">
+
+```dart
+CheckTile(
+  value: false,
+  indeterminate: true,
+  onChanged: (value) {
+    // Handle state change
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Disabled
+Checkbox that cannot be interacted with.
+
+<Preview src="checkbox?style=disabled">
+
+```dart
+CheckTile(
+  value: false,
+  readOnly: true,
+)
+```
+
+</Preview>
+
+---
+
+#### Error State
+Checkbox with error styling.
+
+<Preview src="checkbox?style=error">
+
+```dart
+CheckTile(
+  value: false,
+  isError: true,
+  onChanged: (value) {
+    // Handle state change
+  },
+)
+```
+
+</Preview>
+
+---
+
+## With Label and Description
+Checkbox with a label and optional description text.
+
+<Preview src="checkbox?style=withDescription">
+
+```dart
+CheckTile(
+  value: option1,
+  label: 'Checkbox with Description',
+  description: 'This is a description for the checkbox.',
+  onChanged: (value) {
+    // Update all children
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Interactive Example
+A practical example showing parent-child checkbox relationships with indeterminate state.
+
+<Preview src="checkbox?style=interactive" minHeight="200px">
+
+```dart
+// Parent checkbox with indeterminate state
+CheckTile(
+  value: parentValue,
+  indeterminate: isIndeterminate,
+  onChanged: (value) {
+    // Update all children
+  },
+  label: 'Select All',
+),
+
+// Child checkboxes
+CheckTile(
+  value: option1,
+  label: 'Option 1',
+  onChanged: (value) {
+    // Update parent state
+  },
+),
+CheckTile(
+  value: option2,
+  label: 'Option 2',
+  onChanged: (value) {
+    // Update parent state
+  },
+),
+CheckTile(
+  value: option3,
+  label: 'Option 3',
+  onChanged: (value) {
+    // Update parent state
+  },
+),
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                     | Description                                                                                     |
+|-----------------------|--------------------------|-------------------------------------------------------------------------------------------------|
+| `value`               | `bool?`                  | **Required.** Current state of the checkbox (true, false, or null for indeterminate).          |
+| `onChanged`           | `void Function(bool?)?`  | Callback when checkbox state changes. If null, checkbox is disabled.                           |
+| `label`               | `String?`                | Text label displayed next to the checkbox. Makes the label clickable.                          |
+| `labelStyle`          | `TextStyle?`             | Text style for the label. Default: AppFonts.regular14.                                         |
+| `description`         | `String?`                | Additional description text displayed below the label.                                          |
+| `descriptionStyle`    | `TextStyle?`             | Text style for the description. Default: AppFonts.regular12.                                   |
+| `spacing`             | `double`                 | Spacing between checkbox and label/description column. Default: 12.                            |
+| `size`                | `double`                 | Size of the checkbox in logical pixels. Default: 15.                                           |
+| `scale`               | `double`                 | Scale factor for the checkbox. Default: 1.                                                     |
+| `indeterminate`       | `bool`                   | Whether checkbox is in indeterminate state. Default: false.                                    |
+| `isError`             | `bool`                   | Whether checkbox is in error state with error styling. Default: false.                        |
+| `readOnly`            | `bool`                   | Whether checkbox is read-only and cannot be interacted with. Default: false.                  |
+| `activeColor`         | `Color?`                 | Color when checkbox is checked or indeterminate. Uses theme colors if not provided.           |
+| `borderColor`         | `Color?`                 | Color of the checkbox border. Uses theme colors if not provided.                              |
+| `borderRadius`        | `BorderRadiusGeometry`   | Border radius of the checkbox. Default: BorderRadius.all(Radius.circular(4)).                 |
+</div>

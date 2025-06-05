@@ -5,6 +5,7 @@ export 'src/badge.dart';
 export 'src/breadcrumb.dart';
 export 'src/button.dart';
 export 'src/button_group.dart';
+export 'src/checkbox.dart';
 export 'src/chip.dart';
 export 'src/dialog.dart';
 export 'src/input_field.dart';

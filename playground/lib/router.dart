@@ -7,6 +7,7 @@ import 'package:playground/pages/badge.dart';
 import 'package:playground/pages/breadcrumb.dart';
 import 'package:playground/pages/button.dart';
 import 'package:playground/pages/button_group.dart';
+import 'package:playground/pages/checkbox.dart';
 import 'package:playground/pages/chip.dart';
 import 'package:playground/pages/dialog.dart';
 import 'package:playground/pages/input_field.dart';
@@ -219,6 +220,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'basic';
         return TabsPage(
           style: TabsStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/checkbox',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'basic';
+        return CheckTilePage(
+          style: CheckTileStyle.values.byName(style),
         );
       },
     ),
