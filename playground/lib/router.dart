@@ -20,6 +20,7 @@ import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/skeleton.dart';
 import 'package:playground/pages/tabs.dart';
 import 'package:playground/pages/toast.dart';
+import 'package:playground/pages/toggle.dart';
 import 'package:playground/pages/tooltip.dart';
 import 'package:playground/pages/top_bar.dart';
 
@@ -226,9 +227,18 @@ final router = GoRouter(
     GoRoute(
       path: '/checkbox',
       builder: (context, state) {
-        final style = state.uri.queryParameters['style'] ?? 'basic';
+        final style = state.uri.queryParameters['style'] ?? 'active';
         return CheckTilePage(
           style: CheckTileStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/toggle',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'active';
+        return TogglePage(
+          style: ToggleStyle.values.byName(style),
         );
       },
     ),

@@ -1,0 +1,103 @@
+---
+title: Toggle
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable toggle switch widget for boolean inputs. It provides a switch-style input for boolean values with Cupertino-style design.
+
+The `Toggle` widget offers a modern and intuitive way to handle on/off states in your application. It supports different states including active, inactive, and read-only, with customizable colors and sizing.
+
+- **States**: Active, Inactive, Disabled
+- **Styling**: Customizable colors and sizing
+- **Design**: Cupertino-style switch appearance
+
+---
+
+## Variants
+
+#### Active
+Toggle in the active/on state.
+
+<Preview src="toggle?style=active">
+
+```dart
+Toggle(
+  value: true,
+  onChanged: (value) {
+    // Handle state change
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Inactive
+Toggle in the inactive/off state.
+
+<Preview src="toggle?style=inactive">
+
+```dart
+Toggle(
+  value: false,
+  onChanged: (value) {
+    // Handle state change
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Disabled
+Toggle that cannot be interacted with.
+
+<Preview src="toggle?style=disabled">
+
+```dart
+Toggle(
+  value: true,
+  readOnly: true,
+)
+```
+
+</Preview>
+
+---
+
+#### Large Size
+Toggle with increased size for better visibility.
+
+<Preview src="toggle?style=large">
+
+```dart
+Toggle(
+  value: true,
+  size: 15,
+  onChanged: (value) {
+    // Handle state change
+  },
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                    | Description                                                                                    |
+|-----------------------|-------------------------|------------------------------------------------------------------------------------------------|
+| `value`               | `bool`                  | **Required.** Current state of the toggle (true for active, false for inactive).               |
+| `onChanged`           | `void Function(bool)?`  | Callback when toggle state changes. If null, toggle is disabled.                               |
+| `readOnly`            | `bool`                  | Whether toggle is read-only and cannot be interacted with. Default: false.                     |
+| `size`                | `double`                | Size factor for scaling the toggle from base size of 15. Default: 10.                          |
+| `thumbColor`          | `Color?`                | Color of the toggle thumb (circular moving part). Default: Colors.white.                       |
+| `activeTrackColor`    | `Color?`                | Color of the track when toggle is active. Uses theme accent color if not provided.             |
+| `inactiveTrackColor`  | `Color?`                | Color of the track when toggle is inactive. Uses default Cupertino color if not provided.      |
+</div>

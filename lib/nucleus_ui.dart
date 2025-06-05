@@ -18,5 +18,6 @@ export 'src/separator.dart';
 export 'src/skeleton.dart';
 export 'src/tabs.dart';
 export 'src/toast.dart';
+export 'src/toggle.dart';
 export 'src/tooltip.dart';
 export 'src/top_bar.dart';
