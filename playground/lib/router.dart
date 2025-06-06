@@ -21,6 +21,7 @@ import 'package:playground/pages/segmented_control.dart';
 import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/skeleton.dart';
 import 'package:playground/pages/tabs.dart';
+import 'package:playground/pages/text_area.dart';
 import 'package:playground/pages/toast.dart';
 import 'package:playground/pages/toggle.dart';
 import 'package:playground/pages/tooltip.dart';
@@ -259,6 +260,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'basic';
         return InputPinPage(
           style: InputPinStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/text-area',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'basic';
+        return TextAreaPage(
+          style: TextAreaStyle.values.byName(style),
         );
       },
     ),

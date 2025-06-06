@@ -18,6 +18,7 @@ class InputField extends StatefulWidget {
     this.autofocus = false,
     this.labelText,
     this.hintText,
+    this.hintStyle,
     this.textInputType,
     this.onSubmitied,
     this.validator,
@@ -55,6 +56,9 @@ class InputField extends StatefulWidget {
 
   /// Placeholder text displayed when the text field is empty.
   final String? hintText;
+
+  /// Style for the hint text when the text field is empty.
+  final TextStyle? hintStyle;
 
   /// The type of keyboard to use for editing the text (e.g., email, number, phone).
   final TextInputType? textInputType;
@@ -169,19 +173,21 @@ class _InputFieldStates extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     final isDisabled = widget.enabled == false;
+    final isMultiline = widget.textInputType == TextInputType.multiline;
+    final verticalMargin = (isMultiline ? 6 : 4).toDouble();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           alignment: Alignment.center,
-          height: widget.height,
+          height: isMultiline ? null : widget.height,
           padding: EdgeInsets.all(isFocus || isError ? 0 : 1),
           decoration: BoxDecoration(
             color: isDisabled
                 ? context.color.borderMuted
                 : isError
                     ? context.color.red10
-                    : (widget.fillColor ?? context.color.bgColor),
+                    : (widget.fillColor ?? context.color.chipColor),
             borderRadius: widget.borderRadius,
             border: isDisabled
                 ? null
@@ -245,9 +251,10 @@ class _InputFieldStates extends State<InputField> {
                 contentPadding: widget.contentPadding ??
                     EdgeInsets.fromLTRB(
                       16,
-                      (widget.labelText == null ? 4 : 0) + (kIsWeb ? 4 : 0),
+                      (widget.labelText == null ? verticalMargin : 0) +
+                          (kIsWeb ? verticalMargin : 0),
                       16,
-                      widget.labelText == null ? 10 : 4,
+                      widget.labelText == null ? 10 : verticalMargin,
                     ),
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -283,9 +290,8 @@ class _InputFieldStates extends State<InputField> {
                         child: widget.prefixIcon,
                       ),
                 hintText: widget.hintText,
-                hintStyle: AppFonts.regular16.copyWith(
-                  color: context.color.grey50,
-                ),
+                hintStyle: widget.hintStyle ??
+                    AppFonts.regular16.copyWith(color: context.color.grey50),
                 prefixIconConstraints: const BoxConstraints(),
                 suffixIconConstraints: const BoxConstraints(),
                 suffixIcon: widget.suffixIcon == null

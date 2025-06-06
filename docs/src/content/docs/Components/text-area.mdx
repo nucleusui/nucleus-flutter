@@ -1,0 +1,114 @@
+---
+title: Text Area
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable text area component that provides a consistent way to collect multiline user input through expandable text fields.
+
+The `Text Area` is built using the `InputField` component with multiline configuration. It offers various styling options and input behaviors, supporting features like validation, placeholder text, and expandable height. It handles different states including focus, error, and disabled states, making it perfect for collecting longer text content like notes, comments, or descriptions.
+
+---
+
+## Variants
+
+#### Basic
+A simple text area with placeholder text that expands as the user types.
+
+<Preview src="text-area?style=basic">
+
+```dart
+const InputField(
+  minLines: 3,
+  maxLines: 6,
+  hintText: 'Write a note',
+  textInputType: TextInputType.multiline,
+)
+```
+
+</Preview>
+
+---
+
+#### Disabled
+Text area in a non-interactive state, preventing user input.
+
+<Preview src="text-area?style=disabled">
+
+```dart
+const InputField(
+  minLines: 3,
+  maxLines: 6,
+  hintText: 'Write a note',
+  textInputType: TextInputType.multiline,
+  enabled: false,
+)
+```
+
+</Preview>
+
+---
+
+#### With Validator
+Text area with validation that displays error messages when content is invalid.
+
+<Preview src="text-area?style=withValidator">
+
+```dart
+InputField(
+  minLines: 3,
+  maxLines: 6,
+  hintText: 'Press enter to validate',
+  textInputType: TextInputType.multiline,
+  validator: (value) {
+    if (value == null || value.isEmpty) {
+      return 'Note cannot be empty';
+    }
+    return null;
+  },
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+
+| Property             | Type                                   | Description                                                                                     |
+|----------------------|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| `controller`         | `TextEditingController?`               | Controller for the text area input.                                                            |
+| `minLines`           | `int?`                                 | Minimum number of lines to display. Determines the initial height of the text area.            |
+| `maxLines`           | `int?`                                 | Maximum number of lines to display. The text area will expand up to this limit.                |
+| `hintText`           | `String?`                              | Placeholder text displayed when the text area is empty.                                        |
+| `hintStyle`          | `TextStyle?`                           | Style for the hint text when the text area is empty.                                           |
+| `textInputType`      | `TextInputType?`                       | Set to `TextInputType.multiline` for text area functionality.                                  |
+| `validator`          | `String? Function(String?)?`           | Function that validates the text and returns an error message string if invalid.                |
+| `enabled`            | `bool?`                                | Controls whether the text area is interactive or grayed out.                                   |
+| `maxLength`          | `int?`                                 | Maximum number of characters allowed in the text area.                                         |
+| `autovalidateMode`   | `AutovalidateMode?`                    | Determines when validation should be performed (e.g., on user interaction, always).             |
+| `contentPadding`     | `EdgeInsetsGeometry?`                  | Custom padding for the content inside the text area.                                           |
+| `fillColor`          | `Color?`                               | Background color of the text area.                                                             |
+| `border`             | `BoxBorder?`                           | Custom border for the text area. Overrides the default border.                                 |
+| `borderRadius`       | `BorderRadiusGeometry`                 | Corner radius for the text area borders.                                                       |
+| `initialValue`       | `String?`                              | Default text to display when the text area is first created.                                   |
+| `onChanged`          | `void Function(String)?`               | Callback function when the text value changes.                                                  |
+| `focusNode`          | `FocusNode?`                           | Focus node that controls the focus state of this text area.                                    |
+| `autofocus`          | `bool`                                 | When true, the text area will be focused when the widget is first created.                     |
+| `textInputAction`    | `TextInputAction?`                     | Determines the action button on the keyboard (e.g., newline, done).                            |
+| `onSubmitied`        | `ValueChanged<String>?`                | Callback function when the user submits the text area.                                         |
+
+</div>
+
+---
+
+## Usage Tips
+
+- Set `minLines` to define the initial height of the text area
+- Use `maxLines` to prevent the text area from growing too large
+- Always set `textInputType: TextInputType.multiline` for proper multiline behavior
+- Consider adding validation for required fields or content length limits
+- Use appropriate `textInputAction` values like `TextInputAction.newline` for multiline input
