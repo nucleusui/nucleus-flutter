@@ -82,16 +82,19 @@ class Toggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final activeColor = activeTrackColor ?? context.color.accentModerate;
     return Transform.scale(
       scale: size / 15,
       child: CupertinoSwitch(
         value: value,
         onChanged: readOnly ? null : onChanged,
-        thumbColor: readOnly ? context.color.fgDisabled : thumbColor,
+        thumbColor: readOnly && !value ? context.color.fgDisabled : thumbColor,
         activeTrackColor: readOnly
-            ? context.color.bgDisabled
+            ? value
+                ? activeColor.withValues(alpha: .75)
+                : context.color.bgDisabled
             : activeTrackColor ?? context.color.accentModerate,
-        inactiveTrackColor: inactiveTrackColor,
+        inactiveTrackColor: inactiveTrackColor ?? const Color(0xFFE6E9EB),
       ),
     );
   }
