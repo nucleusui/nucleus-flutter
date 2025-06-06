@@ -9,6 +9,7 @@ import 'package:playground/pages/button.dart';
 import 'package:playground/pages/button_group.dart';
 import 'package:playground/pages/checkbox.dart';
 import 'package:playground/pages/chip.dart';
+import 'package:playground/pages/date_picker.dart';
 import 'package:playground/pages/dialog.dart';
 import 'package:playground/pages/input_field.dart';
 import 'package:playground/pages/input_pin.dart';
@@ -269,6 +270,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'basic';
         return TextAreaPage(
           style: TextAreaStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/date-picker',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'basic';
+        return DatePickerPage(
+          style: DatePickerStyle.values.byName(style),
         );
       },
     ),

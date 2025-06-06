@@ -7,6 +7,7 @@ export 'src/button.dart';
 export 'src/button_group.dart';
 export 'src/checkbox.dart';
 export 'src/chip.dart';
+export 'src/date_picker.dart';
 export 'src/dialog.dart';
 export 'src/input_field.dart';
 export 'src/input_pin.dart';

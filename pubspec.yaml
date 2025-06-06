@@ -16,8 +16,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.20.0
   just_the_tooltip: ^0.0.12
   pin_code_fields: ^8.0.1
+  table_calendar: ^3.2.0
 
 dev_dependencies:
   flutter_test:

@@ -1,0 +1,88 @@
+---
+title: Date Picker
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable calendar date picker component that provides a clean and consistent interface for date selection.
+
+The `DatePicker` component offers various calendar formats, custom styling options, and date range restrictions. It handles different states including weekends, holidays, and disabled dates with appropriate visual feedback, making it versatile for various date selection needs across the application.
+
+---
+
+## Variants
+
+#### Basic
+Standard calendar picker with header navigation and date selection.
+
+<Preview src="date-picker?style=basic" minHeight="450px">
+
+```dart
+DatePicker(
+  onDaySelected: (selectedDay, focusedDay) {
+    // Handle date selection
+    print('Selected: $selectedDay');
+  },
+)
+```
+
+</Preview>
+
+---
+
+#### Dialog
+Date picker displayed within a dialog modal for overlay presentation.
+
+<Preview src="date-picker?style=dialog" minHeight="450px">
+
+```dart
+Button.primary(
+  onPressed: () => showDialog<void>(
+    context: context,
+    builder: (context) => Dialog(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxWidth: 500, 
+          maxHeight: 400
+        ),
+        child: DatePicker(
+          onDaySelected: (selectedDay, focusedDay) {
+            // Handle date selection
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    ),
+  ),
+  label: 'Pick a date',
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+
+| Property             | Type                                     | Description                                                                  |
+|----------------------|------------------------------------------|------------------------------------------------------------------------------|
+| `onDaySelected`      | `void Function(DateTime, DateTime)?`     | Callback function triggered when a date is selected on the calendar.         |
+| `headerVisible`      | `bool`                                   | Controls whether the calendar header (month/year navigation) is visible.     |
+| `calendarFormat`     | `CalendarFormat`                         | The format of the calendar display (month, week, or 2-week view).            |
+| `textStyle`          | `TextStyle?`                             | Default text style applied to calendar dates.                                |
+| `weekendTextStyle`   | `TextStyle?`                             | Text style specifically for weekend dates (Saturday and Sunday).             |
+| `holidayTextStyle`   | `TextStyle?`                             | Text style specifically for holiday dates.                                   |
+| `disabledColor`      | `Color?`                                 | Color used for disabled dates that cannot be selected.                       |
+| `headerStyle`        | `HeaderStyle?`                           | Custom styling for the calendar header section.                              |
+| `daysOfWeekStyle`    | `DaysOfWeekStyle?`                       | Custom styling for the days of the week row (Mon, Tue, Wed, etc.).           |
+| `calendarStyle`      | `CalendarStyle?`                         | Comprehensive styling options for the calendar body and date cells.          |
+| `firstDay`           | `DateTime?`                              | The earliest date that can be selected on the calendar.                      |
+| `lastDay`            | `DateTime?`                              | The latest date that can be selected on the calendar.                        |
+| `focusedDay`         | `DateTime?`                              | The currently focused date, determining which month/year is displayed.       |
+| `currentDay`         | `DateTime?`                              | The current date, typically highlighted with special styling.                |
+| `daysOfWeekHeight`   | `double`                                 | Height of the days of the week header row in pixels.                         |
+
+</div>
