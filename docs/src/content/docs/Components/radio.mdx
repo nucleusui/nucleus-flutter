@@ -1,0 +1,133 @@
+---
+title: Radio
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A form control component that allows users to select one option from a group of mutually exclusive choices. Radio buttons are ideal for presenting a small set of options where only one selection is allowed.
+
+The `RadioButton` widget provides a circular selection indicator with optional label and description text. It supports various customization options including size, spacing, styling, error states, and read-only mode.
+
+- **Single Selection**: Enforces mutually exclusive selection within a group
+- **Customizable**: Supports various sizes, spacing, and styling options
+- **Accessible**: Includes proper labeling and description support
+- **States**: Normal, error, and read-only states
+
+---
+
+## Variants
+
+#### Active
+A radio button in its selected state.
+
+<Preview src="radio?style=active">
+
+```dart
+RadioButton<bool>(
+  value: true,
+)
+```
+
+</Preview>
+
+---
+
+#### Inactive
+A radio button in its unselected state.
+
+<Preview src="radio?style=inactive">
+
+```dart
+RadioButton<bool>(
+  value: false,
+)
+```
+
+</Preview>
+
+---
+
+#### Error
+A radio button displaying an error state with error coloring.
+
+<Preview src="radio?style=error">
+
+```dart
+RadioButton<bool>(
+  value: true,
+  isError: true,
+)
+```
+
+</Preview>
+
+---
+
+#### With Description
+A radio button with both label and description text.
+
+<Preview src="radio?style=withDescription">
+
+```dart
+RadioButton<bool>(
+  value: true,
+  label: 'Title',
+  description: 'Caption',
+)
+```
+
+</Preview>
+
+---
+
+#### Interactive Group
+A practical example showing multiple radio buttons working together as a group.
+
+<Preview src="radio?style=interactive">
+
+```dart
+enum RadioOption { option1, option2 }
+RadioOption? selectedOption;
+
+Row(
+  spacing: 24,
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    RadioButton<RadioOption>(
+      value: RadioOption.option1,
+      label: 'Option 1',
+      groupValue: selectedOption,
+      onChanged: (val) => setState(() => selectedOption = val),
+    ),
+    RadioButton<RadioOption>(
+      value: RadioOption.option2,
+      label: 'Option 2',
+      groupValue: selectedOption,
+      onChanged: (val) => setState(() => selectedOption = val),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                     | Description                                                                   |
+|-----------------------|--------------------------|-------------------------------------------------------------------------------|
+| `value`               | `T`                      | The value represented by this radio button.                                   |
+| `groupValue`          | `T?`                     | The currently selected value for the radio button group.                      |
+| `onChanged`           | `ValueChanged<T?>?`      | Called when the radio button is selected.                                     |
+| `label`               | `String?`                | Optional text label to display next to the radio button.                      |
+| `labelStyle`          | `TextStyle?`             | Custom text style for the label.                                              |
+| `description`         | `String?`                | Optional description text displayed below the label.                          |
+| `descriptionStyle`    | `TextStyle?`             | Custom text style for the description text.                                   |
+| `size`                | `double`                 | The size of the radio button circle in logical pixels. Default is 20.0.       |
+| `spacing`             | `double`                 | The spacing between the radio button and text content. Default is 12.0.       |
+| `readOnly`            | `bool`                   | Whether the radio button is read-only. Default is false.                      |
+| `isError`             | `bool`                   | Whether the radio button should display in an error state. Default is false.  |
+</div>
