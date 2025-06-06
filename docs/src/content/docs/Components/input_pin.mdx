@@ -1,0 +1,113 @@
+---
+title: Input Pin
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A specialized input component designed for entering PIN codes, OTP codes, or other short numeric sequences. The component provides a series of individual input fields that work together as a cohesive unit.
+
+The `InputPin` widget offers extensive customization options including field shapes, colors, animations, and validation. It's optimized for security-sensitive inputs with features like text obscuring and autofill support.
+
+- **Security-Focused**: Built-in text obscuring and secure input handling
+- **Customizable**: Supports various shapes, colors, and styling options
+- **User-Friendly**: Automatic focus management and keyboard handling
+- **Validation**: Built-in validation and error state support
+
+---
+
+## Variants
+
+#### Basic
+A standard PIN input with default settings for 5-digit codes.
+
+<Preview src="input-pin?style=basic">
+
+```dart
+const InputPin()
+```
+
+</Preview>
+
+---
+
+#### Disabled
+A PIN input in disabled state that cannot be interacted with.
+
+<Preview src="input-pin?style=disabled">
+
+```dart
+const InputPin(
+  enabled: false,
+  autoFocus: false,
+  controller: TextEditingController(text: '12345'),
+)
+```
+
+</Preview>
+
+---
+
+#### Error
+A PIN input displaying an error state with error styling and pre-filled content.
+
+<Preview src="input-pin?style=error">
+
+```dart
+InputPin(
+  error: true,
+  autoFocus: false,
+  controller: TextEditingController(text: '12345'),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+<div class="docs-table">
+| Property              | Type                          | Description                                                                |
+|-----------------------|-------------------------------|----------------------------------------------------------------------------|
+| `length`              | `int`                         | The number of PIN input fields to display. Default is 5.                   |
+| `onCompleted`         | `Function(String)?`           | Called when all PIN fields are completed.                                  |
+| `autoFocus`           | `bool`                        | Whether the first field should automatically receive focus.                |
+| `error`               | `bool`                        | Whether the input should display in an error state. Default is false.      |
+| `enabled`             | `bool`                        | Whether the input fields are enabled for interaction.                      |
+| `obscureText`         | `bool`                        | Whether the input text should be obscured (hidden).                        |
+| `keyboardType`        | `TextInputType`               | The type of keyboard to display. Default is TextInputType.number.          |
+| `textStyle`           | `TextStyle?`                  | Custom text style for the input text.                                      |
+| `inputFormatters`     | `List<TextInputFormatter>`    | List of input formatters to apply to the text input.                       |
+| `enableActiveFill`    | `bool`                        | Whether to enable active fill styling.                                     |
+| `beforeTextPaste`     | `Function(String?)?`          | Callback to validate text before pasting.                                  |
+| `animationType`       | `AnimationType`               | The type of animation to apply during field transitions.                   |
+| `animationDuration`   | `Duration`                    | Duration of the animation effects. Default is 300ms.                       |
+| `pinTheme`            | `PinTheme?`                   | Custom pin theme configuration.                                            |
+| `obscuringWidget`     | `Widget?`                     | Custom widget to display when text is obscured.                            |
+| `mainAxisAlignment`   | `MainAxisAlignment`           | How to align the PIN fields horizontally. Default is center.               |
+| `fieldOuterPadding`   | `EdgeInsetsGeometry`          | Padding around each input field. Default is horizontal 8px.                |
+| `fieldWidth`          | `double`                      | Width of each individual input field. Default is 48px.                     |
+| `activeBorderWidth`   | `double`                      | Border width when a field is active (focused). Default is 1.0.             |
+| `selectedBorderWidth` | `double`                      | Border width when a field is selected. Default is 2.5.                     |
+| `cursorColor`         | `Color`                       | Color of the text cursor. Default is transparent.                          |
+| `enablePinAutofill`   | `bool`                        | Whether to enable PIN autofill from system suggestions.                    |
+| `autoDismissKeyboard` | `bool`                        | Whether to automatically dismiss keyboard when PIN is completed.           |
+| `autoFocusOnLoad`     | `bool`                        | Whether to automatically focus the first field when widget loads.          |
+| `validator`           | `Function(String?)?`          | Validation function for the PIN input.                                     |
+| `shape`               | `PinCodeFieldShape`           | The shape of the input fields. Default is circle.                          |
+| `activeBoxShadow`     | `List<BoxShadow>?`            | Custom box shadow for active fields.                                       |
+| `errorTextMargin`     | `EdgeInsets`                  | Margin for error text display. Default is zero.                            |
+| `selectedFillColor`   | `Color?`                      | Fill color for selected fields.                                            |
+| `activeFillColor`     | `Color?`                      | Fill color for active (focused) fields.                                    |
+| `inactiveFillColor`   | `Color?`                      | Fill color for inactive fields.                                            |
+| `selectedColor`       | `Color?`                      | Border color for selected fields.                                          |
+| `activeColor`         | `Color?`                      | Border color for active (focused) fields.                                  |
+| `inactiveColor`       | `Color?`                      | Border color for inactive fields.                                          |
+| `errorBorderColor`    | `Color?`                      | Border color when in error state.                                          |
+| `disabledColor`       | `Color?`                      | Color when the input is disabled.                                          |
+| `onSubmitted`         | `Function(String)?`           | Called when the user submits the input.                                    |
+| `onChanged`           | `Function(String)?`           | Called whenever the input value changes.                                   |
+| `onEditingComplete`   | `Function()?`                 | Called when the user finishes editing.                                     |
+| `controller`          | `TextEditingController?`      | Controller for managing the input text programmatically.                   |
+</div>

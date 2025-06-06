@@ -9,6 +9,7 @@ export 'src/checkbox.dart';
 export 'src/chip.dart';
 export 'src/dialog.dart';
 export 'src/input_field.dart';
+export 'src/input_pin.dart';
 export 'src/nav_bar.dart';
 export 'src/page_control.dart';
 export 'src/progress.dart';

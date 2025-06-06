@@ -11,6 +11,7 @@ import 'package:playground/pages/checkbox.dart';
 import 'package:playground/pages/chip.dart';
 import 'package:playground/pages/dialog.dart';
 import 'package:playground/pages/input_field.dart';
+import 'package:playground/pages/input_pin.dart';
 import 'package:playground/pages/nav_bar.dart';
 import 'package:playground/pages/page_control.dart';
 import 'package:playground/pages/progress.dart';
@@ -249,6 +250,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'active';
         return RadioPage(
           style: RadioStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/input-pin',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'basic';
+        return InputPinPage(
+          style: InputPinStyle.values.byName(style),
         );
       },
     ),
