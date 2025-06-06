@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:just_the_tooltip/just_the_tooltip.dart';
 import 'package:nucleus_ui/constant/colors.dart';
 import 'package:nucleus_ui/constant/typography.dart';
 import 'package:nucleus_ui/extension/context.dart';
-import 'package:nucleus_ui/package/tooltip/tooltip.dart';
 
 /// A customizable tooltip widget that can display messages or custom content.
 ///
@@ -34,8 +34,6 @@ class QuickTip extends StatelessWidget {
     this.showDuration,
     this.triggerMode,
     this.barrierDismissible = true,
-    this.barrierColor = Colors.transparent,
-    this.barrierBuilder,
     this.enableFeedback,
     this.hoverShowDuration,
     this.fadeInDuration = const Duration(milliseconds: 150),
@@ -49,9 +47,9 @@ class QuickTip extends StatelessWidget {
     this.borderRadius = const BorderRadius.all(Radius.circular(4)),
     this.tailLength = 8,
     this.tailBaseWidth = 12,
-    this.tailBuilder = HoverInterface.defaultTailBuilder,
+    this.tailBuilder = JustTheInterface.defaultTailBuilder,
     this.animatedTransitionBuilder =
-        HoverInterface.defaultAnimatedTransitionBuilder,
+        JustTheInterface.defaultAnimatedTransitionBuilder,
     this.backgroundColor,
     this.textDirection = TextDirection.ltr,
     this.shadow,
@@ -76,7 +74,7 @@ class QuickTip extends StatelessWidget {
   final void Function()? onShow;
 
   /// Controller to programmatically show/hide the tooltip.
-  final TooltipController? controller;
+  final JustTheController? controller;
 
   /// Whether the tooltip should be displayed as a modal overlay.
   final bool isModal;
@@ -92,13 +90,6 @@ class QuickTip extends StatelessWidget {
 
   /// Whether clicking outside the tooltip dismisses it.
   final bool barrierDismissible;
-
-  /// Color of the modal barrier when [isModal] is true.
-  final Color barrierColor;
-
-  /// Custom builder for the modal barrier.
-  final Widget Function(BuildContext, Animation<double>, void Function())?
-      barrierBuilder;
 
   /// Whether to provide haptic feedback when showing the tooltip.
   final bool? enableFeedback;
@@ -175,8 +166,6 @@ class QuickTip extends StatelessWidget {
       showDuration: showDuration,
       triggerMode: triggerMode ?? TooltipTriggerMode.tap,
       barrierDismissible: barrierDismissible,
-      barrierColor: barrierColor,
-      barrierBuilder: barrierBuilder,
       enableFeedback: enableFeedback,
       hoverShowDuration: hoverShowDuration,
       fadeInDuration: fadeInDuration,
