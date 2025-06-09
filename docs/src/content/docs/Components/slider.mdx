@@ -1,0 +1,99 @@
+---
+title: Slider
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable slider component for selecting single values or ranges from a continuous scale.
+
+The `DragSlider` and `DragRangeSlider` widgets provide horizontal sliders with customizable appearance including track height, thumb radius, colors, and interactive behavior. They wrap Flutter's built-in Slider components with consistent styling options.
+
+- **Slider Types**: Single value, Range selection.
+- **Customizable**: Supports custom colors, dimensions, divisions, and interaction modes.
+- **Responsive**: Handles touch, mouse, and keyboard interactions.
+
+---
+
+## Variants
+
+#### Single Value Slider
+A slider for selecting a single value from a range.
+
+<Preview src="slider?style=single">
+
+```dart
+DragSlider(
+  value: _value,
+  onChanged: (value) => setState(() => _value = value),
+)
+```
+
+</Preview>
+
+---
+
+#### Range Slider
+A slider for selecting a range of values with two thumbs.
+
+<Preview src="slider?style=range">
+
+```dart
+DragRangeSlider(
+  values: _dragRangeSlider,
+  onChanged: (value) => setState(() => _dragRangeSlider = value),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+### DragSlider
+
+<div class="docs-table">
+| Property              | Type                              | Description                                                                              |
+|-----------------------|-----------------------------------|------------------------------------------------------------------------------------------|
+| `value`               | `double`                          | The current value of the slider.                                                         |
+| `onChanged`           | `void Function(double)?`          | Callback function when the slider value changes.                                         |
+| `onChangeStart`       | `void Function(double)?`          | Callback function when the user starts changing the slider value.                        |
+| `onChangeEnd`         | `void Function(double)?`          | Callback function when the user finishes changing the slider value.                      |
+| `min`                 | `double`                          | The minimum value of the slider range.                                                   |
+| `max`                 | `double`                          | The maximum value of the slider range.                                                   |
+| `thumbRadius`         | `double`                          | The radius of the slider thumb in logical pixels.                                        |
+| `trackHeight`         | `double`                          | The height of the slider track in logical pixels.                                        |
+| `divisions`           | `int?`                            | The number of discrete divisions on the slider track.                                    |
+| `activeColor`         | `Color?`                          | The color of the active portion of the slider track.                                     |
+| `inactiveColor`       | `Color?`                          | The color of the inactive portion of the slider track.                                   |
+| `secondaryActiveColor`| `Color?`                          | The color of the secondary active track (used for additional visual feedback).           |
+| `thumbColor`          | `Color?`                          | The color of the slider thumb.                                                           |
+| `overlayColor`        | `WidgetStateProperty<Color?>?`    | The color of the overlay that appears when the slider is pressed.                        |
+| `mouseCursor`         | `MouseCursor?`                    | The cursor to display when hovering over the slider.                                     |
+| `focusNode`           | `FocusNode?`                      | The focus node for keyboard navigation.                                                  |
+| `autofocus`           | `bool`                            | Whether the slider should automatically gain focus when the widget is built.             |
+| `allowedInteraction`  | `SliderInteraction?`              | The types of interaction allowed for the slider.                                         |
+| `padding`             | `EdgeInsetsGeometry?`             | The padding around the slider.                                                           |
+
+</div>
+
+### DragRangeSlider
+
+<div class="docs-table">
+| Property        | Type                              | Description                                                                                    |
+|-----------------|-----------------------------------|------------------------------------------------------------------------------------------------|
+| `values`        | `RangeValues`                     | The current values of the range slider (start and end values).                                 |
+| `onChanged`     | `void Function(RangeValues)?`     | Callback function when the slider range values change.                                         |
+| `onChangeStart` | `void Function(RangeValues)?`     | Callback function when the user starts changing the slider range values.                       |
+| `onChangeEnd`   | `void Function(RangeValues)?`     | Callback function when the user finishes changing the slider range values.                     |
+| `min`           | `double`                          | The minimum value of the slider range. Defaults to `0`.                                        |
+| `max`           | `double`                          | The maximum value of the slider range. Defaults to `100`.                                      |
+| `thumbRadius`   | `double`                          | The radius of the slider thumbs in logical pixels. Defaults to `8`.                            |
+| `trackHeight`   | `double`                          | The height of the slider track in logical pixels. Defaults to `4`.                             |
+| `divisions`     | `int?`                            | The number of discrete divisions on the slider track.                                          |
+| `activeColor`   | `Color?`                          | The color of the active portion of the slider track (between the two thumbs).                  |
+| `inactiveColor` | `Color?`                          | The color of the inactive portions of the slider track.                                        |
+| `overlayColor`  | `WidgetStateProperty<Color?>?`    | The color of the overlay that appears when the slider thumbs are pressed.                      |
+
+</div>

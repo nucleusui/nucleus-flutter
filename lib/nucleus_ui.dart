@@ -19,6 +19,7 @@ export 'src/search_field.dart';
 export 'src/segmented_control.dart';
 export 'src/separator.dart';
 export 'src/skeleton.dart';
+export 'src/slider.dart';
 export 'src/tabs.dart';
 export 'src/toast.dart';
 export 'src/toggle.dart';
