@@ -1,0 +1,175 @@
+---
+title: Steppers
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable stepper component for incrementing and decrementing numeric values.
+
+The `Steppers` widget provides a flexible UI for numeric input with customizable add/remove buttons, value constraints, and various styling options. It includes multiple static constructors for common stepper styles.
+
+- **Stepper Types**: Outline, Round Button, Outline Round Button, Minimal.
+- **States**: Disabled, Interactive.
+- **Customizable**: Supports custom widgets, colors, dimensions, and constraints.
+
+---
+
+## Variants
+
+#### Outline
+A stepper with outline styling and border container.
+
+<Preview src="steppers?style=outline">
+
+```dart
+Steppers.outline(
+  value: _value,
+  onAdd: () => setState(() => _value++),
+  onRemove: () => setState(() => _value--),
+)
+```
+
+</Preview>
+
+---
+
+#### Round Button
+A stepper with circular button controls.
+
+<Preview src="steppers?style=roundButton">
+
+```dart
+Steppers.roundButton(
+  value: _value,
+  onAdd: () => setState(() => _value++),
+  onRemove: () => setState(() => _value--),
+)
+```
+
+</Preview>
+
+---
+
+#### Outline Round Button
+A stepper combining outline container with round button controls.
+
+<Preview src="steppers?style=outlineRoundButton">
+
+```dart
+Steppers.outlineRoundButton(
+  value: _value,
+  onAdd: () => setState(() => _value++),
+  onRemove: () => setState(() => _value--),
+)
+```
+
+</Preview>
+
+---
+
+#### Minimal
+A compact stepper with minimal styling and vertical divider.
+
+<Preview src="steppers?style=minimal">
+
+```dart
+Column(
+  spacing: 8,
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Text('Value: $_value'),
+    Steppers.minimal(
+      value: _value,
+      onAdd: () => setState(() => _value++),
+      onRemove: () => setState(() => _value--),
+    ),
+  ],
+)
+```
+
+</Preview>
+
+---
+
+#### Disabled State
+A stepper in disabled state that cannot be interacted with.
+
+<Preview src="steppers?style=disabled">
+
+```dart
+Steppers.outline(
+  value: _value,
+  disabled: true,
+  onAdd: () => setState(() => _value++),
+  onRemove: () => setState(() => _value--),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+### Steppers
+
+<div class="docs-table">
+| Property       | Type                  | Description                                                                                     |
+|----------------|-----------------------|-------------------------------------------------------------------------------------------------|
+| `value`        | `int`                 | The current numeric value displayed in the stepper. Defaults to `0`.                          |
+| `min`          | `int`                 | The minimum value that can be set. Value cannot go below this number. Defaults to `0`.        |
+| `max`          | `int?`                | The maximum value that can be set. If null, there is no upper limit.                          |
+| `onAdd`        | `void Function()?`    | Callback function when the add button is pressed to increment the value.                       |
+| `onRemove`     | `void Function()?`    | Callback function when the remove button is pressed to decrement the value.                    |
+| `widgetAdd`    | `Widget?`             | Custom widget to display as the add button. If null, uses default add icon.                   |
+| `widgetRemove` | `Widget?`             | Custom widget to display as the remove button. If null, uses default remove icon.             |
+| `width`        | `double`              | The width allocated for displaying the numeric value. Defaults to `40`.                        |
+| `height`       | `double?`             | The height of the stepper component.                                                           |
+| `spacing`      | `double`              | The spacing between the remove button, value display, and add button. Defaults to `8`.        |
+| `style`        | `TextStyle?`          | Custom text style for the displayed value.                                                     |
+| `isMinimal`    | `bool`                | Whether to use minimal style with a vertical divider instead of value display. Defaults to `false`. |
+| `disabled`     | `bool`                | Whether the stepper is disabled and cannot be interacted with. Defaults to `false`.           |
+
+</div>
+
+### Static Constructors
+
+#### Steppers.outline
+
+Additional properties for the outline variant:
+
+<div class="docs-table">
+| Property       | Type                    | Description                                                                                   |
+|----------------|-------------------------|-----------------------------------------------------------------------------------------------|
+| `border`       | `BoxBorder?`            | Custom border for the container. If null, uses default gray border.                         |
+| `padding`      | `EdgeInsetsGeometry?`   | Padding inside the container. Defaults to `EdgeInsets.fromLTRB(8, 5, 8, 5)`.               |
+| `borderRadius` | `BorderRadiusGeometry?` | Border radius for the container. Defaults to `BorderRadius.all(Radius.circular(100))`.     |
+
+</div>
+
+#### Steppers.outlineRoundButton
+
+Additional properties for the outline round button variant:
+
+<div class="docs-table">
+| Property       | Type                    | Description                                                                                   |
+|----------------|-------------------------|-----------------------------------------------------------------------------------------------|
+| `border`       | `BoxBorder?`            | Custom border for the container. If null, uses default gray border.                         |
+| `padding`      | `EdgeInsetsGeometry?`   | Padding inside the container. Defaults to `EdgeInsets.all(8)`.                              |
+| `borderRadius` | `BorderRadiusGeometry?` | Border radius for the container. Defaults to `BorderRadius.all(Radius.circular(100))`.     |
+
+</div>
+
+#### Steppers.minimal
+
+Additional properties for the minimal variant:
+
+<div class="docs-table">
+| Property       | Type                    | Description                                                                                   |
+|----------------|-------------------------|-----------------------------------------------------------------------------------------------|
+| `border`       | `BoxBorder?`            | Custom border for the container. If null, uses default gray border.                         |
+| `padding`      | `EdgeInsetsGeometry?`   | Padding inside the container. Defaults to `EdgeInsets.symmetric(horizontal: 8)`.            |
+| `borderRadius` | `BorderRadiusGeometry?` | Border radius for the container. Defaults to `BorderRadius.all(Radius.circular(100))`.     |
+
+</div>

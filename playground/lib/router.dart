@@ -22,6 +22,7 @@ import 'package:playground/pages/segmented_control.dart';
 import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/skeleton.dart';
 import 'package:playground/pages/slider.dart';
+import 'package:playground/pages/steppers.dart';
 import 'package:playground/pages/tabs.dart';
 import 'package:playground/pages/text_area.dart';
 import 'package:playground/pages/toast.dart';
@@ -289,6 +290,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'single';
         return SliderPage(
           style: SliderStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/steppers',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'outline';
+        return SteppersPage(
+          style: SteppersStyle.values.byName(style),
         );
       },
     ),
