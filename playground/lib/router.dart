@@ -19,6 +19,7 @@ import 'package:playground/pages/progress.dart';
 import 'package:playground/pages/radio.dart';
 import 'package:playground/pages/search_bar.dart';
 import 'package:playground/pages/segmented_control.dart';
+import 'package:playground/pages/select_input.dart';
 import 'package:playground/pages/separator.dart';
 import 'package:playground/pages/skeleton.dart';
 import 'package:playground/pages/slider.dart';
@@ -299,6 +300,15 @@ final router = GoRouter(
         final style = state.uri.queryParameters['style'] ?? 'outline';
         return SteppersPage(
           style: SteppersStyle.values.byName(style),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/select-input',
+      builder: (context, state) {
+        final style = state.uri.queryParameters['style'] ?? 'standard';
+        return SelectInputPage(
+          style: SelectInputStyle.values.byName(style),
         );
       },
     ),

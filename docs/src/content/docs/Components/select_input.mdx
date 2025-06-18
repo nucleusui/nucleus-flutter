@@ -1,0 +1,88 @@
+---
+title: Select Input
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable dropdown input component for selecting values from a list.
+
+The `SelectInput` widget provides a flexible and reusable UI for dropdown inputs with customizable labels, icons, styles, and validation. It supports both enabled and disabled states, and integrates seamlessly with form validation.
+
+- **Input Styles**: Standard, Floating Label.
+- **Customizable**: Supports custom labels, icons, styles, and validation.
+- **Responsive**: Adapts to various screen sizes and layouts.
+
+---
+
+## Variants
+
+#### Standard
+A dropdown input with a standard label.
+
+<Preview src="select-input?style=standard" minHeight="500px">
+
+```dart
+SelectInput<int>(
+  label: 'Select an option',
+  dropdownMenuEntries: List.generate(3, (e) {
+    return DropdownMenuEntry<int>(
+      value: e,
+      label: 'Option $e',
+    );
+  }),
+)
+```
+
+</Preview>
+
+---
+
+#### Floating Label
+A dropdown input with a floating label that moves above the input when a value is selected.
+
+<Preview src="select-input?style=floatingLabel" minHeight="500px">
+
+```dart
+SelectInput<int>(
+  label: 'Select an option',
+  selectedLabel: 'Your selection',
+  showLabel: true,
+  dropdownMenuEntries: List.generate(3, (e) {
+    return DropdownMenuEntry<int>(
+      value: e,
+      label: 'Option $e',
+    );
+  }),
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+### SelectInput
+
+<div class="docs-table">
+| Property                | Type                              | Description                                                                                     |
+|-------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------|
+| `width`                 | `double`                          | The width of the dropdown input. Defaults to `400`.                                             |
+| `label`                 | `String?`                         | The label text displayed when no value is selected.                                             |
+| `selectedLabel`         | `String?`                         | The label text displayed when a value is selected. If null, falls back to `label`.              |
+| `labelStyle`            | `TextStyle?`                      | Custom text style for the label.                                                                |
+| `disabled`              | `bool`                            | Whether the dropdown input is disabled. Defaults to `false`.                                    |
+| `showLabel`             | `bool`                            | Whether to show the label above the dropdown input. Defaults to `false`.                        |
+| `icon`                  | `Widget?`                         | Custom icon displayed as the trailing icon in the dropdown.                                     |
+| `selectedIcon`          | `Widget?`                         | Custom icon displayed as the trailing icon when a value is selected.                            |
+| `dropdownMenuEntries`   | `List<DropdownMenuEntry<T>>`      | The list of dropdown menu entries to display.                                                   |
+| `onSelected`            | `void Function(T?)?`              | Callback function triggered when a value is selected.                                           |
+| `focusNode`             | `FocusNode?`                      | The focus node for managing focus state.                                                        |
+| `controller`            | `TextEditingController?`          | The text editing controller for managing the input value.                                       |
+| `errorText`             | `String?`                         | The error text displayed below the dropdown input.                                              |
+| `validator`             | `String? Function(T?)?`           | Validator function for validating the selected value.                                           |
+| `initialValue`          | `T?`                              | The initial value of the dropdown input.                                                        |
+| `inputDecorationTheme`  | `InputDecorationTheme?`           | Custom input decoration theme for styling the dropdown input.                                   |
+
+</div>
