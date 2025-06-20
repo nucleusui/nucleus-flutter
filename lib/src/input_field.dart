@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nucleus_ui/constant/colors.dart';
 import 'package:nucleus_ui/constant/typography.dart';
 import 'package:nucleus_ui/extension/context.dart';
@@ -40,6 +41,7 @@ class InputField extends StatefulWidget {
     this.suffixPadding,
     this.prefixPadding,
     this.focusNode,
+    this.inputFormatters,
   });
 
   /// Controller for the text field input.
@@ -123,6 +125,9 @@ class InputField extends StatefulWidget {
   /// Focus node that controls the focus state of this text field.
   final FocusNode? focusNode;
 
+  /// Creates an InputField widget with the specified properties.
+  final List<TextInputFormatter>? inputFormatters;
+
   @override
   State<InputField> createState() => _InputFieldStates();
 }
@@ -184,13 +189,13 @@ class _InputFieldStates extends State<InputField> {
           padding: EdgeInsets.all(isFocus || isError ? 0 : 1),
           decoration: BoxDecoration(
             color: isDisabled
-                ? context.color.borderMuted
+                ? const Color(0xFFE6E9EB)
                 : isError
                     ? context.color.red10
                     : (widget.fillColor ?? context.color.chipColor),
             borderRadius: widget.borderRadius,
             border: isDisabled
-                ? null
+                ? Border.all(color: context.color.borderDisabled)
                 : widget.border ??
                     Border.all(
                       width: isFocus || isError ? 2 : 1,
@@ -217,6 +222,7 @@ class _InputFieldStates extends State<InputField> {
               minLines: widget.minLines,
               maxLines: hidePass ? 1 : widget.maxLines,
               focusNode: focusNode,
+              inputFormatters: widget.inputFormatters,
               onTap: () {
                 FocusManager.instance.primaryFocus?.requestFocus();
                 setState(() => isFocus = true);
