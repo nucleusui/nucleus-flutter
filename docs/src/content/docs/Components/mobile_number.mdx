@@ -1,0 +1,89 @@
+---
+title: Mobile Number
+---
+
+import Preview from "../../../components/Preview.astro";
+import "../../../styles/docs.css";
+
+A customizable mobile number input component with country code selection.
+
+The `MobileNumber` widget provides a specialized input field for mobile numbers with an integrated country picker. It automatically validates phone number length based on the selected country and provides customizable formatting and validation options.
+
+- **Input Styles**: Standard, Floating Label, Disabled.
+- **Country Selection**: Built-in country picker with flags and dial codes.
+- **Validation**: Automatic phone number validation based on selected country.
+- **Customizable**: Supports custom validators, formatters, and styling.
+
+---
+
+## Variants
+
+#### Standard
+A mobile number input with hint text placeholder.
+
+<Preview src="mobile-number?style=standard" minHeight="500px">
+
+```dart
+const MobileNumber(
+  hintText: 'Mobile number',
+)
+```
+
+</Preview>
+
+---
+
+#### Floating Label
+A mobile number input with a floating label that moves above the input when focused or filled.
+
+<Preview src="mobile-number?style=floatingLabel" minHeight="500px">
+
+```dart
+const MobileNumber(
+  labelText: 'Mobile number',
+)
+```
+
+</Preview>
+
+---
+
+#### Disabled
+A mobile number input in disabled state that cannot be interacted with.
+
+<Preview src="mobile-number?style=disabled">
+
+```dart
+const MobileNumber(
+  hintText: 'Mobile number',
+  isEnabled: false,
+)
+```
+
+</Preview>
+
+---
+
+## Properties
+
+### MobileNumber
+
+<div class="docs-table">
+| Property            | Type                              | Description                                                                                      |
+|---------------------|-----------------------------------|--------------------------------------------------------------------------------------------------|
+| `labelText`         | `String?`                         | The label text displayed above the input field.                                                  |
+| `hintText`          | `String?`                         | The hint text displayed inside the input field when empty.                                       |
+| `validator`         | `String? Function(String?)?`      | Custom validator function for the mobile number input. If null, uses default validation.         |
+| `inputFormatters`   | `List<TextInputFormatter>?`       | Custom input formatters. If null, uses digits-only formatter with country-based length limiting. |
+| `textInputType`     | `TextInputType`                   | The keyboard type for the input field. Defaults to `TextInputType.phone`.                        |
+| `autovalidateMode`  | `AutovalidateMode?`               | When to automatically validate the input. Defaults to `AutovalidateMode.onUserInteraction`.      |
+| `prefixWidget`      | `Widget?`                         | Custom prefix widget to display before the country selector.                                     |
+| `dialogTitle`       | `String`                          | The title displayed in the country picker dialog. Defaults to `'Select Country'`.                |
+| `searchHint`        | `String`                          | The hint text displayed in the country picker search field.                                      |
+| `controller`        | `TextEditingController?`          | Text editing controller for the mobile number input.                                             |
+| `prefixPadding`     | `EdgeInsetsGeometry`              | Padding around the prefix icon (country selector).                                               |
+| `onCountrySelected` | `void Function(Country)?`         | Callback function triggered when a country is selected.                                          |
+| `isError`           | `bool`                            | Whether the input field should display in error state. Defaults to `false`.                      |
+| `isEnabled`         | `bool`                            | Whether the input field is enabled for user interaction. Defaults to `true`.                     |
+
+</div>
