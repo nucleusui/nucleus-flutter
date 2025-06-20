@@ -191,7 +191,9 @@ class _InputFieldStates extends State<InputField> {
             color: isDisabled
                 ? const Color(0xFFE6E9EB)
                 : isError
-                    ? context.color.red10
+                    ? context.color.brightness == Brightness.dark
+                        ? context.color.chipColor
+                        : context.color.red10
                     : (widget.fillColor ?? context.color.chipColor),
             borderRadius: widget.borderRadius,
             border: isDisabled
